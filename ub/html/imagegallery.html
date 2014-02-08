@@ -1,0 +1,12 @@
+<div class="event_image_gallery_region">
+	<!-- display current selected image as main image -->
+	<img class="event_details_page_image" ng-src="{{selected.imageURL}}" />
+	<div ng-show="(event_item_active.eImages.length > 1)">
+		<div class="ub_image_scroll_right">
+			<i class="icon-caret-right icon-3x" ng-click="click_right()"></i>
+		</div>
+		<div class="ub_image_scroll_left">
+			<i class="icon-caret-left icon-3x" ng-click="click_left()"></i>
+		</div>
+	</div>
+</div>

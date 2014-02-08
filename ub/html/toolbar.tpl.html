@@ -1,0 +1,11 @@
+<div>
+	  <div ng-show="(menuloginStatus == true)" style="float:left;" class="logintoolbar_topmenu_items">
+		  <div ng-click="profile()">{{currentUser.name}}</div>
+	  </div>
+	  <div ng-show="(menuloginStatus == true)" class="logout">
+		  <div class="logintoolbar_topmenu_items" ng-click="logout()">Log out</div>
+	  </div>
+	  <div ng-show="(menuloginStatus == false)" class="login">
+			<div class="logintoolbar_topmenu_items" ng-click="login()">Sign In</div>
+	  </div>
+</div>

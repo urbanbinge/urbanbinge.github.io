@@ -1,0 +1,21 @@
+<div>
+	<h3><i class="icon_34 icon_left" title="close" data-ng-click="closeCurrentPanel(panel)"></i>Sponsors</h3>
+
+	<h2>Your Event Sponsors</h2>
+	<p class="help-block">Add sponsors to your event, upload their logo and provide a link to their website for recognition.</p>
+
+	<ul class="pte-ticket-list" data-ng-model="orderedSponsors">
+	<li data-ng-repeat="sponsor in orderedSponsors" data-ng-click="setCurrentSponsor(sponsor)" id="{{sponsor.name}}>
+	<i class="ss-icon">&#x25BB;</i>
+	<div class="pte-sponsor-list-logo"><img data-ng-src="{{ sponsor.image_uri }}"></div>
+	<span class="pte-ticket-list-name">{{ sponsor.name }}</span>
+	<span>{{ sponsor.external_url }}</span>
+	</li>
+	</ul>
+	<button data-ng-click="addSponsor()" type="button" class="btn btn-large btn-success btn-block">Add Sponsor</button>
+	<div ng-show="( addSponsorClick == 1)">
+		<ub-event-sponsor>
+		</ub-event-sponsor>
+	</div>
+
+</div>

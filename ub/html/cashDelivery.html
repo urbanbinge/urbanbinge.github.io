@@ -1,0 +1,83 @@
+<div>
+  <h2>Invoicing for Cash Delivery</h2>
+  <div class="control-group inline-label-option">
+	<label class="control-label">Business Name</label>
+	<div class="controls">
+	  <input type="text" data-ng-model="event.invoice_name" name="event_invoice_name" required>
+	</div><!-- /.controls -->
+	<div data-ng-show="eventSettingsForm.event_invoice_name.$dirty && eventSettingsForm.event_invoice_name.$invalid" class="alert alert-error">
+	  <span data-ng-show="eventSettingsForm.event_invoice_name.$error.required">Please provide a name for your company. This will be shown on the invoice.</span>
+	</div>
+  </div><!-- /.control-group inline-label-option -->
+  <div class="control-group inline-label-option">
+	<label class="control-label">Address</label>
+	<div class="controls">
+	  <input type="text" data-ng-model="event.invoice_street" name="event_invoice_street" required>
+	</div><!-- /.controls -->
+	<div data-ng-show="eventSettingsForm.event_invoice_street.$dirty && eventSettingsForm.event_invoice_street.$invalid" class="alert alert-error">
+	  <span data-ng-show="eventSettingsForm.event_invoice_street.$error.required">Please provide a street address for the invoice.</span>
+	</div>
+  </div><!-- /.control-group inline-label-option -->
+  <div class="control-group inline-label-option">
+	<label class="control-label">Location</label>
+	<div class="controls">
+		<select data-ui-select2 data-placeholder="-- Country --"  data-ng-model="event.invoice_country_id">
+		  <option></option>
+		  <option data-ng-repeat="country in countries" value="{{country.id}}">{{ country.country }}</option>
+		</select>
+	</div><!-- /.controls -->
+  </div><!-- /.control-group -->
+  <div class="control-group inline-label-option">
+	<label class="control-label">&nbsp;</label>
+	<div class="controls">
+		<select data-ui-select2 data-placeholder="-- Region --" data-ng-model="event.invoice_region_id">
+		  <option></option>
+		  <option data-ng-repeat="region in regions" value="{{region.id}}">{{ region.name }}</option>
+		</select>
+	</div><!-- /.controls -->
+  </div><!-- /.control-group -->
+  <div class="control-group inline-label-option">
+	<label class="control-label">&nbsp;</label>
+	<div class="controls">
+	  <div class="input-prepend full-width">
+		<span class="add-on"><i class="ss-icon">&#xE6D0;</i></span><input type="text" data-ng-model="event.invoice_locality" placeholder="City" name="event_invoice_locality" required>
+	  </div><!-- /.input-prepend -->
+	</div><!-- /.controls -->
+	<div data-ng-show="eventSettingsForm.event_invoice_locality.$dirty && eventSettingsForm.event_invoice_locality.$invalid" class="alert alert-error">
+	  <span data-ng-show="eventSettingsForm.event_invoice_locality.$error.required">Please provide a city for the invoice.</span>
+	</div>
+  </div><!-- /.control-group -->
+  <div class="control-group inline-label-option">
+	<label class="control-label">Postal Code</label>
+	<div class="controls">
+	  <input type="text" data-ng-model="event.invoice_postalcode" name="event_invoice_postalcode" data-ng-minlength="5">
+	</div><!-- /.controls -->
+	<div data-ng-show="eventSettingsForm.event_invoice_postalcode.$dirty && eventSettingsForm.event_invoice_postalcode.$invalid" class="alert alert-error">
+	  <span data-ng-show="eventSettingsForm.event_invoice_postalcode.$error.minlength">Please provide a zip/postal code for the invoice.</span>
+	</div>
+  </div><!-- /.control-group inline-label-option -->
+  <div class="control-group inline-label-option">
+	<label class="control-label">Phone</label>
+	<div class="controls">
+	  <input type="tel" data-ng-model="event.invoice_telephone" name="event_invoice_telephone" data-ng-pattern="/^[0-9-. ()]{7,}$/">
+	</div><!-- /.controls -->
+	<div data-ng-show="eventSettingsForm.event_invoice_telephone.$dirty && eventSettingsForm.event_invoice_telephone.$invalid" class="alert alert-error">
+	  <span data-ng-show="eventSettingsForm.event_invoice_telephone.$error.pattern">Please enter a phone number for the invoice. Example: 416-555-1234.</span>
+	</div>
+  </div><!-- /.control-group inline-label-option -->
+  <div class="control-group inline-label-option">
+	<label class="control-label">Email</label>
+	<div class="controls">
+	  <input type="email" data-ng-model="event.invoice_email" name="event_invoice_email" data-ng-pattern="/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/">
+	</div><!-- /.controls -->
+	<div data-ng-show="eventSettingsForm.event_invoice_email.$dirty && eventSettingsForm.event_invoice_email.$invalid" class="alert alert-error">
+	  <span data-ng-show="eventSettingsForm.event_invoice_email.$error.pattern">Please enter a valid email address for the invoice.</span>
+	</div>
+  </div><!-- /.control-group inline-label-option -->
+  <div class="control-group inline-label-option">
+	<label class="control-label">Tax Number</label>
+	<div class="controls">
+	  <input type="text" data-ng-model="event.invoice_tax_number">
+	</div><!-- /.controls -->
+  </div><!-- /.control-group inline-label-option -->
+</div>

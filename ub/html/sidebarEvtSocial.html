@@ -1,0 +1,57 @@
+<div>
+	<h3><i class="icon_34 icon_left" title="close" data-ng-click="closeCurrentPanel(panel)"></i>Social</h3>
+	<h3>Facebook</h3>
+
+	<div class="control-group">
+	<div class="controls">
+	<label class="checkbox">
+	<input type="checkbox" data-ng-model="event.facebookEnabled">
+	Add Facebook Like Button
+	</label>
+	</div><!-- /.controls -->
+	</div><!-- /.control-group -->
+	<hr>
+	<h2>Twitter</h2>
+
+	<div class="control-group inline-label-option">
+	<label class="control-label">Event Hashtag</label>
+	<div class="input-counter-append input-prepend full-width">
+	<span class="add-on">#</span><input type="text" data-ng-model="event.twitterHashTag" data-pt-input-counter="14">
+	<span class="input-counter">
+	<span>{{ event.twitterHashTag }}/14</span>
+	</span>
+	</div><!-- /.input-counter-append -->
+	</div><!-- /.control-group inline-label-option -->
+	<div class="control-group">
+	<div class="controls">
+	<label class="checkbox">
+	<input type="checkbox" data-ng-model="event.twitterEnabled">
+	Add Tweet Button
+	</label>
+	</div><!-- /.controls -->
+	</div><!-- /.control-group -->
+
+	<hr>
+	<h2>LinkedIn</h2>
+	<div class="control-group">
+	<div class="controls">
+	<label class="checkbox">
+	<input type="checkbox" data-ng-model="event.linkedinEnabled">
+	Add LinkedIn Share Button
+	</label>
+	</div><!-- /.controls -->
+	</div><!-- /.control-group -->
+
+	<hr>
+	<h2>Google+</h2>
+	<div class="control-group">
+	<div class="controls">
+	<label class="checkbox">
+	<input type="checkbox" data-ng-model="event.googleplusEnabled">
+	Add +1 Button
+	</label>
+	</div><!-- /.controls -->
+	</div><!-- /.control-group -->
+	<hr>
+	<p class="help-block">&nbsp;<br>* When an event is set to Private in the Settings panel, <br>all Social buttons and comments are disabled.</p>
+</div>

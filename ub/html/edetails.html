@@ -1,0 +1,41 @@
+<div ng-show="(eventState == 1)"
+     class="event_details_panel"
+     ng-style="panel_style()">
+  <div class="event_detail_close icon_48 icon_close" style="cursor:pointer;" ng-click="event_panel_close()"></div>
+  <div class="more_info"><a style="cursor:pointer;" ng-href="#/events/{{event_item_active.eid}}">more Info</a></div>
+  <div class="event_top_region">
+    <div class="q_event_data_region">
+      <div class="etitle">{{ event_item_active.etitle }}</div>
+      <div class="hr"></div>
+      <div class="event_details_image" ng-style="thumbnail_style()">
+      </div>
+    </div>
+    <div class="event_overview_region">
+      <div class="etitle">Event Details</div>
+      <div class="hr"></div>
+      <div class="event_details">
+	Place : {{event_item_active.eVenue}}<br />
+	Date  : {{event_item_active.eStartDateDisplay}} to {{event_item_active.eDateDisplay}} <br />
+	Price : Free <br />
+	Per Batch  :  SirHackAlot<br />
+	Contact  :  100<br />
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+	</p>
+      </div>
+    </div>
+    <div class="event_book_region">
+      <div class="book_item">
+	Quantity :<input type="text" id="booking_quantity" style="margin-top:2px;width:30px;"></input>
+      </div>
+      <div class="book_item">
+	Priced @ 2,500/- Per person.
+      </div>
+      <div class="book_item">
+	<b>Total</b>: 0
+      </div>
+      <div class="book_item">
+	<div class="q_e_booking">Book Now</div>
+      </div>
+    </div>
+  </div>
+</div>

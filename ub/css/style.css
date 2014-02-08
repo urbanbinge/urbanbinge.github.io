@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  width: 100%;
+  cursor: default;
+
+  background-color: rgba(220, 220, 220, 0.75);
+  background-repeat: no-repeat;
+
+  /* Disable tablet highlight */
+  -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
+
+  /* Disable text selection as a default for whole body  */
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+@font-face
+{
+    font-family: "Andika";
+    src: url('../assets/fonts/Andika-R.ttf');
+}
+
+@font-face {
+    font-family:"arvo";
+    src: url('../assets/fonts/Arvo-Regular.ttf');
+    font-style:normal;font-weight:400;
+}
+
+@font-face {
+    font-family:"arvo";
+    src: url('../assets/fonts/Arvo-Bold.ttf');
+    font-style:normal;font-weight:700;
+}
+
+@font-face {
+    font-family:"arvo";
+    src: url('../assets/fonts/Arvo-Italic.ttf');
+    font-style:italic;font-weight:400;
+}
+
+@font-face {
+    font-family:"arvo";
+    src: url('../assets/fonts/Arvo-BoldItalic.ttf');
+    font-style:italic;font-weight:700;
+}

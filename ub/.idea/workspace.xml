@@ -1,0 +1,744 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="51e018a5-5139-44d2-b2d5-303eebdd5e24" name="Default" comment="" />
+    <ignored path="adda.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="adda" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="addeventpage.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/addeventpage.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="40" selection-start="190" selection-end="190" vertical-scroll-proportion="-0.0" vertical-offset="34" max-vertical-offset="1479">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addafileuploader.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/addafileuploader.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="0" selection-start="420" selection-end="420" vertical-scroll-proportion="-7.6923075" vertical-offset="0" max-vertical-offset="1640">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jquery.fileupload-angular.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/lib/fileupload/jquery.fileupload-angular.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="259" column="35" selection-start="10895" selection-end="10895" vertical-scroll-proportion="0.0" vertical-offset="4284" max-vertical-offset="6545">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="utils.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/utils.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="144" column="20" selection-start="5363" selection-end="5363" vertical-scroll-proportion="0.0" vertical-offset="2261" max-vertical-offset="10115">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jquery-1.10.2.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/lib/jquery-1.10.2.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="630" column="32" selection-start="16593" selection-end="16593" vertical-scroll-proportion="0.0" vertical-offset="7429" max-vertical-offset="166294">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addaposter.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/addaposter.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="31" column="92" selection-start="1420" selection-end="1420" vertical-scroll-proportion="-6.5384617" vertical-offset="357" max-vertical-offset="1530">
+              <folding>
+                <marker date="1391457234298" expanded="true" signature="616:668" placeholder="..." />
+                <marker date="1391457234298" expanded="true" signature="701:3082" placeholder="..." />
+                <marker date="1391457234298" expanded="true" signature="741:2341" placeholder="..." />
+                <marker date="1391457234298" expanded="true" signature="790:952" placeholder="..." />
+                <marker date="1391457234298" expanded="true" signature="1001:1160" placeholder="..." />
+                <marker date="1391457234298" expanded="true" signature="1238:2322" placeholder="..." />
+                <marker date="1391457234298" expanded="true" signature="1325:1932" placeholder="..." />
+                <marker date="1391457234298" expanded="true" signature="1444:1510" placeholder="..." />
+                <marker date="1391457234298" expanded="true" signature="1747:1812" placeholder="..." />
+                <marker date="1391457234298" expanded="true" signature="2006:2298" placeholder="..." />
+                <marker date="1391457234298" expanded="true" signature="2381:2588" placeholder="..." />
+                <marker date="1391457234298" expanded="true" signature="2628:3067" placeholder="..." />
+                <marker date="1391457234298" expanded="true" signature="2677:2875" placeholder="..." />
+                <marker date="1391457234298" expanded="true" signature="2946:3048" placeholder="..." />
+                <marker date="1391457234298" expanded="true" signature="3117:3322" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="elist.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/elist.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="12" selection-start="575" selection-end="603" vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="663">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addacreate_tags.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/addacreate_tags.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="101" selection-start="168" selection-end="168" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="255">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="adda.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/adda.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2201" column="21" selection-start="109595" selection-end="109595" vertical-scroll-proportion="-4.2352943" vertical-offset="37201" max-vertical-offset="2369681">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addas.css" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/css/addas.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="143" column="1" selection-start="2192" selection-end="2192" vertical-scroll-proportion="0.2777778" vertical-offset="2261" max-vertical-offset="5202">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/scripts/menu.js" />
+        <option value="$PROJECT_DIR$/html/adda.html" />
+        <option value="$PROJECT_DIR$/scripts/events.js" />
+        <option value="$PROJECT_DIR$/scripts/utils.js" />
+        <option value="$PROJECT_DIR$/scripts/config.js" />
+        <option value="$PROJECT_DIR$/scripts/lib/fileupload/jquery.fileupload-angular.js" />
+        <option value="$PROJECT_DIR$/html/fileuploader.html" />
+        <option value="$PROJECT_DIR$/scripts/app.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/html/addafileuploader.html" />
+        <option value="$PROJECT_DIR$/html/addacreate_tags.html" />
+        <option value="$PROJECT_DIR$/html/addaposter.html" />
+        <option value="$PROJECT_DIR$/html/addalist.html" />
+        <option value="$PROJECT_DIR$/scripts/adda.js" />
+        <option value="$PROJECT_DIR$/adda.json" />
+        <option value="$PROJECT_DIR$/css/addas.css" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1358" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Spelling</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>SpellCheckingInspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="adda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="adda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="adda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="adda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="adda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="adda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="adda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="FullScreen" value="false" />
+    <property name="options.lastSelected" value="editor" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="SearchEverywhereHistory" value="||" />
+    <property name="LayoutCode.rearrangeEntriesJavaScript" value="false" />
+    <property name="LayoutCode.rearrangeEntriesHTML" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.index.html">
+    <configuration default="false" name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true" temporary="true" uri="http://localhost:63342/adda/index.html">
+      <RunnerSettings RunnerId="JavascriptDebugRunner" />
+      <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
+      <method />
+    </configuration>
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="name" value="Dart" />
+      <option name="saveOutputToFile" value="false" />
+      <option name="showConsoleOnStdErr" value="false" />
+      <option name="showConsoleOnStdOut" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
+      <setting name="configLocationType" value="CONFIG_FILE" />
+      <setting name="settingsFile" value="" />
+      <setting name="serverType" value="INTERNAL" />
+      <setting name="preferredDebugBrowser" value="CHROME" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
+      <browser start="false" url="" with-js-debugger="false" />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="51e018a5-5139-44d2-b2d5-303eebdd5e24" name="Default" comment="" />
+      <created>1390576631344</created>
+      <updated>1390576631344</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1358" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32771337" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.084375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2665964" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18652038" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USERS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="39" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/scripts/events.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="861" column="8" selection-start="22714" selection-end="22807" vertical-scroll-proportion="0.0" vertical-offset="14416" max-vertical-offset="15946" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="20" selection-start="588" selection-end="588" vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="8347">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/adda.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="10" selection-start="333" selection-end="333" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="510" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/addalist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="35" selection-start="306" selection-end="306" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1615" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="75" selection-start="3353" selection-end="3353" vertical-scroll-proportion="0.0" vertical-offset="387" max-vertical-offset="3196" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/addas.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="94" column="2" selection-start="1358" selection-end="1358" vertical-scroll-proportion="0.0" vertical-offset="1598" max-vertical-offset="2431" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/adda.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="174" column="24" selection-start="6319" selection-end="6331" vertical-scroll-proportion="0.0" vertical-offset="2837" max-vertical-offset="3553">
+          <folding>
+            <marker date="1391459218811" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1391459218811" expanded="true" signature="-1:-1" placeholder="{&quot;restrict&quot;: 'E'...}" />
+            <marker date="1391459218811" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="21" selection-start="3046" selection-end="3046" vertical-scroll-proportion="0.0" vertical-offset="1005" max-vertical-offset="10115" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="98" selection-start="109" selection-end="128" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="255" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/searchResult.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="10" selection-start="1505" selection-end="1603" vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="612" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adda.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2278" column="26" selection-start="113841" selection-end="113850" vertical-scroll-proportion="0.0" vertical-offset="38503" max-vertical-offset="2369681" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/events.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="288" column="40" selection-start="7769" selection-end="7769" vertical-scroll-proportion="0.0" vertical-offset="4745" max-vertical-offset="15946" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="264" column="22" selection-start="8007" selection-end="8007" vertical-scroll-proportion="0.0" vertical-offset="4341" max-vertical-offset="8347">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/landing.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="41" selection-start="540" selection-end="553" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="680" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/adda.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="129" selection-start="590" selection-end="590" vertical-scroll-proportion="0.0" vertical-offset="134" max-vertical-offset="510" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/addalist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="35" selection-start="410" selection-end="422" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="1666" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/adda.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="46" selection-start="443" selection-end="443" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1479">
+          <folding>
+            <marker date="1391459218811" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1391459218811" expanded="true" signature="-1:-1" placeholder="{&quot;restrict&quot;: 'E'...}" />
+            <marker date="1391459218811" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/types.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="9" selection-start="1189" selection-end="1189" vertical-scroll-proportion="0.41131106" vertical-offset="537" max-vertical-offset="2397" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/events.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="1413" selection-start="1411" selection-end="1413" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="337" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/searchResult.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="46" selection-start="634" selection-end="634" vertical-scroll-proportion="0.38568935" vertical-offset="0" max-vertical-offset="612" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/lib/masonry.pkgd.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="98" selection-start="109" selection-end="128" vertical-scroll-proportion="0.059336822" vertical-offset="0" max-vertical-offset="573" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/hmenu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="923" />
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/phrase.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="166" column="20" selection-start="3623" selection-end="3623" vertical-scroll-proportion="0.33261105" vertical-offset="2515" max-vertical-offset="6902" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="4" selection-start="2919" selection-end="2919" vertical-scroll-proportion="0.5625" vertical-offset="1003" max-vertical-offset="11696">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/events.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="218" column="1" selection-start="4286" selection-end="4286" vertical-scroll-proportion="0.0" vertical-offset="3508" max-vertical-offset="14943">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/landing.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="20" selection-start="341" selection-end="341" vertical-scroll-proportion="0.25813007" vertical-offset="162" max-vertical-offset="680" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/eventDetails.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/sidebarEvtInfo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="24" selection-start="2381" selection-end="2381" vertical-scroll-proportion="1.2205129" vertical-offset="0" max-vertical-offset="2108" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/organizer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="401" column="25" selection-start="13012" selection-end="13012" vertical-scroll-proportion="0.24300699" vertical-offset="6678" max-vertical-offset="10200" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/sidebar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="14" selection-start="789" selection-end="789" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="952" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/menu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="176" column="4" selection-start="5101" selection-end="5139" vertical-scroll-proportion="0.33224222" vertical-offset="2789" max-vertical-offset="9384">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/lib/angular.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11830" column="0" selection-start="402246" selection-end="402246" vertical-scroll-proportion="0.0" vertical-offset="201003" max-vertical-offset="343740">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/lib/fileupload/jquery.fileupload.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="33" selection-start="2484" selection-end="2484" vertical-scroll-proportion="0.0" vertical-offset="772" max-vertical-offset="22610">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="144" column="20" selection-start="5363" selection-end="5363" vertical-scroll-proportion="0.0" vertical-offset="2261" max-vertical-offset="10115">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="310" selection-end="310" vertical-scroll-proportion="0.12686567" vertical-offset="0" max-vertical-offset="8364">
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/lib/fileupload/jquery.fileupload-angular.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="259" column="35" selection-start="10895" selection-end="10895" vertical-scroll-proportion="0.0" vertical-offset="4284" max-vertical-offset="6545">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/fileuploader.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="61" selection-start="328" selection-end="348" vertical-scroll-proportion="0.07919255" vertical-offset="0" max-vertical-offset="1547">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/lib/jquery-1.10.2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="630" column="32" selection-start="16593" selection-end="16593" vertical-scroll-proportion="0.0" vertical-offset="7429" max-vertical-offset="166294">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/addafileuploader.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="420" selection-end="420" vertical-scroll-proportion="-7.6923075" vertical-offset="0" max-vertical-offset="1640">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/addeventpage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="40" selection-start="190" selection-end="190" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="1479">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="71" selection-start="3958" selection-end="3958" vertical-scroll-proportion="-19.384615" vertical-offset="550" max-vertical-offset="3179">
+          <folding>
+            <marker date="1391438941518" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/adda.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="20" selection-start="414" selection-end="414" vertical-scroll-proportion="0.44875777" vertical-offset="0" max-vertical-offset="644">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/addaposter.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="92" selection-start="1420" selection-end="1420" vertical-scroll-proportion="-6.5384617" vertical-offset="357" max-vertical-offset="1530">
+          <folding>
+            <marker date="1391457234298" expanded="true" signature="616:668" placeholder="..." />
+            <marker date="1391457234298" expanded="true" signature="701:3082" placeholder="..." />
+            <marker date="1391457234298" expanded="true" signature="741:2341" placeholder="..." />
+            <marker date="1391457234298" expanded="true" signature="790:952" placeholder="..." />
+            <marker date="1391457234298" expanded="true" signature="1001:1160" placeholder="..." />
+            <marker date="1391457234298" expanded="true" signature="1238:2322" placeholder="..." />
+            <marker date="1391457234298" expanded="true" signature="1325:1932" placeholder="..." />
+            <marker date="1391457234298" expanded="true" signature="1444:1510" placeholder="..." />
+            <marker date="1391457234298" expanded="true" signature="1747:1812" placeholder="..." />
+            <marker date="1391457234298" expanded="true" signature="2006:2298" placeholder="..." />
+            <marker date="1391457234298" expanded="true" signature="2381:2588" placeholder="..." />
+            <marker date="1391457234298" expanded="true" signature="2628:3067" placeholder="..." />
+            <marker date="1391457234298" expanded="true" signature="2677:2875" placeholder="..." />
+            <marker date="1391457234298" expanded="true" signature="2946:3048" placeholder="..." />
+            <marker date="1391457234298" expanded="true" signature="3117:3322" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/events.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="476" column="10" selection-start="12703" selection-end="12928" vertical-scroll-proportion="0.0" vertical-offset="7004" max-vertical-offset="15946">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/addacreate_tags.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="101" selection-start="168" selection-end="168" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="255">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/elist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="12" selection-start="575" selection-end="603" vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="663">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/addalist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="31" selection-start="485" selection-end="495" vertical-scroll-proportion="0.30375427" vertical-offset="60" max-vertical-offset="1683">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/adda.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="393" column="37" selection-start="13626" selection-end="13626" vertical-scroll-proportion="0.0" vertical-offset="6358" max-vertical-offset="7905">
+          <folding>
+            <marker date="1391459218811" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1391459218811" expanded="true" signature="-1:-1" placeholder="{&quot;restrict&quot;: 'E'...}" />
+            <marker date="1391459218811" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adda.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2201" column="21" selection-start="109595" selection-end="109595" vertical-scroll-proportion="-4.2352943" vertical-offset="37201" max-vertical-offset="2369681">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/addas.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="143" column="1" selection-start="2192" selection-end="2192" vertical-scroll-proportion="0.2777778" vertical-offset="2261" max-vertical-offset="5202">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+

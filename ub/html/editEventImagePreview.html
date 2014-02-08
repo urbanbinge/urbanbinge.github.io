@@ -1,0 +1,22 @@
+<div>
+	<!-- display current selected image as main image -->
+	<img class="edit_event_details_page_image" ng-src="{{selected}}" />
+        
+	<!--    Layout the large images horizontally using viewwindow
+	to hide the overflow (all but the current image). -->
+	<div class="event_page_photo_region" ng-show="( path.length >= 4 )">
+		<ul>
+			<!--    Iterate through all images and display them end to end as thumbs -->
+			<li ng-repeat="image in path">
+				<div class="ubThumbWrapper">
+				<!--    Note ng-click here calls the scrollTo function found in the
+				controller and passes it its index. This is used to scroll 
+				the large image to the correct image -->
+					<a ng-href="">
+						<img ng-style="thumbnail_style()" ng-src="{{image}}" />
+					</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>

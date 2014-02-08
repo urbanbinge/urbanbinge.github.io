@@ -1,0 +1,77 @@
+<div class="pte-ticket-edit" data-ng-class="{true: activeState}[isTicketVisible(ticket)]">
+	<section>
+	<button type="button" class="btn btn-small pte-ticket-edit-back" data-ng-click="closeCurrentTicket()">
+		<i class="icon-long-arrow-left icon-large"></i>
+	</button>
+	<button type="button" class="btn btn-small btn-danger pte-ticket-edit-delete" data-ng-click="deleteCurrentTicket(regularTickets, currentTicket)">Delete</button>
+	<h2>
+	{{ currentTicket.name }}
+	</h2>
+	<h3>Ticket Details</h3>
+	<div class="control-group inline-label-option">
+	<label class="control-label">Ticket Name</label>
+	<div class="input-counter-append">
+	<input type="text" data-ng-model="currentTicket.name" data-pt-input-counter="35">
+	<span class="input-counter">
+	<span>{{ currentTicket.name.length }}/35</span>
+	</span>
+	</div><!-- /.input-counter-append -->
+	</div><!-- /.control-group inline-label-option -->
+	<div class="control-group inline-label-option">
+	<label class="control-label">Description</label>
+	<div class="input-counter-append">
+	<input type="text" data-ng-model="currentTicket.description" data-pt-input-counter="50">
+	<span class="input-counter">
+	<span>{{ currentTicket.description.length }}/50</span>
+	</span>
+	<p class="help-block">Optionally provide a quick description.</p>
+	</div><!-- /.input-counter-append -->
+	</div><!-- /.control-group inline-label-option -->
+
+	<hr>
+
+	<h2>Ticket Price</h2>
+	<div class="control-group inline-label-option">
+	<label class="control-label">Price</label>
+	<div class="input-prepend half-width">
+	<span class="add-on"><i class="ss-icon">INR</i></span>
+	<input type="text" data-ng-model="currentTicket.price">
+	</div><!-- /.input-prepend -->
+	<!-- TODO: What is the reference for this checkbox? -->
+	<label class="checkbox"><input type="checkbox" data-ng-model="currentTicket.type" data-ng-true-value="free" data-ng-false-value="regular">Free</label>
+	</div><!-- /.control-group -->
+	<hr>
+
+	<h3>Quantity</h3>
+	<div class="control-group inline-label-option">
+	<label class="control-label">Quantity</label>
+	<div class="third-width">
+	<input type="text" data-ng-model="currentTicket.quantity">
+	</div><!-- /.third-width -->
+	</div><!-- /.control-group -->
+
+	<hr>
+
+	<h2>Availability</h2>
+	<div class="control-group inline-label-option">
+	<label class="control-label">Start Date</label>
+	<div class="controls">
+	<div class="input-prepend half-width">
+		<input id="inputDatepicker" placeholder="From" type="text" ng-model="currentTicket.open_date" data-date-format="dd/mm/yyyy" bs-datepicker>
+	</div><!-- /.input-prepend -->
+	<p class="help-block">Start selling this ticket on this date</p>
+	</div><!-- /.controls -->
+	</div><!-- /.control-group -->
+
+	<div class="control-group inline-label-option">
+	<label class="control-label">End Date</label>
+	<div class="controls">
+	<div class="input-prepend half-width">
+		<input id="inputDatepicker" placeholder="To" type="text" ng-model="currentTicket.close_date" data-date-format="dd/mm/yyyy" bs-datepicker>
+	</div><!-- /.input-prepend --><label class="checkbox"><input data-ng-model="closeDateChecked" type="checkbox">Event Date</label>
+	<p class="help-block">Stop selling this ticket on this date</p>
+	</div><!-- /.controls -->
+	</div><!-- /.control-group -->
+
+	</section>
+</div>

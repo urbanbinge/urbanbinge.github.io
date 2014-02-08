@@ -1,0 +1,40 @@
+<div>
+          <h1><i class="ss-icon" title="close" data-ng-click="closeCurrentPanel(panel)">&#x2B05;</i>Settings</h1>
+
+          <form name="eventSettingsForm" novalidate>
+            <h2>Event Access</h2>
+
+            <div class="control-group">
+              <label class="control-label">Unique URL</label>
+              <div class="controls">
+                <div class="input-prepend input-counter-append full-width">
+                  <span class="add-on">urbanbinge.com/</span><input type="text" data-ng-model="event.uri" data-pt-input-counter="35" name="event_slug" data-ng-pattern="/^[a-zA-Z0-9_-]{3,35}$/">
+                  <span class="input-counter">
+                    <span>{{ event.uri.length }}/35</span>
+                  </span>
+                </div><!-- /.input-counter-append -->
+              </div><!-- /.controls -->
+              <div data-ng-show="eventSettingsForm.event_slug.$dirty && eventSettingsForm.event_slug.$invalid" class="alert alert-error">
+                <span data-ng-show="eventSettingsForm.event_slug.$error.required">You must provide a Unique URL for your event.</span>
+                <span data-ng-show="eventSettingsForm.event_slug.$error.pattern">Your Unique URL must be between 3 and 35 characters long and can only include letters, numbers, dashes and underscores.</span>
+              </div>
+            </div><!-- /.control-group -->
+
+            <hr>
+
+            <h2>Money</h2>
+            <div class="control-group inline-label-option payment-control-group">
+              <label class="control-label">Payment</label>
+              <form class="controls">
+                <div data-ng-repeat="paymentOption in filteredPaymentOptions">
+					<label class="checkbox">
+						<input type="radio" ng-model="currentPaymentOption" name="payment_option_id" value="{{paymentOption.id}}">
+						{{paymentOption.name}}
+					</label>
+                </div>
+				<!-- <div data-ng-include="paymentOptionTemplate(currentPaymentOption).url"></div> -->
+              </form><!-- /.controls -->
+            </div><!-- /.control-group inline-label-option -->
+
+          </form>
+</div>

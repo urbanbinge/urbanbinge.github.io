@@ -1,0 +1,23 @@
+<div>
+	<h3><i class="icon-long-arrow-left icon-large" title="close" data-ng-click="closeCurrentPanel(panel)"></i>Tickets</h3>
+	<h4>Your Tickets</h4>
+	<p class="help-block">Create new tickets, edit or delete existing tickets.
+
+	<ul id="pte-reg-ticket-sort-list" class="pte-ticket-list" ng-model="regularTickets">
+		<li data-ng-repeat="ticket in regularTickets" data-ng-click="setCurrentTicket(ticket)" id="{{ticket.name}}">
+			<i class="icon-chevron-right"></i>
+		<span class="pte-ticket-list-name">{{ ticket.name }}</span>
+		<span data-ng-show="(ticket.price != 0)">INR:{{ ticket.price }}</span>
+		<span data-ng-show="(ticket.price == 0)">Free</span>
+		</li>
+	</ul>
+	<div>
+		<button data-ng-click="addRegularTicket()" type="button" class="btn btn-large btn-success btn-block">Add Ticket</button>
+	</div>
+	<div ng-show="( ticketButtonClick == 1 )">
+		<ub-event-ticket>
+		</ub-event-ticket>
+	</div>
+</div>
+
+

@@ -1,0 +1,31 @@
+/*
+© [urbanbinge.com] [2013]
+All Rights Reserved
+No part of this website or any of its contents may be reproduced, copied, modified or adapted, without the prior written consent of the author, unless otherwise indicated for stand-alone materials.Infringement of copyright is a criminal offence.
+
+urbanibnge.com - local event discovery platform.
+
+For people who want to explore outdoor activities,looking for things to do in their city and plannig offbeat group adventure experience urbanbinge.com showcases these experience and allow users to book various activities on the site.
+*/
+
+
+This is standalone project decoupled from actual backend for ease of development.
+Open index.html in browser(mozilla) to get website. ( beware of same-origin policy).
+.json files provide the required data as  if they are coming from webserver.
+
+adda.js : This component is for adda feature.
+app.js : This is the entry point of the application and contains code to retrieve event and category information.
+config.js : This has global configuration related information which will be used across the project.
+events.js : This manages how event details are displayed.
+menu.js : This has complete menu information for the site.
+organizer.js : This has "add activity" related code.
+security.js : This has authentication and authrization related development.
+types.js : This acts as abstract to read and write to .json aka to make REST calls.
+ubapi.js : This global module is for interaction with backend via REST calls.
+utils.js : This has generic widgets like search,file uploader,analutics etc.
+
+
+
+
+
+

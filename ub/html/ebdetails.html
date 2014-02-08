@@ -1,0 +1,131 @@
+<div class="event_details_page"
+    ng-init="user_rating = [1,2,3,4,5]">
+  <div class="event_page_rating_region">
+    <div style="float:right;margin-right:20px;" class="icon_32 icon_fav"></div>
+    <div style="float:right;margin-right:20px;" class="icon_32 icon_wishlist"></div>
+    <div class="event_user_rating">
+      <div style="margin-left:350px;">Your Rating</div>
+		<div ub-event-rating rating-value="rating" max="5" on-rating-selected="saveRatingToServer(rating)" style="margin-left:350px;margin-top:-5px;"></div>
+    </div>
+  </div>
+  <div class="event_top_region">
+	<div class="event_page_overview_region">
+	  <div class="etitle">Event Overview</div>
+	  <div class="hr"></div>
+	  <div class="event_details">
+		Place : {{event_item_active.eVenue}}<br />
+		Date  : {{event_item_active.eStartDateDisplay}} to {{event_item_active.eDateDisplay}} <br />
+		Price : {{event_item_active.eRegDetails[0].perHeadCharge}}<br />
+		Per Batch  :{{event_item_active.eRegDetails[0].totalSeats}}<br />
+		Contact  :  {{event_item_active.eventContact}}<br />
+	  </div>
+	</div>
+	  
+	<div class="event_page_book_region">
+		<div class="etitle">Book Event</div>
+		<div class="hr"></div>
+		<br />
+			@{{event_item_active.eRegDetails[0].perHeadCharge}} Per person. <br />
+			Quantity :<input type="text" id="booking_quantity" style="margin-top:2px;width:30px;" ng-model="selectedQuantity"></input>
+		<br />
+			<b>Total Amount</b>:{{selectedQuantity * event_item_active.eRegDetails[0].perHeadCharge}}
+		<div class="e_booking" ng-click="item_click()">Book Now</div>
+		<div class="e_customize" ng-click="item_click_customize()" ng-show="(iscustomizable == 1)">Customize Activity</div>
+		<div ng-show="(booking_state == 1)">
+			<div style="position: fixed; top: 0px; bottom: 0px; right: 0px; left: 0px; background-color: rgb(0, 0, 0); opacity: 0.6; z-index: 3;"></div>
+			<ub-event-booking-panel>
+			</ub-event-booking-panel>
+		</div>
+		<div ng-show="(customize_state == 1)">
+			<div style="position: fixed; top: 0px; bottom: 0px; right: 0px; left: 0px; background-color: rgb(0, 0, 0); opacity: 0.6; z-index: 3;"></div>
+			<ub-event-customize-panel>
+			</ub-event-customize-panel>
+		</div>
+	</div>
+	 <div class="event_data_region">
+      <div class="etitle">{{ event_item_active.etitle }}</div>
+      <div class="hr"></div>
+	 </div>
+	 <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="100" data-height="100" data-colorscheme="light" data-layout="standard" data-action="like" data-show-faces="false" data-send="false"></div>
+      <ub-event-details-photo-gallery>
+	  </ub-event-details-photo-gallery>
+  </div>
+  
+  <div class="event_details_region">
+      <div class="event_page_opt_sel">
+		<ul class="nav nav-tabs">
+			<li ng-class="{active:main.active.tab == 'Event_Details'}">
+				<a ng-click='main.active.tab = "Event_Details"'>Event Details</a>
+			</li>
+			<li ng-class="{active:main.active.tab == 'About_Organizer'}">
+				<a ng-click='main.active.tab = "About_Organizer"'>About Organizer</a>
+			</li>
+		</ul>
+		<div class="tab-content" ng-init='main.active.tab = "Event_Details"'>
+			<div ng-switch='main.active.tab'>
+				<div ng-switch-when='Event_Details'>
+					<div ng-include='"html/eventDetails.html"'> </div>
+				</div>
+				<div ng-switch-when='About_Organizer'>
+					<div  ng-include='"html/aboutOrganizer.html"'></div>
+				</div>
+			</div>
+		</div>
+      </div>
+  </div>
+  <div class="event_page_sub_region">
+    <div class="event_maps_region">
+      <div class="etitle">Map</div>
+      <div class="hr"></div>
+      <div class="event_details">
+		<div class="google-map" 
+			center="position.coords"
+			zoom="zoomProperty" 
+			markers="markersProperty"
+			latitude="clickedLatitudeProperty"
+			longitude="clickedLongitudeProperty"
+			mark-click="true"
+			draggable="true"
+			fit="false"
+			events="eventsProperty"
+			style="height: 200px; width: auto">
+		</div>
+      </div>
+    </div>
+    <div class="event_upcoming_region">
+      <div class="etitle">Recommended Events</div>
+      <div class="hr"></div>
+      <div class="event_details">
+	Currently Unavailable
+      </div>
+    </div>
+    <div class="event_related_region">
+      <div class="etitle">Activity Feed</div>
+	  <div class="hr"></div>
+		<div ng-show="(ask_organizer == 1)">
+			<div style="position: fixed; top: 0px; bottom: 0px; right: 0px; left: 0px; background-color: rgb(0, 0, 0); opacity: 0.6; z-index: 3;">
+			</div>
+			<ub-ask-the-organizer-panel>
+			</ub-ask-the-organizer-panel>
+		</div>
+	  <ub-event-activity-feed>
+	  </ub-event-activity-feed>
+	  <div class="ask_the_organizer" ng-click="askOrganizer()">Ask The Organizer
+		</div>
+    </div>
+	<div class="event_comments_region">
+      <div class="etitle">Comments</div>
+      <div class="hr"></div>
+      <div class="event_details" ng-repeat="item in event_item_active.eUserCmnts | limitTo:4">
+		  {{item.usercomment}}
+		  <div class="comment_user"> {{item.uid}} on {{item.commentDate}} </div>
+      </div>
+    </div>
+  </div>
+  <div class="event_bottom_region">
+    <textarea style="height:80px; width:700px;">
+      Your Review or Feedback...
+    </textarea>
+    <div class="e_comment">Review</div>
+  </div>
+</div>

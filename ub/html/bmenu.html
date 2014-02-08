@@ -1,0 +1,13 @@
+<div class="bmenu_container" ng-style="container_style_param()">
+  <div ng-repeat="item in dw.items"
+       class="bmenu_items"
+       ng-style="item_style($index,item.type)"
+	   ng-click="item_click(item)">
+    {{ item.label }}
+  </div>
+  <div ng-show="(aboutUs == 1)">
+	<!-- <div style="position: fixed; top: 0px; bottom: 0px; right: 0px; left: 0px; background-color: rgb(0, 0, 0); opacity: 0.6; z-index: 3;"></div> -->
+	<ub-about-us>
+    </ub-about-us>
+  </div>
+</div>

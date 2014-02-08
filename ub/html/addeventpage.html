@@ -1,0 +1,82 @@
+ <div>
+	<div class="pte-loading" data-ng-hide="loadingComplete()" data-ng-animate="{show: 'loading-show', hide: 'loading-hide'}" style="display: none;">
+	<!--  data-ui-if="isLoadingOpen" -->
+	<div class="loading-backdrop">
+	<div class="loading-container">
+	<div class="loading-logo">
+	</div>
+	<div class="loading-text">Loading…</div>
+	</div><!-- /.loading-logo -->
+	</div><!-- /.loading-backdrop -->
+	</div><!-- /.pte-loading -->
+	<div>
+		<ub-event-side-bar>
+		</ub-event-side-bar>
+	</div>
+    <div id="cover-photo">
+		<!-- TO DO Image -->
+      <section id="pte-intro">
+        <header>
+			<h2 itemprop="name" data-ng-bind-template="{{event.eventTitle}}">Your Event Name</h2>
+			<h5 itemprop="name" data-ng-bind-template="{{event.remarks}}">Tagline</h5>
+        </header>
+        <div class="pte-date">
+          <i class="ss-icon">Date</i> <span ng-bind-template="{{event.endDate}}">Event Date</span>
+        </div><!-- /.pte-date -->
+        <div class="pte-venue" data-ng-show="eventHasVenue()" style="display: none;">
+			<span ng-bind-template="{{event.city}}">City</span>
+        </div><!-- /.pte-venue -->
+      </section><!-- /#pte-intro -->
+    </div><!-- /#cover-photo -->
+
+    <div class="event-wrapper">
+
+      <ul id="event-tabs" class="nav nav-tabs">
+        <li class="active">
+          <a href="#pte-details-tab" data-toggle="tab">Event Details</a>
+        </li>
+        <!-- uiIf: showEventComments() -->
+      </ul>
+      <div class="container">
+        <div class="row">
+          <div class="span8">
+            <div class="tab-content">
+
+              <section class="tab-pane active" id="pte-details-tab">
+                <!-- uiIf: event.status === 'closed' -->
+                <!-- uiIf: event.poster_type !== 'none' --><!-- /.pte-event-poster -->
+                <div itemprop="description" data-ng-bind-template="{{event.eventDescription}}" class="pte-full-description"></div><!-- /.pte-full-description -->
+                <!-- uiIf: event.disclaimer --><!-- /.pte-terms-conditions -->
+                <!-- uiIf: sponsors != '' --><!-- /.pte-sponsors -->
+              </section><!-- /#pte-details-tab" -->
+
+              <!-- uiIf: event.comments_enabled --><!-- /#pte-comments-tab" -->
+
+            </div><!-- /.tab-content -->
+
+          </div><!-- /.span8 -->
+        </div><!-- /.row -->
+      </div><!-- /.container -->
+		<div class="pte-ticket-block well">
+			<ul id="pte-reg-ticket-sort-list" class="pte-ticket-list">
+			<li data-ng-repeat="ticket in regularTickets"  id="{{ticket.name}}">
+			<i class="ss-icon">&#x25BB;</i>
+			<span class="pte-ticket-list-name">{{ ticket.name }}</span>
+			<span data-ng-show="(ticket.price)">&#36;{{ ticket.price }}</span>
+			<span data-ng-show="(ticket.price == 0)">Free</span>
+			</li>
+			</ul>
+		</div>
+    </div><!-- /.event-wrapper -->
+
+  <!-- Le event edit statusbar
+  ================================================== -->
+	<div id="event-edit-statusbar">
+	  <!-- uiIf: hasValidationErrors() --><!-- /.sb-validator -->
+	  <div class="sb-action-buttons">
+		<a class="btn btn-inverse btn-large pte-save-btn" data-ng-class="saveClass" data-ng-click="SaveAll()"> Save</a>
+		<!-- uiIf: showGoLiveButton() -->
+	  </div><!-- /.sb-action-buttons -->
+	</div>
+
+</div>

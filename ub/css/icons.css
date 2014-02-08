@@ -1,0 +1,128 @@
+.icon_54 {
+    width:54px;
+    height:54px;
+    background-size:54px 54px;
+    background-repeat:no-repeat;
+}
+.icon_74 {
+	width: 74px;
+	height: 74px;
+	background-size: 54px 54px;
+	background-repeat: no-repeat;
+	background-color: #C5DFF1;
+	border-bottom: 2px solid #78BEF0;
+	border-right: 1px solid #77B2DB;
+	padding: 3px 4px 3px 4px;
+	margin: 2px 12px 2px 0;
+	text-decoration: none;
+	font-size: 90%;
+	line-height: 1.4;
+	white-space: nowrap;
+	display: inline-block;
+	line-height: 120px;
+	text-align: center;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.icon_94 {
+    width:80px;
+    height:102px;
+    background-size:80px 102px;
+    background-repeat:no-repeat;
+}
+
+.icon_32 {
+    background-size:32px 32px;
+    width:32px;
+    height:32px;
+    background-repeat:no-repeat;
+}
+
+.icon_48 {
+    background-size:48px 48px;
+    background-position:0px 4px;
+    width:48px;
+    height:48px;
+    background-repeat:no-repeat;
+	background-color: orange;
+}
+.icon_28 {
+	background-size: 28px 28px;
+	background-position: 0px 4px;
+	width: 28px;
+	height: 28px;
+	background-repeat: no-repeat;
+	background-color: orange;
+	margin-top: 1px;
+	margin-right: 1px;
+}
+.icon_grid_view {
+    background-image:url('../assets/images/4_collections_view_as_grid.png');
+}
+
+.icon_list_view {
+    background-image:url('../assets/images/4_collections_view_as_list.png');
+}
+
+.icon_pricetag {
+    background-image:url('../assets/images/icon_pricetag.png');
+}
+
+.icon_close {
+    background-image:url('../assets/images/1_navigation_cancel.png');
+}
+
+.icon_adv {
+    background-image:url('../assets/images/icon_adv.png');
+}
+
+.icon_sights {
+    background-image:url('../assets/images/icon_sight.png');
+}
+
+.icon_water {
+    background-image:url('../assets/images/icon_water.png');
+
+}
+
+.icon_workshops {
+    background-image:url('../assets/images/icon_wrkshp.png');
+
+}
+
+.icon_camps {
+    background-image:url('../assets/images/icon_camp.png');
+}
+
+.icon_mountain {
+    background-image:url('../assets/images/icon_mount.png');
+
+}
+/* Binge Special Icon */
+.icon_null {
+    background-image:url('../assets/images/icon_null.png');
+}
+
+.icon_couples {
+    background-image:url('../assets/images/icon_couples.png');
+}
+
+.icon_kids {
+    background-image:url('../assets/images/icon_kids.png');
+}
+
+.icon_music {
+    background-image:url('../assets/images/icon_music.png');
+}
+
+.icon_art {
+    background-image:url('../assets/images/icon_art.png');
+}
+
+.icon_wishlist {
+    background-image:url('../assets/images/3_rating_good.png');
+}
+
+.icon_fav {
+    background-image:url('../assets/images/3_rating_important.png');
+}

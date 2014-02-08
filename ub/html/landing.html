@@ -1,0 +1,35 @@
+<div class="poster">
+  <ub-poster-events>
+  </ub-poster-events>
+</div>
+
+<div class="search_box">
+  <ub-search-box>
+  </ub-search-box>
+</div>
+
+<div class="slist" ng-show="(slist_active == 1)">
+	<ub-slider-list slist-data="eventlist"
+					slist-active="slist_active">
+	</ub-slider-list>
+</div>
+
+<div class="category_menu">
+  <ub-category-menu>
+  </ub-category-menu>
+</div>
+
+<div class="elist">
+	<div ng-hide="(displaysearchLayout == 1)">
+	  <ub-event-list list-data="elist_by_genre"
+			 elist-element-status="elist_result"
+			 category-name="selected_type"
+			 event-state="event_state">
+	  </ub-event-list>
+	</div>
+	<div ng-show="(displaysearchLayout == 1)"> 
+		<h3> search result:</h3>
+		<ub-search-result-list elist="search_list_data">
+		</ub-search-result-list>
+	</div>
+</div>

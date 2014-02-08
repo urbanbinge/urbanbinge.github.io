@@ -1,0 +1,12 @@
+<div class="topmenu_cover_poster" >
+  <div ng-show="(poster_events.length > 0)" ng-style="cover_poster_style()">
+    <img ng-click="item_click(selected)" ng-src="{{selected.eImages[0].imageURL}}" class="event_poster_image" />
+    <div class="etitle poster_title">{{ selected.etitle }}</div>
+  </div>
+  <div ng-show="( !(poster_events.length > 0))" ng-style="item_style()"></div>
+  <div ng-show="(eventState == 1)">
+	<div style="position: fixed; top: 0px; bottom: 0px; right: 0px; left: 0px; background-color: rgb(0, 0, 0); opacity: 0.6; z-index: 3;"></div>
+    <ub-event-details>
+    </ub-event-details>
+  </div>
+</div>

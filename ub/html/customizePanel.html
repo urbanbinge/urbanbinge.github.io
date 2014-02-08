@@ -1,0 +1,48 @@
+ <div class="event_customize_panel" ng-style="panel_style()">
+	<div class="event_detail_close icon_48 icon_close" style="cursor:pointer;" ng-click="customize_panel_close()"></div>
+	<span class="customize_help_block">Use this option when you have enough time to plan the activity and you need major change in the content of activity</span>
+	<span class="customize_help_block">Please fill in your details and we will get back to you</span>
+	<form accept-charset="utf-8" style="margin-left:20px;padding:5px;">
+            <div class="row-fluid">
+                <div class="span6">
+                    <b>Name:</b>
+                    <input type="text" class="span12" name="username" value="" placeholder="Name (required)">
+                    <b>Mobile:</b>
+                    <input type="text" class="span12" name="mobile" value="" placeholder="Mobile (optional)">
+                    <b>Service Level:</b><br>
+                                        <label class="radio inline">
+                        <input type="radio" name="service_level" value="basic" checked="">Basic
+                    </label>
+                                        <label class="radio inline">
+                        <input type="radio" name="service_level" value="comfort">Comfort
+                    </label>
+                                    </div>
+                <div class="span6">
+                    <b>Email:</b>
+                    <input type="text" class="span12" name="email" value="" placeholder="Email (required)">
+                    <b>Group Size:</b><select name="group_size">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="&gt;15">more than 15</option>
+                    </select>
+                    <b>Tentative Date:</b>
+                    <input id="inputDatepicker" class="search_input_box" placeholder="From" type="text" ng-model="Fromdate" data-date-format="dd/mm/yyyy" bs-datepicker>
+                </div>
+                <textarea name="query" rows="3" class="span12" placeholder="Additional Query (Optional)" style="height:150px;width:900px;"></textarea>
+                <input class="btn btn-warning span12" type="submit" name="submit" value="Submit Query">
+            </div>
+        </form>
+ </div>

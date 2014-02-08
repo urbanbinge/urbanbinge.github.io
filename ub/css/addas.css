@@ -1,0 +1,302 @@
+
+.addas_search_title{
+	background-color: #bbb;
+	color: #333;
+	font-size: 1.1em;
+	font-weight: bold;
+	text-align: center;
+	display: block;
+	padding: 7px;
+	margin: 10px auto;
+	width: 70%;
+}
+
+.addalist {
+	margin: 0 auto;
+	width: 1170px;
+}
+
+
+.adda_panel{
+	background-color: #f9f9f9;
+	box-sizing: border-box;
+	border: 5px solid rgba(220, 220, 220, 0.8); 
+	position: relative;
+	width: 380px; 
+}
+
+.adda_panel h4{
+	display: block;
+	font-size: 1.1em;
+	font-weight: bold; 
+	text-align: center;
+	width: 100%;
+}
+
+.adda_panel img.cover_photo{
+	display: block; 
+	min-height: 200px;
+	width: 100%;
+}
+
+.adda_panel .user_info{
+	font-size: 0.8em;
+	position: relative;
+	overflow: hidden; 
+	padding: 10px;
+}
+.adda_panel img.user_photo{
+	float: left;
+	text-align: center;
+	height: 80px;
+	margin-right: 10px;
+	width: 80px;
+}
+
+.adda_panel .tags{
+	display: inline;
+	list-style-type: none;
+	margin: 0 5px;
+	padding: 0;
+	height: 80px;
+	width: 80px;
+}
+
+.adda_items_list{
+    display: block;
+    margin: 0 auto;
+    position: relative !important;
+    clear: both;
+    overflow: scroll !important;
+}
+.adda_items_list .adda_panel{
+    display: block;
+    margin: 0 auto;
+    left: 0px !important;
+    top: 0px  !important;
+    position: relative !important;
+    width: 800px;
+    clear: both;
+}
+
+.tag {
+	margin-left: 5px;
+}
+ 
+
+ #adda_items {
+    width: 100%;
+    margin: 0 auto;
+}
+/*
+#myContent, #myContent li{ 
+    padding: 0;
+    margin: 0;
+}
+
+ 
+#myContent {
+    -moz-column-count: 3;
+    -moz-column-gap: 10px;
+    -webkit-column-count: 3;
+    -webkit-column-gap: 10px;
+    column-count: 3;
+    column-gap: 10px;
+    width: 100%;
+}
+
+#myContent div.item{
+    display: inline-block;
+    margin-bottom: 10px;
+    width: 100%;
+}
+*/
+.comments {
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	color: #ccc;
+	font-size: 0.8em;
+	text-align: right;
+	padding: 5px 10px;
+	margin: 10px 0;
+}
+
+.comments .icon {
+	margin-right:5px;
+	margin-left: 15px;
+}
+
+.most_recent_event {
+    border: 1px solid #CCCCCC;
+    margin: 5px;
+	margin-top: 15px;
+	padding: 5px;
+	position: relative;
+}
+.most_recent_event div {
+    position: relative;
+}
+
+.most_recent_event .event_photo { 
+	display: block; 
+	min-height: 150px;
+	width: 60%;
+	margin-left:20%;
+}
+
+.most_recent_event .recent_event_title {  
+	position: absolute; 
+	left: 20px;
+	bottom: 20px;
+    color: #FFF;
+    text-shadow: 2px 2px #333;
+    font-weight: bold;
+}
+.most_recent_event .recent_event_info {
+    display: block;
+    font-size: 11px;
+    margin-top: 10px;
+    position: relative;
+}
+
+.more_events {
+	background-color: #5DBCD2;
+	color: white;
+	font-weight: bold;
+	font-weight: 1.1em;
+	display: block;
+	margin-top: 10px;
+	padding: 7px 0;
+	text-align: center;
+}
+
+/** CREATE ADDA STYLES**/
+#create_adda_header{
+    color: white;
+    padding: 10px;
+    background: #336699;
+ }
+
+#create_adda_header h3{
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.adda-control-group{
+    display: inline;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+.adda-control-group label{
+    margin-right: 10px;
+    vertical-align: top;
+    width: 100px;
+ }
+.adda-control-group .input-control{
+    width: 400px;
+}
+ .createadda-introduction{
+    width: 400px;
+    border: 1px solid #ccc;
+    height: 160px;
+}
+.createadda-tags{
+    margin: 0;
+    padding: 0;
+    width: 400px;
+    display: inline-block;
+}
+.createadda-tags li {
+    display: inline-block;
+    margin: 5px;
+    width: 160px;
+}
+
+.createadda-tags a {
+    display: block;
+    color: #333;
+    font-family: arial;
+    font-size: 11px;
+}
+
+
+.createadda-tags li  span{
+    color: green;
+}
+
+.createadda-tags li .tag-selected span{
+    color: red;
+}
+
+.createadda-tags a:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+.privacy label {
+    float: left;
+}
+.options {
+     overflow: hidden;
+     width: 400px;
+ }
+.options span{
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+.options-check{
+    margin-left: 110px;
+    width: 400px;
+}
+
+/** UPLOAD PANEL **/
+.addas_image_upload_panel {
+    overflow: hidden;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    margin: 0px;
+    box-sizing: content-box;
+    background-position: 50% 50%;
+    background-repeat: no-repeat no-repeat;
+    margin-bottom: 10px;
+}
+.addas_image_upload_panel h3{
+    margin:0;
+    padding: 0;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+.adda_fileupload-buttonbar{
+    font-size: 0.8em;
+}
+.adda_fileupload-buttonbar .fu-title{
+    color: blue;
+}
+.adda_fileupload-buttonbar input{
+    display: block;
+}
+.adda_fileupload-buttonbar .adda_uploadbuttons{
+    margin-top: 15px;
+}
+.adda_image_dragdrop span{
+    padding: 30px 20px;
+    margin-top: 30px;
+    display: block;
+    background: whitesmoke;
+    border: dashed black 1px;
+    text-align: center;
+    color: orange;
+}
+.adda_table_files{
+    margin-left: 5px;
+    margin-top: 10px;
+    color: orange;
+    background-color: rgba(116, 116, 122,0.8);
+}

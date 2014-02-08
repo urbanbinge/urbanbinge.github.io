@@ -1,0 +1,39 @@
+<div class="pte-ticket-edit pte-sponsor-edit" data-ng-class="{true: activeState}[isSponsorVisible(sponsor)]">
+	<section>
+	<h1>
+	{{ currentSponsor.name }}
+	<button type="button" class="btn btn-small pte-ticket-edit-back" data-ng-click="closeCurrentSponsor()"><i class="ss-icon" title="close">&#x2B05;</i></button>
+	<button type="button" class="btn btn-small btn-danger pte-ticket-edit-delete" data-ng-click="deleteCurrentSponsor(orderedSponsors, currentSponsor)">Delete</button>
+	</h1>
+	<form name="eventSponsorForm" novalidate>
+	<h2>Add a Sponsor</h2>
+	<div class="control-group inline-label-option">
+	<label class="control-label">Sponsor Logo</label>
+	<div class="controls">
+	<div data-ng-model="currentSponsor.image_uri" data-pt-image-uploader="{'maxSize':1048576}" data-pt-image-uploader-path="events/{{event.id}}/"></div>
+	<p class="help-block">White background preferred.<br>Max file size 1MB.</p>
+	</div><!-- /.controls -->
+	</div><!-- /.control-group inline-label-option -->
+	<div class="control-group inline-label-option">
+	<label class="control-label">Name</label>
+	<div class="controls full-width">
+	<input type="text" required data-ng-model="currentSponsor.name" name="sponsor_name">
+	</div><!-- /.controls -->
+	<div data-ng-show="eventSponsorForm.sponsor_name.$error.required" class="alert alert-error">
+	<span>Sponsor name is a required field.</span>
+	</div>
+	</div><!-- /.control-group -->
+	<div class="control-group inline-label-option">
+	<label class="control-label">Website</label>
+	<div class="controls full-width">
+	<input type="url" placeholder="http://www.yourwebsite.com" data-ng-model="currentSponsor.external_url" name="sponsor_url">
+	<p class="help-block">Do not add if you don&rsquo;t want to link out.</p>
+	</div><!-- /.controls -->
+	<div data-ng-show="eventSponsorForm.sponsor_url.$error.url" class="alert alert-error">
+	<span>Not valid url. The url must start with http:// or https://</span>
+	</div>
+	</div><!-- /.control-group -->
+	</form>
+
+	</section>
+</div>

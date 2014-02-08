@@ -1,0 +1,22 @@
+<div class="topmenu_container" ng-style="container_style_param()">
+  <div ng-repeat="item in dw.items"
+       class="topmenu_items"
+       ng-style="item_style($index,item.type)"
+       ng-click="item_click(item)">
+    {{ item.label }}
+  </div>
+  <div class="topmenu_city_selected">{{ citySelected }}</div>
+  <div class="topmenu_city"
+       ng-repeat="city in city_list"
+       ng-style="city_item_style($index)"
+       ng-show="(cityList == 1)"
+       ng-click="city_select($index,city)"
+       >
+      {{ city.label }}
+  </div>
+  
+	<div class="logintoolbar">
+		<login-toolbar>
+		</login-toolbar>
+	</div>
+</div>

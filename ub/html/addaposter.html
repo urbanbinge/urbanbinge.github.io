@@ -1,0 +1,85 @@
+<div style="width: inherit; height: inherit;">
+    <div class="topmenu_cover_add_poster" ng-style="item_style()">
+        <div class="adda_box">
+            <div class="adda_box_inside">
+                <div class="adda_box_header">Adda</div>
+                <div class="adda_box_subscript">Place where people gather for conversation and much more..</div>
+                <div class="create_adda" ng-click="showDialogCreateAdda()">Create Adda</div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/ng-template" id="createAddaDialog.html">
+        <div id="create_adda_header" class="modal-header">
+            <h3>Create new Adda</h3>
+        </div>
+        <div class="modal-body">
+            <div ng-show="showPage(1)">
+                <div class="adda-control-group">
+                    <label>Group Name:</label>
+                    <input class="input-control" type="text" ng-model="$parent.groupName"/>
+                </div>
+                <div class="adda-control-group">
+                    <label>Location:</label>
+                    <input class="input-control" type="text" ng-model="$parent.location"/>
+                </div>
+                <hr>
+                <div class="adda-control-group privacy">
+                    <label>Privacy:</label>
+
+                    <div class="options">
+
+                        <input type="radio" name="op_privacy" ng-model="$parent.isPrivate"    ng-value="false" /> <i
+                            class="glyphicon glyphicon-globe"></i>
+                        Open
+
+                        <span>Anyone can join group, membership aproval not required.</span>
+
+                        <input type="radio" name="op_privacy" ng-model="$parent.isPrivate" ng-value="true"/> <i
+                            class="glyphicon glyphicon-lock"></i> Closed
+
+
+                        <span> Private group, membership approval required..</span>
+                    </div>
+
+                    <hr>
+                    <div class="options-check">
+
+                        <input type="checkbox" ng-model="options.sendAlerts"/> Send alerts to members about group
+                        activities </br>
+
+                        <input type="checkbox" ng-model="options.uploadPhotos"/> Upload Coverpage and Logo
+
+                    </div>
+
+                </div>
+            </div>
+            <div ng-show="showPage(2)">
+
+                <adda-image-upload filename="coverfilename"></adda-image-upload>
+
+                <hr/>
+
+                <adda-image-upload filename="logofilename"></adda-image-upload>
+
+
+            </div>
+            <div ng-show="showPage(3)">
+                <div class="adda-control-group">
+                    <label>Group Introduction:</label>
+                    <textarea name="" id="" class="createadda-introduction" ng-model="$parent.introduction"></textarea>
+                </div>
+                <hr/>
+                <div class="adda-control-group">
+
+<adda-create-tag tags="tags" tags-selected="tagsSelected"></adda-create-tag>
+
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" data-ng-click="ok()">{{getPrimaryLabelBtn()}}</button>
+            <button class="btn btn-warning" data-ng-click="cancelDialog()">Cancel</button>
+        </div>
+    </script>
+</div>

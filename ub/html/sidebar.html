@@ -1,0 +1,51 @@
+<div id="event-edit-sidebar" data-ng-animate="{enter: 'edit-sidebar-enter', leave: 'edit-sidebar-leave'}">
+  <ul class="sidebar-edit-sections">
+    <!-- ngRepeat: panel in panels -->
+		<div ng-repeat="panel in panels"
+		ng-class="{{panel.class}}-selector"
+		ng-click="setCurrentPanel(panel)">
+		{{ panel.name }}
+		</div>
+  </ul>
+	<div class="event-edit-panels" ng-switch on="currentPanel">
+
+		<div class="event-edit-sidebar-panel manage-event-info" ng-switch-when="event-info">
+			<!--
+			  ///// Event Info /////
+			-->
+			<ub-sidebar-event-info>
+			</ub-sidebar-event-info>
+		</div>
+		<div class="event-edit-sidebar-panel manage-event-tickets" ng-switch-when="event-tickets">
+			<!--
+			///// Event Tickets /////
+			-->
+			<ub-manage-event-tickets>
+			</ub-manage-event-tickets>
+		</div>
+
+		<div class="event-edit-sidebar-panel manage-event-social" data-ng-switch-when="event-social">
+			<!--
+			///// Event Social /////
+			-->
+			<ub-event-social-share>
+			</ub-event-social-share>
+		</div>
+		
+		<div class="event-edit-sidebar-panel manage-event-sponsors" data-ng-switch-when="event-sponsors">
+			<!--
+			///// Event Sponsors /////
+			-->
+			<ub-manage-event-sponsors>
+			</ub-manage-event-sponsors>
+		</div>
+
+		<div class="event-edit-sidebar-panel manage-event-settings" data-ng-switch-when="event-settings">
+			<!--
+			///// Event Settings /////
+			-->
+			<ub-event-settings>
+			</ub-event-settings>
+		</div>
+	</div>
+</div>

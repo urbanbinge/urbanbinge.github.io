@@ -1,0 +1,93 @@
+<div class="edit_event_details_page"
+    ng-init="user_rating = [1,2,3,4,5]">
+	<div>
+		<ub-event-side-bar>
+		</ub-event-side-bar>
+	</div>
+  <div class="edit_event_top_region"> 
+    <div class="edit_event_page_overview_region">
+      <div class="etitle">Event Overview</div>
+      <div class="hr"></div>
+      <div class="event_details">
+		<div ng-bind-template="{{event.city}}">
+			Place : </div><br />
+		<div ng-bind-template="{{readableDate}}">
+			Date  : </div><br />
+		<div ng-bind-template="{{event.eventregistrationdetails.perHeadCharge}}">
+			Price : </div><br />
+		<div ng-bind-template="{{event.eventregistrationdetails.totalSeats}}">
+			Per Batch  :  </div><br />
+		<div ng-bind-template="{{event.eventContact}}">
+			Contact  :  </div><br />
+      </div>
+    </div>
+	<div class="edit_event_page_book_region">
+		<div class="etitle">Book Event</div>
+		<div class="hr"></div>
+		<br />
+		@ {{event.eventregistrationdetails.perHeadCharge}}/- Per person. <br />
+		Quantity :<input type="text" id="booking_quantity" style="margin-top:2px;width:30px;"></input>
+		<br />
+		<b>Total</b>: 0
+		<div class="e_booking">Book Now</div>
+    </div>
+	<div class="edit_event_data_region">
+      <div class="etitle" ng-bind-template="{{event.eventTitle}}">Your Event Name</div>
+      <div class="hr"></div>
+      <ub-edit-event-details-photo-gallery>
+	  </ub-edit-event-details-photo-gallery>
+    </div> 
+  </div>
+  <div class="edit_event_details_region">
+      <div class="event_page_opt_sel">
+	<div ng-repeat="item in ['Event Details','About Organiser']">
+	  <div class="event_opt_item">{{ item }}</div>
+	</div>
+      </div>
+      <div class="hr"></div>
+      <div class="event_details">
+	<p ng-bind-template="{{event.eventDescription}}"> Event Info
+	</p>
+      </div>
+  </div>
+  <div class="edit_event_page_sub_region">
+	<div class="event_maps_region">
+	  <div class="etitle">Map</div>
+	  <div class="hr"></div>
+	  <div class="event_details">
+		<div class="google-map" 
+			center="position.coords"
+			zoom="zoomProperty" 
+			markers="markersProperty"
+			latitude="clickedLatitudeProperty"
+			longitude="clickedLongitudeProperty"
+			mark-click="true"
+			draggable="true"
+			fit="false"
+			events="eventsProperty"
+			style="height: 200px; width: auto">
+		</div>
+	  </div>
+	</div>
+    <div class="event_upcoming_region">
+      <div class="etitle">Recommended Events</div>
+      <div class="hr"></div>
+      <div class="event_details">
+	Currently Unavailable
+      </div>
+    </div>
+    <div class="event_related_region">
+      <div class="etitle">Activity Feed</div>
+      <div class="hr"></div>
+      <div class="event_details">
+	Currently Unavailable
+      </div>
+    </div>
+  </div>
+	<div class="event-edit-statusbar">
+	  <div class="sb-action-buttons">
+		<a class="btn btn-inverse btn-large pte-save-btn" data-ng-class="saveClass" data-ng-click="SaveAll()"> Save</a>
+		<!-- uiIf: showGoLiveButton() -->
+	  </div><!-- /.sb-action-buttons -->
+	</div>
+</div>

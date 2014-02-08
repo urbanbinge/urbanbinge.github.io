@@ -1,0 +1,119 @@
+<div>
+	<section>
+		  <i class="icon-long-arrow-left icon-large" title="close" data-ng-click="closeCurrentPanel(panel)"></i>
+          <h1>Event Information</h1>
+          <form name="eventInfoForm" novalidate>
+
+            <h3>Event Details</h3>
+
+            <div class="control-group">
+              <label class="control-label">Event Name</label>
+              <div class="controls">
+                <div class="input-counter-append full-width">
+                  <input type="text" data-ng-model="event.eventTitle" name="event_title" data-pt-input-counter="75" data-ng-minlength="3" required>
+                  <span class="input-counter">
+                    <span data-ng-bind-template="{{ event.eventTitle.length }}/75"></span>
+                  </span>
+                </div><!-- /.input-counter-append -->
+                <div data-ng-show="eventInfoForm.event_title.$dirty && eventInfoForm.event_title.$invalid" class="alert alert-error">
+                  <span data-ng-show="eventInfoForm.event_title.$error.required">The Event name is a required field.</span>
+                  <span data-ng-show="eventInfoForm.event_title.$error.minlength">The Event name must be at least 3 characters long.</span>
+                </div>
+              </div><!-- /.controls -->
+            </div><!-- /.control-group -->
+
+            <div class="control-group">
+              <label class="control-label">Tagline</label>
+              <div class="controls">
+                <div class="input-counter-append full-width">
+                  <input type="text" data-ng-model="event.remarks" data-pt-input-counter="140">
+                  <span class="input-counter">
+                    <span data-ng-bind-template="{{ event.remarks.length }}/140"></span>
+                  </span>
+                </div><!-- /.input-counter-append -->
+                <span class="help-block">Describe your event in 140 characters or less.</span>
+              </div><!-- /.controls -->
+            </div><!-- /.control-group -->
+            <div class="control-group horizontal-label">
+              <label class="control-label">Event Image</label>
+            </div><!-- /.control-group -->
+            <div class="control-group">
+              <label class="control-label">Upload Image</label>
+				<a class="btn btn-small btn-block add-image" data-ng-click="addImage()" href="">Add Image</a>
+					<ub-file-uploader>
+					</ub-file-uploader>
+            </div><!-- /.control-group -->
+            <div class="control-group">
+              <label class="control-label">Event Description</label>
+              <div class="controls">
+				<textarea data-ng-model="event.eventDescription"
+					class="ng-pristine ng-valid"
+					style="display: none;"></textarea>
+              </div><!-- /.controls -->
+            </div><!-- /.control-group -->
+
+            <hr>
+
+            <h3>Date &amp; Time</h3>
+            <!-- TODO: Figure this shit out -->
+            <div class="control-group horizontal-label">
+              <label class="control-label">Start Date</label>
+              <div class="controls">
+                <div>
+				  <input id="inputDatepicker" placeholder="From" type="text" ng-model="event.startDate" data-date-format="dd/mm/yyyy" bs-datepicker>
+                </div><!-- /.input-prepend -->
+				<div>
+					<input type="text" ng-model="start_time" bs-timepicker>
+				</div>
+            </div><!-- /.controls -->
+            </div><!-- /.control-group -->
+
+            <div class="control-group horizontal-label">
+              <label class="control-label">End Date</label>
+              <div class="controls">
+				<div>
+					<input id="inputDatepicker" placeholder="To" type="text" ng-model="event.endDate" data-date-format="dd/mm/yyyy" bs-datepicker>
+				</div>
+				<div>
+					<input type="text" ng-model="end_time" bs-timepicker>
+				</div>
+				
+              </div><!-- /.controls -->
+            </div><!-- /.control-group -->
+            <hr>
+
+            <h3>Location</h3>
+
+            <div class="control-group horizontal-label">
+              <label class="control-label">Venue</label>
+              <div class="controls">
+                <input class="full-width" type="text" data-ng-model="event.eventVenue">
+              </div><!-- /.controls -->
+            </div><!-- /.control-group -->
+
+            <div class="control-group horizontal-label">
+              <label class="control-label">&nbsp;</label>
+              <div class="controls">
+                <div class="input-prepend full-width">
+                  <span class="add-on"><i class="icon-map-marker"></i></span><input type="text" data-ng-model="event.city" placeholder="City">
+                </div><!-- /.input-prepend -->
+              </div><!-- /.controls -->
+            </div><!-- /.control-group -->
+
+            <div class="control-group horizontal-label">
+              <label class="control-label">Address</label>
+              <div class="controls">
+                <input class="full-width" type="text" data-ng-model="event.eventContact">
+              </div><!-- /.controls -->
+            </div><!-- /.control-group -->
+            <hr>
+
+            <h3>Event Disclaimer</h3>
+            <div class="control-group">
+              <textarea class="event-edit-disclaimer" data-ng-model="event.eventdocuments"></textarea>
+              <span class="help-block">Use this area to let your patrons know about any restrictions, liabilities, etc.</span>
+            </div><!-- /.control-group -->
+
+          </form>
+	</section>
+</div>

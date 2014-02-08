@@ -1,0 +1,33 @@
+<div>
+  <div class="container_type_sel">
+    <div style="float:right;" class="icon_32 icon_grid_view" ng-click="container_view_change(0)"></div>
+    <div style="float:right;" class="icon_32 icon_list_view" ng-click="container_view_change(1)"></div>
+  </div>
+  <div ng-switch on="elist_status">
+	<div ng-switch-when="found">
+		<div class="category_hint" ng-show="(category_selected != '')"> Experiences For category " {{category_selected}} "</div>
+		<ul ub-scroll='loadmore()' ub-scroll-distance='1' ub-scroll-immediate-check='false'>
+			<div ng-repeat="item in dw.items" 
+			ng-class="container_style()">
+				<a style="cursor:pointer;" ng-href="#/events/{{item.eid}}">
+					<div ng-class="event_pricetag()">
+						<div class="event_cost" ng-show="hasEventRegistration(item)">INR <br>{{item.eRegDetails[0].perHeadCharge}}
+						</div>
+						<div class="event_cost" style="margin-top:50px;" ng-hide="hasEventRegistration(item)">FREE
+						</div>
+					</div>
+					<div ng-style="thumbnail_style($index)"></div>
+					<div class="event_title">{{ item.etitle }} <br />@{{ item.eCity.cityName}}</div>
+					<div ng-style="list_view_item($index)" class="event_details" ng-show="(e_view_type == 1)" style="width:95%;">
+						{{item.eDesc}}
+						<div class="e_booking_listview">Book Now</div>
+					</div>
+				</a>
+			</div>
+		</ul>
+	</div>
+	<div ng-switch-when="notFound">
+		<h2> Argh!! No items found for {{category_selected}} currently, you may find awesomeness in other categories</h2>
+	</div>
+  </div>
+</div>

@@ -1,0 +1,262 @@
+.topmenu {
+    position:fixed;
+    z-index:2;
+    width:100%;
+    height:40px;
+    line-height:40px;
+    background-color: rgba(10, 10, 10, 0.75);
+    border-radius:5px;
+}
+
+.topmenu_container {
+    /* width:80%; */
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.topmenu_items {
+    float:left;
+    font-family:"Andika";
+    height:40px;
+    line-height:40px;
+    color:white;
+    font-height:14px;
+    font-weight:bold;
+}
+
+.topmenu_city {
+    position:absolute;
+    z-index:1;
+    margin-top:40px;
+    margin-left:15%;
+    width:100px;
+    background-color:rgba(10, 10, 10, 0.75);
+    color:white;
+    font-family:"arvo";
+    font-size:12px;
+    font-weight:normal;
+    text-align:center;
+}
+
+.topmenu_city_selected {
+    float:left;
+    padding-right:20px;
+    font-family:"Andika";
+    line-height:40px;
+    color:white;
+    font-height:14px;
+    font-weight:bold;
+}
+
+.category_menu {
+    display: block;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 950px;
+}
+
+.category_list_items {
+    float:left;
+}
+
+.bottom_menu {
+    width:100%;
+    height:40px;
+    float:left;
+    line-height:40px;
+    background-color: rgba(10, 10, 10, 0.75);
+    border-radius:5px;
+	z-index: 3;
+}
+
+.bmenu_container {
+    /* width:80%; */
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.bmenu_items {
+    float:left;
+    font-family:"Andika";
+    height:40px;
+    line-height:40px;
+    color:white;
+    font-height:14px;
+    font-weight:bold;
+}
+
+.topmenu_cover_poster {
+    position:absolute;
+    z-index:0;
+    background-color:rgba(10, 10, 10, 0.75);
+    -webkit-transition:2s;
+	width: 1350px;
+	height: 450px;
+}
+.topmenu_cover_add_poster {
+	z-index:0;
+    background-color:rgba(10, 10, 10, 0.75);
+    -webkit-transition:2s;
+	width: 1350px;
+	height: 450px;
+}
+.poster {
+    /* z-index:; */
+    left:0px;
+    top:40px;
+    height:495px;
+}
+
+.poster_title {
+    position:absolute;
+    top:100px;
+    right:50px;
+    background-color:rgba(10, 10, 10, 0.75);
+}
+
+.poster_navigation {
+    float:left;
+    margin-top:200px;
+    margin-left:20px;
+    color:white;
+}
+.login_template{
+	background-color: #D5D5D5;
+    background-image: url("../assets/images/delhi.jpg");
+    background-repeat: no-repeat;
+    height: 600px;
+    position: relative;
+    width: 100%;
+    z-index: 0;
+}
+
+.about_template{
+	position: fixed;
+	background-color: rgba(213, 213, 213, 1);
+	z-index: 6;
+	margin-left: 5%;	
+}
+.site_layout {
+	width:auto;
+	height:auto;
+	margin-left:10px;
+	margin-top:10px; 
+	background-color: rgb(0, 0, 0);
+}
+.sign_wrapper {
+    overflow: hidden; 
+	border-right: 1px solid black;
+    height: 100%;
+	z-index:0;
+	/*background-color: rgba(10, 10, 10, 0.25);*/
+}
+.ub_login {
+	float:left; 
+	margin-left: 10%;
+	margin-top: 5%;
+	background-color: rgba(10, 10, 10, 0.25);
+	height:60%;
+	width:40%;
+}
+.social_login {
+	float:left; 
+	margin-left: 5%;
+	margin-top: 5%;
+	background-color: rgba(10, 10, 10, 0.25);
+	height:60%;
+	width:40%;
+}
+.facebook_login {
+	padding:5px;
+	margin-bottom:50px;
+}
+.google_login {
+	padding:5px;
+	margin-top:50px;
+}
+.adda_box {
+	position: absolute;
+	display: "inline-block";
+	top: 80px;
+	right: 0;
+	left: 0;
+}
+.adda_box_inside {
+	margin: 0 auto;
+	width: 600px;
+	padding: 0px 0 20px;
+	border: 1px solid #555;
+	position: relative;
+	background-color: rgba(0,0,0,0.7);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#CC000000', endColorstr='#CC000000');
+	color: white;
+}
+.adda_box_header {
+	text-align: center;
+	font-family:"Andika";
+    line-height:40px;
+    color:white;
+    font-size:24px;
+    font-weight:bold;
+}
+.adda_box_subscript {
+	text-align: center;
+	font-family:"Andika";
+    line-height:40px;
+    color:white;
+    font-size:14px;
+}
+.create_adda {
+	padding-right: 10px;
+	padding-left: 10px;
+	margin-left: 230px;
+	padding: 10px;
+	color: rgb(239, 248, 17);
+	width: 150px;
+	margin-top: 10px;
+	height: 50px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+	font-size: 18px;
+	text-align: center;
+	cursor: pointer;
+	background-image: -webkit-gradient(linear, 0% 100%, 0% 0%, color-stop(0.15, rgb(22, 166, 202)), color-stop(0.58, rgb(64, 105, 235)));
+
+}
+
+.home_join_form {
+	position: relative;
+	margin-bottom: 10px;
+	padding: 25px 25px 20px;
+	background-color: #e2e7ea;
+	background-color: rgba(226,231,234,.8);
+	box-shadow: 0 0 15px 0 rgba(0,0,0,.3);
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-o-border-radius: 10px;
+	-ms-border-radius: 10px;
+	border-radius: 10px;
+	z-index: 4;
+}
+.logintoolbar{
+	float:right;
+	width:200px;
+	height:50px;
+	z-index: 5;
+	margin-right: 10px;
+}
+.logintoolbar_topmenu_items {
+    float:right;
+    font-family:"Andika";
+    height:40px;
+    line-height:40px;
+    color:white;
+    font-height:14px;
+    font-weight:bold;
+}
+.logout{
+	float:right
+}
