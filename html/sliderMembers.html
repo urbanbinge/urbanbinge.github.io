@@ -1,0 +1,14 @@
+<div style="position:relative; width: 100%; background: #333; padding: 10px 0; margin: 10px 0;">
+    <a href="#" class="btnprev_member"><i class="fa fa-arrow-circle-o-left"></i></a>
+    <a href="#" class="btnnext_member"><i class="fa fa-arrow-circle-o-right"></i></a>
+
+    <div class="addaevent_members">
+        <ul>
+            <li ng-repeat=" member in members">
+
+                <img ng-src="{{member.memberPicURL}}">
+                <span class="membername">{{member.name}}</span>
+            </li>
+        </ul>
+    </div>
+</div>

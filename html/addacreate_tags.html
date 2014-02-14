@@ -2,9 +2,13 @@
 
 <div >
     <label>Tags</label>
-
     <ul class="createadda-tags">
         <li  ng-repeat="tag in tags"><a href="#" class="category-tag" ng-click="selectTag($event, tag)"><span
                 class="glyphicon glyphicon-plus-sign"></span> {{tag}} </a></li>
     </ul>
+
+    <ul class="createadda-selectedtags">
+        <li  ng-repeat="tag in tagsSelected"><span>{{tag}}</span><button type="button" class="close" ng-click="deleteTag($event, tag)">&times;</button> </li>
+    </ul>
+
 </div>

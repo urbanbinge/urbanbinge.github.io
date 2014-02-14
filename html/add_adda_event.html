@@ -1,0 +1,84 @@
+<div ng-init="$parent.init()">
+
+    <div id="create_adda_header" class="modal-header">
+        <h3>Create new Event</h3>
+    </div>
+    <div class="modal-body">
+        <div ng-show="showPage(1)">
+            <div class="adda-control-group">
+                <label>Event-title:</label>
+                <input class="input-control" type="text" ng-model="$parent.eventTitle"/>
+            </div>
+            <div class="adda-control-group">
+                <label>Location:</label>
+                <input class="input-control" type="text" ng-model="$parent.location"/>
+            </div>
+            <hr/>
+            <div class="adda-control-group">
+                <label>Date:</label>
+                <input class="input-control" type="text" ng-model="$parent.date" data-date-format="dd/mm/yyyy"
+                       bs-datepicker/>
+            </div>
+            <div class="adda-control-group">
+                <label>Seats:</label>
+                <input class="input-control" type="text" ng-model="$parent.seats" style=" width: 100px; " ng-disabled="noLimit"/>
+                <input type="checkbox" ng-model="$parent.noLimit"/> No limit
+
+            </div>
+            <div style="clear: both; margin: 20px 0; overflow: hidden">
+
+                <div class="addaddaevent_check">
+                    <input class="input-control" type="checkbox" ng-model="$parent.onlineBookingRequired"/> Online
+                    Booking Required
+                </div>
+
+                <div class="addaaddevent_price">
+                    <span>Ticket Price</span>
+
+                    <div class="input-group">
+                        <span class="input-group-addon">$</span>
+                        <input type="text" class="form-control" style="width: 100px;">
+                    </div>
+                </div>
+            </div>
+
+            <hr class="clearfix">
+
+            <div  style="margin-top: 20px;">
+                <input type="checkbox" ng-model="options.uploadCoverPage"/> Upload coverpage
+                activities </br>
+
+                <input type="checkbox" ng-model="options.uploadAditionalPhotos"/> Upload aditional event photos
+            </div>
+
+        </div>
+        <div ng-show="showPage(2)">
+<div ng-show="options.uploadCoverPage">
+            <adda-image-upload   filename="coverPhoto" title="Upload Cover Photo"></adda-image-upload>
+</div>
+            <hr/>
+            <div ng-show="options.uploadAditionalPhotos">
+            <adda-image-upload filename="eventImages" title="Upload Event Images"></adda-image-upload>
+</div>
+
+        </div>
+        <div ng-show="showPage(3)">
+            <div class="adda-control-group">
+                <label>Event Introduction:</label>
+                <!--   <textarea name="" id="" class="createadda-introduction" ng-model="$parent.introduction"></textarea> -->
+                <div text-angular ng-model="$parent.introduction" ta-text-editor-class="createadda_editor"></div>
+            </div>
+            <hr/>
+            <div class="adda-control-group">
+
+                <adda-create-tag tags="tags" tags-selected="tagsSelected"></adda-create-tag>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" data-ng-click="ok()">{{getPrimaryLabelBtn()}}</button>
+        <button ng-show="currentPage != 1" class="btn btn-primary" data-ng-click="back()">Back</button>
+        <button class="btn btn-warning" data-ng-click="cancelDialog()">Cancel</button>
+    </div>
+</div>

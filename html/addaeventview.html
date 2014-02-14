@@ -1,0 +1,182 @@
+<div ng-init="init()">
+    <div class="addaevent_coverphoto">
+        <img ng-src="{{event.eventPhotos[0].imageURL}}" alt=""/>
+
+        <div data-ng-switch="isOrganizer">
+
+            <div data-ng-switch-when="true">
+
+                <button class="btn addaevent_editbutton">Edit event</button>
+            </div>
+            <div data-ng-switch-when="false">
+
+                <button class="btn addaevent_bookmark"><i class="fa fa-bookmark"></i></button>
+                <button class="btn addaevent_checked"><i class="fa fa-check"></i></button>
+                <button class="btn addaevent_attendevent">ATTEND EVENT</i></button>
+            </div>
+
+        </div>
+
+        <h1 class="addaevent_title">{{event.eventTitle}}</h1>
+
+        <div class="addaevent_infobox">
+
+        </div>
+
+        <div class="addaevent_organizername">
+            <h3>ORGANIZER</h3>
+            <span>{{adda.organizedBy}}</span>
+        </div>
+        <div class="addaevent_organizerlogo">
+            <img ng-src="adda.organizerLogoURL" alt=""/>
+        </div>
+    </div>
+    <div class="navbar navbar-default">
+        <div class="navbar-collapse collapse ">
+            <ul class="nav navbar-nav addaevent_menu">
+                <li ng-class=" getMenuClass('info')">
+                    <menu-item href="#" show="show('info')">INFO</menu-item>
+                </li>
+                <li ng-class="getMenuClass('participants')">
+                    <menu-item href="#" show="show('participants')">PARTICIPANTS ({{event.participants.length}})
+                    </menu-item>
+                </li>
+                <li ng-class="getMenuClass('photos')">
+                    <menu-item href="#" show="show('photos')">PHOTOS</menu-item>
+                </li>
+                <li ng-class="getMenuClass('comments')">
+                    <menu-item href="#" show="show('comments')">COMMENTS</menu-item>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+    <div ng-show="active == 'info'" class="addavent_panel">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div style="margin-bottom: 50px;">
+                        {{event.eventInfo}}
+                    </div>
+                    <div class="addaevent_commentpanel">
+                        <textarea class="form-control"></textarea>
+
+                        <div class="addaevent_commentbtnpanel">
+                            <button class="btn btn-default pull-right">Post</button>
+                        </div>
+
+                    </div>
+                    <div class="addaevent_comments">
+                        <div class="addaevent_comment" ng-repeat="comment in infoComments">
+                            <img ng-src="comment.memberPicURL" class="commentimage"/>
+                            <span class="commentname">{{comment.name}}</span>
+                            <span class="commentdate">{{comment.commentDate}}</span>
+
+                            <div class="clearfix"></div>
+                            <p class="commenttext">{{comment.comment}}</p>
+
+                            <div>
+                                <a class="commentreply" href="#" data-ng-click="replyComment($event,comment.commentId)">Reply</a>
+                                <a class="commentdelete" href="#"
+                                   data-ng-click="deleteComment($event,comment.commentId)">Delete</a>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-default" data-ng-show="event.membersComments.length>5"
+                                ng-click="show('comments')">View all Comments
+                        </button>
+                    </div>
+
+                </div>
+                <div class="col-md-3">
+                    <div ng-show="event.sponsorLogoURL!=undefined">
+                        <h3>SPONSORS</h3>
+                        <img class="addaevent_sponsorLogo" ng-src="event.sponsorLogoURL"/>
+                    </div>
+                    <div>
+                        <h3>Reserve your slots</h3>
+                        <button class="btn btn-success">Book Now</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-show="active == 'participants'">
+    <div class="container">
+        <slider-members members="event.participants"></slider-members>
+    </div>
+</div>
+
+<div ng-show="active == 'photos' " style="overflow: hidden; background: #fff; padding: 20px;">
+
+
+    <carousel interval="myInterval">
+        <slide ng-repeat="photo in event.eventPhotos" active="slide.active">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7 col-md-offset-1">
+                        <img class="addaevent_photo" ng-src="{{photo.imageURL}}" style="margin:auto;">
+                    </div>
+                    <div class="col-md-3" style="background: white; min-height: 400px;">
+                        <div class="photoTitle">
+
+                            <div class="addaevent_morecomments" data-ng-show="showAllPhotos" >
+                                <a href="#" ng-click="showAllPhotos=false " a-prevent-default>  <i class="fa fa-comment-o"></i> Hide comments</a>
+                            </div>
+
+                            <div data-ng-hide="showAllPhotos">
+
+
+                            <div class="addaevent_morecomments"
+                                 ng-show="photo.comments!= undefined && photo.comments.length > 5">
+                                <a href="#" ng-click="showAllPhotos=true " a-prevent-default>  <i class="fa fa-comment-o"></i> View
+                                    {{photo.comments.length - 5}} more comments</a>
+                            </div>
+                            </div>
+
+                            <div data-ng-hide="showAllPhotos"  class="addaevent_photocomment" ng-repeat="photoComment in photo.comments.slice(0,5)">
+                                {{photoComment.comment}}
+                            </div>
+                            <div data-ng-show="showAllPhotos" class="addaevent_photocomment" ng-repeat="photoComment in photo.comments">
+                                {{photoComment.comment}}
+                            </div>
+
+                            <textarea class="form-control" ng-model="photo.photoCommentText"
+                                      ng-enter="saveComment(photo)" placeholder="Write a comment"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </slide>
+    </carousel>
+
+
+</div>
+
+<div ng-show="active == 'comments'">
+    <div class="container" style="background: white;">
+        <div class="addaevent_comments">
+            <div class="addaevent_comment" ng-repeat="comment in event.membersComments">
+                <img ng-src="{{comment.memberPicURL}}" class="commentimage"/>
+                <span class="commentname">{{comment.name}}</span>
+                <span class="commentdate">{{comment.commentDate}}</span>
+
+                <div class="clearfix"></div>
+                <p class="commenttext">{{comment.comment}}</p>
+
+                <div>
+                    <a class="commentreply" href="#" data-ng-click="replyComment($event,comment.commentId)">Reply</a>
+                    <a class="commentdelete" href="#" data-ng-click="deleteComment($event,comment.commentId)">Delete</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+
+

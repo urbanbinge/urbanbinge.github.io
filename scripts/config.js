@@ -75,7 +75,7 @@ var __master_config =
 	'ratingconfig' : {
 	'max' : 5
     },
-    tags: [ "Travel", "Outdoor Recreation", "Concerts", "Arts and Crafts" ]
+    tags: [ "Travel", "Outdoor Recreation", "Concerts", "Arts and Crafts" , 'Kids', 'Music', 'Water Sport', 'Mountain']
 };
 
 var mUbConfigProvider = angular.module("ubConfigProvider", []);

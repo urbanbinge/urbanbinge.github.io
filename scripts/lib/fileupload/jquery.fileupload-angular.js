@@ -279,7 +279,6 @@ var mubfileupload = angular.module("ubFileUpload", [])
                     'fileuploadprocessstop'
                 ].join(' '), function (e, data) {
                     if ($scope.$emit(e.type, data).defaultPrevented) {
-                        console.log(e.type);
                         e.preventDefault();
                     }
                 }).on('remove', function () {

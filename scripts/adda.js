@@ -54,7 +54,8 @@ function CreateAddaDialogCtrl($scope, $modalInstance, $http, ubconfig) {
         console.log(data);
     });
 
-    $scope.tags = ubconfig.get('tags');
+
+
     $scope.tagsSelected = [];
 
     $scope.cancelDialog = function () {
@@ -92,11 +93,26 @@ function CreateAddaDialogCtrl($scope, $modalInstance, $http, ubconfig) {
             newAdda.addaPicture = $scope.coverPhotoImg;
             newAdda.addaName =  $scope.groupName;
             newAdda.addaDescription = $scope.introduction;
-            newAdda.addaLocation = $scope.introduction;
+            newAdda.addaLocation = $scope.location;
             newAdda.organizerLogoURL = $scope.logoImg;
             newAdda.addaPicture = $scope.coverPhotoImg;
             newAdda.tags = $scope.tagsSelected ;
             $modalInstance.close(newAdda);
+
+        }
+
+    }
+
+    $scope.back = function () {
+        if ($scope.currentPage === 2) {
+            $scope.currentPage = 1;
+        } else if ($scope.currentPage === 3) {
+
+            if ($scope.options.uploadPhotos) {
+                $scope.currentPage = 2;
+            } else {
+                $scope.currentPage = 1;
+            }
 
         }
 
@@ -126,7 +142,8 @@ mubAdda.directive('addaImageUpload', function () {
         replace: true,
         require: '?cdMouseDrag',
         scope: {
-            filename: '='
+            filename: '=',
+            title: '@'
         },
         controller: ['$scope', '$http', 'ubconfig',
             function ($scope, $http, ubconfig) {
@@ -186,33 +203,60 @@ mubAdda.directive('file', function () {
 mubAdda.directive('addaCreateTag', function () {
     return {
         scope: {
-            tags: '=',
             tagsSelected: '='
         },
         restrict: 'E',
         replace: true,
-        controller: ['$scope',
-            function ($scope) {
+        controller: ['$scope','ubconfig',
+            function ($scope, ubconfig) {
+
+                $scope.tagsInConfigFile = ubconfig.get('tags');
+
+                $scope.tags = [];
+
+                $scope.getTagsShowed = function () {
+                    var c = 0;
+                    $scope.tags = [];
+                    angular.forEach($scope.tagsInConfigFile, function(tag){
+                        if ( ! ( $scope.tagsSelected.indexOf( tag.trim() ) >= 0 )  && c<4 ) {
+                            $scope.tags.push(tag.trim());
+                            c++;
+                        }
+                    });
+
+                } ;
+
                 $scope.selectTag = function (event, data) {
                     event.preventDefault();
                     var tag = $(event.target);
-                    if(tag.hasClass('tag-selected')) {
-                        tag.removeClass('tag-selected');
-                        tag.find('span').removeClass('glyphicon-minus-sign').addClass('glyphicon-plus-sign');
-                        var index = $scope.tagsSelected.indexOf(data);
-                        if(index >=0) {
-                            $scope.tagsSelected.splice(index, 1);
-                        }
-
-                    }else{
-                        tag.addClass('tag-selected');
-                        tag.find('span').removeClass('glyphicon-plus-sign').addClass('glyphicon-minus-sign');
-                        $scope.tagsSelected.push(data);
+                    if(!tag.parent().hasClass('tag-selected')) {
+                        $scope.tagsSelected.push(data.trim());
+                        tag.parent().addClass('tag-selected');
                     }
+                    $scope.getTagsShowed();
+
+                };
+
+                $scope.deleteTag = function (event, data) {
+                    event.preventDefault();
+                    var createtags_list =  angular.element('.createadda-tags');
+                    angular.forEach(createtags_list.children(), function(item){
+                        if(item.firstChild.textContent.trim() == data.trim()){
+                            $(item).removeClass('tag-selected');
+                        }
+                    });
+
+                    var tagSelected = event.target;
+                    var index = $scope.tagsSelected.indexOf(data);
+                    if(index >=0) {
+                        $scope.tagsSelected.splice(index, 1);
+                    }
+                    $scope.getTagsShowed();
 
                 }
         }],
         link: function (scope, el, attrs) {
+            scope.getTagsShowed();
         },
         templateUrl: 'html/addacreate_tags.html'
     };
@@ -243,7 +287,8 @@ mubAdda.directive('ubAddaPoster', function () {
                 var modalInstance = $modal.open({
                     // Controller of the modal dialog
                     controller: CreateAddaDialogCtrl,
-                    templateUrl: 'createAddaDialog.html'
+                    templateUrl: 'createAddaDialog.html',
+                    windowClass: 'modal-huge'
                 });
 
                 modalInstance.result.then (function (newAdda) {

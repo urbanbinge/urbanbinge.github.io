@@ -6,7 +6,7 @@
 
     <div style="clear: both"></div>
 
-    <h3 class="addas_search_title">Most actives Addas in {{currentCity}}</h3>
+    <h3 class="addas_search_title">Most active Addas in {{currentCity}}</h3>
 
     <div ng-switch on="searchStatus">
         <div ng-switch-when="found">
@@ -16,7 +16,8 @@
                 <div masonry ub-scroll='loadMoreAddas()' ub-scroll-distance='1' ub-scroll-immediate-check='false'>
                     <div class="masonry-brick adda_panel" ng-repeat="adda in listData" ng-init="init(adda)"  >
                         <div class="item">
-                            <h4>{{adda.addaName}}</h4>
+                            <h4><a href="#/addaview/{{adda.id}}">{{adda.addaName}}</a></h4>
+                            
                             <img class="cover_photo" ng-src="{{adda.addaPicture}}">
 
                             <div class="user_info">
@@ -41,7 +42,7 @@
                             </div>
 
                             <div class="more_events">
-                                {{ "0"}} More Things To Do &raquo;
+                                {{ adda.events.length - 1 }} More Things To Do &raquo;
                             </div>
                         </div>
                         </div>
@@ -81,7 +82,7 @@
                             </div>
 
                             <div class="more_events">
-                                {{ "0"}} More Things To Do &raquo;
+                                {{ adda.events.length - 1 }} More Things To Do &raquo;
                             </div>
                         </div>
                     </li>

@@ -9,7 +9,8 @@
         </div>
     </div>
 
-    <script type="text/ng-template" id="createAddaDialog.html">
+    <script type="text/ng-template" id="createAddaDialog.html" ng-init="$parent.init()">
+
         <div id="create_adda_header" class="modal-header">
             <h3>Create new Adda</h3>
         </div>
@@ -29,7 +30,7 @@
 
                     <div class="options">
 
-                        <input type="radio" name="op_privacy" ng-model="$parent.isPrivate"    ng-value="false" /> <i
+                        <input type="radio" name="op_privacy" ng-model="$parent.isPrivate" ng-value="false"/> <i
                             class="glyphicon glyphicon-globe"></i>
                         Open
 
@@ -56,30 +57,34 @@
             </div>
             <div ng-show="showPage(2)">
 
-                <adda-image-upload filename="coverfilename"></adda-image-upload>
+
+                <adda-image-upload filename="coverfilename" title="Upload Cover Photo"></adda-image-upload>
 
                 <hr/>
 
-                <adda-image-upload filename="logofilename"></adda-image-upload>
+                <adda-image-upload filename="logofilename" title="Upload Logo"></adda-image-upload>
 
 
             </div>
             <div ng-show="showPage(3)">
                 <div class="adda-control-group">
                     <label>Group Introduction:</label>
-                    <textarea name="" id="" class="createadda-introduction" ng-model="$parent.introduction"></textarea>
+                    <!--   <textarea name="" id="" class="createadda-introduction" ng-model="$parent.introduction"></textarea> -->
+                    <div text-angular ng-model="$parent.introduction" ta-text-editor-class="createadda_editor"></div>
                 </div>
                 <hr/>
                 <div class="adda-control-group">
 
-<adda-create-tag tags="tags" tags-selected="tagsSelected"></adda-create-tag>
+                    <adda-create-tag tags="tags" tags-selected="tagsSelected"></adda-create-tag>
 
                 </div>
             </div>
         </div>
         <div class="modal-footer">
             <button class="btn btn-primary" data-ng-click="ok()">{{getPrimaryLabelBtn()}}</button>
+            <button ng-show="currentPage != 1" class="btn btn-primary" data-ng-click="back()">Back</button>
             <button class="btn btn-warning" data-ng-click="cancelDialog()">Cancel</button>
         </div>
+
     </script>
 </div>

@@ -1,0 +1,160 @@
+<div class="adda_view" ng-init="init()">
+    <div class="adda_view_header">
+        <img class="adda_view_logo" src="{{adda.organizerLogoUrl}}" ng-src="{{adda.organizerLogoUrl}}" alt="Logo"/>
+
+        <h3 class="adda_view_name">{{adda.addaName}}</h3>
+    </div>
+
+    <div class="navbar navbar-default">
+        <div class="adda_view_city">
+            <span class="city_name">Bangalore</span>
+            <span class="city_date">Since {{operationalSince}}</span>
+        </div>
+        <div class="navbar-collapse collapse adda_view_menu">
+            <ul class="nav navbar-nav">
+                <li ng-class=" getMenuClass('theme')">
+                    <menu-item href="#" show="show('theme')">Theme</menu-item>
+                </li>
+                <li ng-class="getMenuClass('events')">
+                    <menu-item href="#" show="show('events')">Events</menu-item>
+                </li>
+                <li ng-class="getMenuClass('noticeboard')">
+                    <menu-item href="#" show="show('noticeboard')">Notice Board</menu-item>
+                </li>
+                <li ng-class="getMenuClass('members')">
+                    <menu-item href="#" show="show('members')">Members</menu-item>
+                </li>
+            </ul>
+            <div class="adda_view_join_button">
+              <!--  <button ng-show="isOrganizer" ng-click="show('addevent')">Add Event</button>-->
+                <button ng-show="isOrganizer" ng-click="showAddEventDialog()">Add Event</button>
+                <button ng-hide="isOrganizer" ng-click="show('joinadda')">Join Adda</button>
+                <button ng-show="isOrganizer" ng-click="show('emailmembers')">Email Members</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div ng-show="active == ''">
+        <div class="adda_view_coverphoto">
+            <img src="{{adda.addaPicture}}" ng-src="{{adda.addaPicture}}"/>
+        </div>
+
+    </div>
+    <div ng-show="active == 'theme'">
+        <div class="container">
+            <p>{{adda.addaDescription}}</p>
+        </div>
+    </div>
+    <div ng-show="active == 'events'" style="clear: both;">
+
+
+        <div class="addaview_container">
+
+            <div class="addaview_side">
+                <div style="font-weight: bold; background: yellow; padding: 10px;">
+                    <div class="addaview_upcoming" style="height: 160px;">Upcoming events</div>
+                    <div class="addaview_past" style="height: 160px;">Past events</div>
+                </div>
+            </div>
+            <div class="addaview_content">
+                <div id="addaview_events">
+
+
+                    <carousel-events events="adda.events"></carousel-events>
+
+                    <carousel-events events="adda.events"></carousel-events>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div ng-show="active == 'noticeboard'">
+        <h3 style="text-align: center">Notice board</h3>
+
+        <div id="addaview_noticeboard">
+            <div class="addaview_message sticky{{$index%5+1}}" data-ng-repeat="message in adda.noticeBoard">
+                <div class='pin'></div>
+                <div class='text'>{{message}}</div>
+            </div>
+        </div>
+    </div>
+    <div ng-show="active == 'members'" style="clear: both;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <div style="margin-top: 10px; font-weight: bold;">
+                        {{adda.members.length}} Members
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <div id="addaview_members">
+                        <div masonry id="addaview_members_masonry" masonry-options="{ isInitLayout: false, gutter: 0 }"
+                             dynamic-layout cpage="active" page="members">
+                            <div class="masonry-brick addaview_memberpanel" ng-repeat="member in adda.members"
+                                 popover-trigger="mouseenter" popover="{{member.name}}">
+
+                                <img ng-src="{{member.memberPicURL}}"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div ng-show="active == 'joinadda'">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <form id="addaview_joinaddaform" class="form">
+                        <h2>Introduce yourself</h2>
+
+                        <div class="form-group"><label>Write a short bio</label>
+                            <input type="text" ng-model="joinAdda.bio" class="form-control"/></div>
+                        <h3>Profile questions</h3>
+
+                        <div class="form-group">
+                            <label>Your expectations from the Group</label>
+                            <input type="text" ng-model="joinAdda.expectations" class="form-control"/>
+                        </div>
+                        <div class="form-group"><label>Your idea of an Ideal Getaway</label>
+                            <input type="text" ng-model="joinAdda.idealGateway" class="form-control"/>
+                        </div>
+                        <div class="form-group"><label>Your Interests, Hobbies and >Passion</label>
+                            <input type="text" ng-model="joinAdda.interests" class="form-control"/>
+                        </div>
+                        <button type="button" class="btn btn-default pull-right" ng-click="joinAddaAction()">Join
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div ng-show="active == 'addevent'">
+
+    </div>
+
+    <div ng-show="active == 'emailmembers'">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div text-angular ng-model="htmlEmail"></div>
+                    <div style="text-align: center; padding: 20px 0; ">
+                        <button class="btn btn-lg btn-primary" ng-click="sendEmail()">
+                            Send email
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>

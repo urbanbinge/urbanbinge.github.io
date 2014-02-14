@@ -5,25 +5,28 @@
 */
 
 var mUrbanBinge = angular.module("UrbanBingeApp",  [
-    /* List dependencies */
-    'ubapiProvider',
-    'ubConfigProvider',
-    'ubMainMenu',
-    'ubEvents',
-    'ubUtils',
-	'ubOrganizer',
-	'ngResource',
-	'ngRoute',
-	'ngCookies',
-	'ubanalytics',
-	'ubAdda',
-	'ubUserProfile',
-	'ubOrganizerProfile',
-	'ublogin',
-	'ubsecurityProvider',
-	'ubtoaster',
-	'wu.masonry',
-    'ui.bootstrap'
+				/* List dependencies */
+				'ubapiProvider', 
+				'ubConfigProvider',
+				'ubMainMenu',
+				'ubEvents',
+				'ubUtils',
+				'ubAddaView',
+				'ubOrganizer',
+				'ngResource',
+				'ngRoute',
+				'ngCookies',
+				'ubanalytics',
+				'ubAdda',
+				'ubUserProfile',
+				'ubOrganizerProfile',
+				'ublogin',
+				'ubsecurityProvider',
+				'ubtoaster',
+				'wu.masonry',
+    				'ui.bootstrap',
+    				'ngSanitize',
+    				'textAngular'
 ]);
 
 (function(exports){
@@ -136,8 +139,12 @@ mUrbanBinge.config(['$routeProvider',
 		when('/404',{templateUrl: 'html/404.html',access:access.public}).
 		when('/addEvent',{templateUrl: 'html/addNewEventPage.html',controller:'addEventCtrl',access:access.public}).
 		when('/adda/:cityId',{templateUrl: 'html/adda.html',controller:'addaCtrl',access:access.public}).
-		when('/user',{templateUrl: 'html/userProfile.html',controller:'userCtrl',access:access.user}).
-		when('/organizer',{templateUrl: 'html/organizerProfile.html',controller:'organizerCtrl',access:access.organizer}).
+            	when('/addaview/:addaId',{templateUrl: 'html/addaview.html',controller:'addaViewCtrl',access:access.public}).
+            
+            	when('/addaview/:addaId/event/:eventId',{templateUrl: 'html/addaeventview.html',controller:'addaEventViewCtrl',access:access.public}).
+            	
+		when('/users/:uid',{templateUrl: 'html/userProfile.html',controller:'userCtrl',access:access.user}).
+		when('/organizer/:uid',{templateUrl: 'html/organizerProfile.html',controller:'organizerCtrl',access:access.organizer}).
 		when('/login',{templateUrl: 'html/login.html',controller:'loginCtrl',access:access.public}).
 		otherwise({redirectTo: '/'});
 		// Without serve side support html5 must be disabled.
