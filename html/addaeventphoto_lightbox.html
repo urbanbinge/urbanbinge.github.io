@@ -1,0 +1,46 @@
+<div style="display:none">
+    <div id="lightbox_gallery_links" style="position:relative; overflow: hidden;">
+        <a photoid="slideshow_{{ photo.imageId }}" ng-repeat="photo in photos"></a>
+
+    </div>
+    <div id="lightbox_gallery" style="position:relative; overflow: hidden;">
+        <div rel="eventgallery" id="slideshow_{{ photo.imageId }}" class="eventgallery" item="photo" ng-repeat="photo in photos">
+
+                <div style="width:872px; display: block;padding: 20px;">
+                    <div style="width:500px; display: block; float: left;">
+                        <img ng-src="{{ photo.imageURL }}" alt=""/>
+                    </div>
+                    <div style="width:300px; display: block;float: right;"  >
+                        <div class="photoTitle">
+
+                            <div class="addaevent_morecomments" data-ng-show="showAllPhotos"> <a href="#" ng-click="showAllPhotos=false " a-prevent-default> <i class="fa fa-comment-o"></i> Hide comments</a> </div>
+
+                            <div data-ng-hide="showAllPhotos">
+                                <div class="addaevent_morecomments" ng-show="photo.comments!= undefined && photo.comments.length > 5"> <a href="#" ng-click="showAllPhotos=true " a-prevent-default>
+                                    <i class="fa fa-comment-o"></i> View {{photo.comments.length - 5}} more comments</a>
+                                </div>
+                            </div>
+
+                            <div data-ng-hide="showAllPhotos" class="addaevent_photocomment"
+                                 ng-repeat="photoComment in photo.comments.slice(0,5)">
+                                <strong class="commentuser">{{photoComment.user}}</strong>
+                                <span class="commenttext">{{photoComment.comment}}</span>
+                            </div>
+                            <div data-ng-show="showAllPhotos" class="addaevent_photocomment"
+                                 ng-repeat="photoComment in photo.comments">
+                                <strong class="commentuser">{{photoComment.user}}</strong>
+                                <span class="commenttext">{{photoComment.comment}}</span>
+                            </div>
+
+                            <textarea class="form-control photocommenttextarea" ng-model="photo.photoCommentText"
+                                      placeholder="Write a comment"></textarea>
+                            <div class="pull-right">
+                                <button class="btn btn-sm btn-default" ng-click="saveComment(photo)">Post</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+</div>

@@ -4,29 +4,30 @@
 * Application controller.
 */
 
-var mUrbanBinge = angular.module("UrbanBingeApp",  [
-				/* List dependencies */
-				'ubapiProvider', 
-				'ubConfigProvider',
-				'ubMainMenu',
-				'ubEvents',
-				'ubUtils',
-				'ubAddaView',
-				'ubOrganizer',
-				'ngResource',
-				'ngRoute',
-				'ngCookies',
-				'ubanalytics',
-				'ubAdda',
-				'ubUserProfile',
-				'ubOrganizerProfile',
-				'ublogin',
-				'ubsecurityProvider',
-				'ubtoaster',
-				'wu.masonry',
-    				'ui.bootstrap',
-    				'ngSanitize',
-    				'textAngular'
+var mUrbanBinge = angular.module("UrbanBingeApp", [
+    /* List dependencies */
+    'ubapiProvider',
+    'ubConfigProvider',
+    'ubMainMenu',
+    'ubEvents',
+    'ubUtils',
+    'ubAddaView',
+    'ubOrganizer',
+    'ubOrganizerTheme',
+    'ngResource',
+    'ngRoute',
+    'ngCookies',
+    'ubanalytics',
+    'ubAdda',
+    'ubUserProfile',
+    'ubOrganizerProfile',
+    'ublogin',
+    'ubsecurityProvider',
+    'ubtoaster',
+    'wu.masonry',
+    'ui.bootstrap',
+    'ngSanitize',
+    'textAngular'
 ]);
 
 (function(exports){
@@ -140,12 +141,13 @@ mUrbanBinge.config(['$routeProvider',
 		when('/addEvent',{templateUrl: 'html/addNewEventPage.html',controller:'addEventCtrl',access:access.public}).
 		when('/adda/:cityId',{templateUrl: 'html/adda.html',controller:'addaCtrl',access:access.public}).
             	when('/addaview/:addaId',{templateUrl: 'html/addaview.html',controller:'addaViewCtrl',access:access.public}).
-            
-            	when('/addaview/:addaId/event/:eventId',{templateUrl: 'html/addaeventview.html',controller:'addaEventViewCtrl',access:access.public}).
-            	
+            when('/addaview/:addaId/admin',{templateUrl: 'html/addaview.html',controller:'addaViewCtrl',access:access.public}).
+            when('/addaview/:addaId/event/:eventId',{templateUrl: 'html/addaeventview.html',controller:'addaEventViewCtrl',access:access.public}).
+            when('/addaview/:addaId/event/:eventId/admin',{templateUrl: 'html/addaeventview.html',controller:'addaEventViewCtrl',access:access.public}).
 		when('/users/:uid',{templateUrl: 'html/userProfile.html',controller:'userCtrl',access:access.user}).
 		when('/organizer/:uid',{templateUrl: 'html/organizerProfile.html',controller:'organizerCtrl',access:access.organizer}).
-		when('/login',{templateUrl: 'html/login.html',controller:'loginCtrl',access:access.public}).
+            when('/organizertheme/:id', {templateUrl: 'html/organizer_theme.html', controller: 'organizerThemeCtrl', access: access.public}).
+            when('/login', {templateUrl: 'html/login.html', controller: 'loginCtrl', access: access.public}).
 		otherwise({redirectTo: '/'});
 		// Without serve side support html5 must be disabled.
 		$locationProvider.html5Mode(false);

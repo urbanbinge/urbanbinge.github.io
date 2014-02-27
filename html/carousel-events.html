@@ -1,13 +1,19 @@
 <div class="addaview_eventscarousel">
-    <a href="#" class="btnprev"><i class="fa fa-arrow-circle-o-left"></i></a>
-    <a href="#" class="btnnext" ><i class="fa fa-arrow-circle-o-right"></i></a>
+    <a href="#" class="btnprev"><i class="arrowleft"></i></a>
+    <a href="#" class="btnnext"><i class="arrowright"></i></a>
     <ul>
-        <li ng-repeat="event in events" ng-click="selectEvent(event)" >
+        <li ng-repeat="event in events" ng-click="selectEvent(event)">
 
-            <img  ng-src="event.eventPhotos[0].imageURL">
+            <img ng-src="{{ event.eventPhotos[0].imageURL }}">
 
             <span class="addaview_eventtitle">{{event.eventTitle}}</span>
-            <span class="addaview_eventfee">{{event.fee | currency}}</span>
+
+            <div class="addaview_feeblock">
+                <div class="addaview_feeblock_inner"></div>
+                <span class="addaview_feetop">FROM</span>
+                <span class="addaview_eventfee">{{event.fee | currency}}</span>
+            </div>
+
         </li>
     </ul>
 </div>

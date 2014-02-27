@@ -39,7 +39,7 @@
     /*TODO: Calculate height based on window.innerHeight and box-size*/
     height:auto;
     background-color:rgba(220, 220, 220, 0.7);
-    margin-top:90px;
+    /*margin-top:90px;*/
 }
 
 .container_type_sel {
@@ -241,11 +241,11 @@
 
 .event_poster_image{
 	background-color: rgba(10 , 10, 10, 0.75);
-    background-size: 1350px 450px;
+    background-size: 1350px 395px;
     background-repeat: no-repeat;
 	overflow-x: hidden;
     width:1350px;
-    height:450px;
+    height:395px;
     box-sizing:border-box;
     margin-top:40px;
 }

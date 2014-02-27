@@ -1,0 +1,21 @@
+<div class="addacomment_thread">
+    <div class="addacomment_block">
+        <a href="#" class="addacomment_avatar"><img ng-src="{{ comment.memberPicURL }}"/></a>
+
+        <p class="addacomment_top">
+            <!-- author name -->
+            <strong>{{ comment.name }}</strong>
+            <!-- comment date -->
+            <span>{{commentDate | date:'medium'}}</span>
+        </p>
+
+        <div class="addacomment_content">
+            <p class="addacomment_post">{{comment.comment}}</p>
+
+            <p class="addacomment_options">
+                <a class="addacomment_optionreply" ng-click="reply ($event)">Reply</a>
+                <a class="addacomment_optiondelete" ng-confirm-click="Are you sure you want to delete the comment?" confirmed-click="delete()">Delete</a>
+            </p>
+        </div>
+    </div>
+</div>

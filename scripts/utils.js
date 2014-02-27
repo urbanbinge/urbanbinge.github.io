@@ -98,7 +98,7 @@ mubUtils.directive('ubSearchBox', function () {
 
             };
         },
-        templateUrl: 'html/search.html',
+        templateUrl: 'html/search.html'
     };
 });
 
@@ -128,7 +128,7 @@ mubUtils.directive('ubFileUploader', function () {
                 );
             }
         ],
-        templateUrl: 'html/fileuploader.html',
+        templateUrl: 'html/fileuploader.html'
     };
 });
 
@@ -168,7 +168,7 @@ mubUtils.directive('ubFileDestroyer', function () {
                 }
             }
         ],
-        templateUrl: 'html/filedestroyer.html',
+        templateUrl: 'html/filedestroyer.html'
     };
 });
 mubUtils.factory('localizedMessages', ['ubconfig',
@@ -588,3 +588,26 @@ angular.module('ubtoaster', ['ngAnimate'])
             };
         }
     ]);
+
+
+
+
+
+// Parse a date string in the format yyy-MM-ddThh:mm:ss TZD
+// Example: 2010-08-20T10:02:32 -06:-30
+function parseAddaDateString(dateString) {
+    var year = dateString.substring(0,4);
+    var month = dateString.substring(5,7);
+    var day = dateString.substring(8,10);
+    var hour = dateString.substring(11,13);
+    var minute = dateString.substring(14,16);
+    var second = dateString.substring(17,19);
+    var timezoneTmp = dateString.substring(20).trim();
+    var timezone = timezoneTmp.substring(0,1) + timezoneTmp.substring(1).replace('-','').replace('+','');
+
+    var utcString = year +"-" + month + "-" +day + "T" +hour + ":"+minute +":"+second +timezone  ;
+    var dateobj = new Date(Date.parse(utcString));
+
+    return dateobj;
+
+}

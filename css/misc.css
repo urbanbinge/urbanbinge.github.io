@@ -1,70 +1,61 @@
-.top {
-  position: relative;
-}
-.outer_search_box{
-  width: 100%;
-  position: absolute;
-  bottom: 50px;
-}
-.search_box { 
-  color: white;
-  font-style: "arvo";
-  width: 900px;
-  height: 50px;
-  background-color: rgba(10, 10, 10, 0.7);
-  border-radius: 5px;
-  padding-left: 10px;
-  overflow: hidden;
-  margin: 0 auto;
+.search_box {
+    position:absolute;
+    color:white;
+    font-style:"arvo";
+    top:330px;
+    left:200px;
+    width:900px;
+    height:50px;
+    background-color:rgba(10, 10, 10, 0.7);
+    border-radius: 5px;
+    padding-left:10px;
 }
 
 .search_input_box {
-  border-radius:5px;
-  font-size: 11px;
-  width:60px;
-  height:20px;
-  margin-left:10px;
-  margin-right:20px;
-  color: #555;
-  margin-top: 15px;
+    border-radius:5px;
+    width:60px;
+    height:20px;
+    margin-left:10px;
+    margin-right:20px;
+    color:rgba(180, 180, 180, 0.9);
+	margin-top: 15px;
 }
 
 .search_value_box {
-  border-radius:5px;
-  width:240px;
-  height:20px;
-  margin-left:10px;
-  color:#555;
-  text-align:center;
+    border-radius:5px;
+    width:240px;
+    height:20px;
+    margin-left:10px;
+    color:rgba(180, 180, 180, 0.9);
+    text-align:center;
 }
 
 .search_button {
-  float:right;
-  font-style:"arvo";
-  font-weight:bold;
-  font-height:14px;
-  color:black;
-  margin-right:60px;
-  width:80px;
-  height:30px;
-  margin-top:10px;
-  border-radius:3px;
-  line-height:30px;
-  text-align:center;
-  background-image: linear-gradient(bottom, rgb(221,227,45) 15%, rgb(214,210,135) 58%);
-  background-image: -o-linear-gradient(bottom, rgb(221,227,45) 15%, rgb(214,210,135) 58%);
-  background-image: -moz-linear-gradient(bottom, rgb(221,227,45) 15%, rgb(214,210,135) 58%);
-  background-image: -webkit-linear-gradient(bottom, rgb(221,227,45) 15%, rgb(214,210,135) 58%);
-  background-image: -ms-linear-gradient(bottom, rgb(221,227,45) 15%, rgb(214,210,135) 58%);
-
-  background-image: -webkit-gradient(
-   linear,
-   left bottom,
-   left top,
-   color-stop(0.15, rgb(221,227,45)),
-   color-stop(0.58, rgb(214,210,135))
-   );
-
+    float:right;
+    font-style:"arvo";
+    font-weight:bold;
+    font-height:14px;
+    color:black;
+    margin-right:60px;
+    width:80px;
+    height:30px;
+    margin-top:10px;
+    border-radius:3px;
+    line-height:30px;
+    text-align:center;
+    background-image: linear-gradient(bottom, rgb(221,227,45) 15%, rgb(214,210,135) 58%);
+    background-image: -o-linear-gradient(bottom, rgb(221,227,45) 15%, rgb(214,210,135) 58%);
+    background-image: -moz-linear-gradient(bottom, rgb(221,227,45) 15%, rgb(214,210,135) 58%);
+    background-image: -webkit-linear-gradient(bottom, rgb(221,227,45) 15%, rgb(214,210,135) 58%);
+    background-image: -ms-linear-gradient(bottom, rgb(221,227,45) 15%, rgb(214,210,135) 58%);
+    
+    background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.15, rgb(221,227,45)),
+	color-stop(0.58, rgb(214,210,135))
+    );
   cursor:pointer;
 }
 

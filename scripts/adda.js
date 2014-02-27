@@ -16,15 +16,17 @@ function GetAddasByCategoryId(addas_list, id) {
 // Function to get the most recent events
 function GetMostRecentEvent(addas_list) {
     if (addas_list != undefined) {
+        var mostRecentAdda = addas_list[0];
         var mostRecentEvent = addas_list[0].events[0];
         for (var i = 0; i < addas_list.length; i++) {
-            for (var j = 0; i < addas_list[i].events; j++) {
-                if (Date.parse(addas_list[i].events[j].eventDate) <= Date.parse(mostRecentEvent.eventDate)) {
+            for (var j = 0; j < addas_list[i].events.length; j++) {
+                if (parseAddaDateString(addas_list[i].events[j].eventDate) <= parseAddaDateString(mostRecentEvent.eventDate)) {
                     mostRecentEvent = addas_list[i].events[j];
+                    mostRecentAdda = addas_list[i];
                 }
             }
         }
-        return mostRecentEvent;
+        return mostRecentAdda;
     }
     return {};
 }
@@ -136,6 +138,8 @@ function CreateAddaDialogCtrl($scope, $modalInstance, $http, ubconfig) {
 
 }
 
+
+
 mubAdda.directive('addaImageUpload', function () {
     return {
         restrict: 'E',
@@ -143,10 +147,11 @@ mubAdda.directive('addaImageUpload', function () {
         require: '?cdMouseDrag',
         scope: {
             filename: '=',
-            title: '@'
+            title: '@',
+            optionsPreview: '='
         },
-        controller: ['$scope', '$http', 'ubconfig',
-            function ($scope, $http, ubconfig) {
+        controller: ['$scope', '$element', '$http', 'ubconfig',
+            function ($scope, $element, $http, ubconfig) {
 
                 //var url = ubconfig.get('ubapi_url') + /imgserver';
                 var url = 'imgserver/index.php'; // demo
@@ -165,6 +170,9 @@ mubAdda.directive('addaImageUpload', function () {
                         $scope.loadingFiles = false;
                     }
                 );
+                $scope.$watch('optionsPreview', function(newVal){
+                    $element.find('.')
+                })
 
             }
         ],
@@ -272,6 +280,16 @@ mubAdda.directive('ubAddaPoster', function () {
             $scope.dw = ubconfig.get('topmenu');
 
             var cityId = $routeParams.cityId;
+
+            $scope.optionsCoverPhoto = {
+                previewWidth: 500,
+                previewHeight: 1350
+            }
+
+            $scope.optionsLogo = {
+                previewWidth: 100,
+                previewHeight: 100
+            }
 
             $scope.item_style = function () {
                 var style = {
@@ -411,9 +429,8 @@ mubAdda.controller('addaCtrl', ['$scope', '$window', '$timeout', '$http', '$rout
                     } else {
                         // Obtain the suggested event when the results with the search criteria given are not found
                         // Is returned one event but from the webservice could be returned any number of events suggested.
-
                         $scope.searchStatus = 'notFound';
-                        var mostRecent = GetMostRecentEvent();
+                        var mostRecent = GetMostRecentEvent(resultsArray);
                         $scope.addas_search_list_suggested = [  ];
                         $scope.addas_search_list_suggested.push(mostRecent);
                     }
@@ -439,16 +456,25 @@ mubAdda.directive('ubAddaList', function () {
             // Grid Layout by default
             $scope.e_view_type = 0;
 
+            if($scope.listDataSuggested==undefined){
+                console.log('Adda does not exits');
+            }
+
+
             $scope.getMostRecentEvent = function (adda) {
+                if(adda==undefined){
+                    console.log('Adda does not exits');
+                }
                 var response = {};
                 response.eventName = adda.events[0].eventTitle;
                 response.eventImageUrl = adda.events[0].eventPhotos[0].imageURL;
                 response.eventInfo = adda.events[0].eventInfo.substring(0, 60);
-                response.mostRecentDate = Date.parse(adda.events[0].eventDate);
-                var currentDate = Date.parse(adda.events[0].eventDate);
+                response.mostRecentDate = parseAddaDateString(adda.events[0].eventDate);
+                var currentDate =  parseAddaDateString(adda.events[0].eventDate);
                 // get most recent event
                 angular.forEach(adda.events, function (value) {
-                    currentDate = Date.parse(value.eventDate);
+                   // currentDate = Date.parse(value.eventDate);
+                    currentDate = parseAddaDateString(value.eventDate);
                     if (response.mostRecentDate < currentDate) {
                         response.eventName = value.eventTitle;
                         response.mostRecentDate = currentDate;

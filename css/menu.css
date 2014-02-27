@@ -50,9 +50,9 @@
 
 .category_menu {
     display: block;
+    margin-left: 200px;
+    margin-top: 60px;
     overflow: hidden;
-    margin: 0 auto;
-    margin-top: 10px;
     width: 950px;
 }
 
@@ -92,7 +92,7 @@
     background-color:rgba(10, 10, 10, 0.75);
     -webkit-transition:2s;
 	width: 1350px;
-	height: 450px;
+	height: 395px;
 }
 .topmenu_cover_add_poster {
 	z-index:0;
@@ -105,7 +105,7 @@
     /* z-index:; */
     left:0px;
     top:40px;
-    height:495px;
+    height:395px;
 }
 
 .poster_title {
