@@ -8,7 +8,9 @@ mubUtils.directive('ubSearchBox', function () {
         scope: true,
         controller: function ($scope, $timeout, $window, $http, ejsResource, ubconfig, $analytics, ubSharedService) {
             console.log('Search Box');
+			$scope.selectedAddress = '';
             // Datepicker directive
+			
             $scope.datepicker = {
                 Fromdate: new Date(),
                 Todate: new Date()
@@ -54,11 +56,13 @@ mubUtils.directive('ubSearchBox', function () {
                 .indices('events')
                 .types('search');
 
-
-            $scope.search = function () {
+			$scope.$watch('selectedAddress',function(){
+				console.log("ggb $scope.selectedAddress = ",$scope.selectedAddress);
+			});
+            $scope.search = function (term) {
                 // do these operation for searching events
                 if (ubSharedService.getIsAddaSearch() == false) {
-                    $scope.results = client
+                   /* $scope.results = client
                         .query(oQuery.query($scope.queryTerm || '*'))
                         .doSearch(function (obj) {
                             console.log('query term', $scope.queryTerm);
@@ -72,7 +76,11 @@ mubUtils.directive('ubSearchBox', function () {
                             category: 'search',
                             label: $scope.queryTerm
                         });
-                    }
+                    } */
+					return $http.get('search.json').then(function(response) {
+						return response.data;
+					  });
+					
                 } else if (ubSharedService.getIsAddaSearch() == true) { //// do these operation for searching addas
                     console.log('Directive ubSearchBox', 'searching adda events');
 

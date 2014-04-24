@@ -12,9 +12,20 @@
         "registeredOn": "1992-09-24T06:42:44 -06:-30",
         "whatwedo": "Veniam est id est sunt. In id enim officia quis fugiat pariatur sunt laboris. Pariatur quis quis dolor culpa duis tempor est. Duis ipsum dolore aute fugiat ex elit ullamco Lorem esse commodo duis esse minim culpa. In quis esse ipsum culpa qui sunt ipsum eu consequat velit qui cillum minim ullamco. Velit ad dolore ex adipisicing in minim incididunt elit ut consectetur id consequat et.\r\nLabore reprehenderit tempor tempor nulla sunt reprehenderit reprehenderit irure quis ex. Deserunt id occaecat aliquip anim minim culpa tempor voluptate in qui et et. Esse cupidatat nulla irure cupidatat excepteur ullamco sint eiusmod enim in excepteur. Ex do cupidatat nostrud Lorem laborum. Velit irure enim occaecat id ullamco exercitation reprehenderit excepteur ex velit dolore enim nostrud est. Dolor sint dolore non deserunt aliquip minim dolor irure Lorem.\r\n",
         "sponsorLogoURL": "user/sponsor/1/1.jpg",
+        "interests": [
+            "Bloggers", "Innovation", "Business Entrepreneur Networking", "Startup Business",
+            "Startup Ventures", "Startup & Entreprenuers", "Intellectual Discusion",
+            "Startups", "Embedded Systems", "Social Networking","Marketing"
+        ],
         "tags": [
             "est",
             "deserunt"
+        ],
+        "memberOf" : [
+            {
+                "addaName" : "Mysore Mob Hacks",
+                "imageURL": "eventimages/adda/events/6/1.jpg"
+            }
         ],
         "activities": [
             {

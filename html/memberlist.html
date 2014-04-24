@@ -1,0 +1,15 @@
+<div>
+  <div class="event_detail_close icon_28 icon_close" style="cursor:pointer;" ng-click="slist_panel_close()"></div>
+	  <div ng-repeat="item in dw"
+		  class="slist_items">
+		<div class="etitle">{{ item.name }}</div>
+	  </div>
+  <div ng-show="(slistData.length > 5)">
+		<div class="ub_slider_scroll_right">
+			<i class="icon-caret-right icon-3x" ng-click="click_right()"></i>
+		</div>
+		<div class="ub_slider_scroll_left">
+			<i class="icon-caret-left icon-3x" ng-click="click_left()"></i>
+		</div>
+  </div>
+</div>

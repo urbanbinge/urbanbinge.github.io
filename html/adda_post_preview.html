@@ -1,0 +1,33 @@
+<div class="updateBuilderContainer">
+	<div class="outerContainer">
+	<div class="innerContainer">
+		<div class="editContainer" style="position: relative;">
+			<div class="magicTextareaContainer" style="height: 76px;">
+				<div class="magicDiv" style="height: 76px;"></div>
+				<div class="BGContainer" style="display: none;"></div><div text-angular ng-model="htmlEmail"></div>
+			</div>
+			<div class="relatedSkillsAndAddMediaContainer">
+				<div class="addMediaContainer">
+					<label class="lbl" data-ng-click="attach()" href="">Attach</label>
+					<ub-file-uploader>
+					</ub-file-uploader>
+				</div>
+			</div>
+			</div>
+			<div class="actionsContainer">
+				<input type="button" class="actionPostUpdate btn blue disabled" value="Post Article" disabled=""> 
+			</div>
+		</div>
+	</div>
+	<div class="blog-gallery-holder">
+		<div class="comments" data-ng-repeat="post in postsArray">
+			<ub-adda-post post-data="post"></ub-adda-post>
+		</div>
+		<div style="float:right;font-size: 1.1em;font-weight: bold;margin: 10px 0px 30px 0px;" data-ng-show="(true == seeMore)"> 
+			<button ng-click="selectMore()" class="btn btn-default pull-right">see More Posts</button>
+		</div>
+		<div class="comments" data-ng-show="(showRest == true)" data-ng-repeat="post in postsArray">
+				<ub-adda-post post-data="post"></ub-adda-post>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,39 @@
+<div> 
+	<article class="post-3887" id="post-3887" style="width: 627px;">
+	<figure>
+	<img ng-src="{{currentPost.postImage}}" ng-alt="{{currentPost.title}}">
+	</figure>
+
+	<header class="box-headline">
+		<h4 class="secondary published">{{currentPost.title}}</a></h4>
+	</header>
+	<ul>
+		<li>posted by:{{currentPost.name}}</li>
+		<li>on: {{currentPost.messageDate}}</li>
+	</ul>
+	<div class="postcontent">
+		<div data-ng-hide="(readmore == true)"> {{currentPost.content | limitTo:50 }}
+		<p> <a href="" class="more-link" data-ng-click="Readmore()">Read more</a></p></div>
+		<span data-ng-show="(readmore == true)">{{currentPost.content}} 
+			<br>  
+			<div class="addaevent_commentpanel">
+				<textarea class="form-control" ng-model="newcommenttext"></textarea>
+                <div class="addaevent_commentbtnpanel">
+                    <button class="btn btn-default pull-right" ng-click="postComment()">Post</button>
+					<div id="addacomments_threads">
+						<div data-ng-hide="true == showMoreComments">
+							<ub-comments-thread comments='infoComments'></ub-comments-thread>
+						</div>
+						<button class="btn btn-default" data-ng-show="(currentPost.membersComments.length > 5) && (false == showMoreComments)"
+								ng-click="showMore()">View all Comments
+						</button>
+						<div class="addaevent_comments" data-ng-show="true == showMoreComments">
+							<ub-comments-thread comments='currentPost.membersComments'></ub-comments-thread>
+						</div>
+					</div>
+                </div>
+			</div> 
+		</span>
+	</div>
+  </article>
+</div>

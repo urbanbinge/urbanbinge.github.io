@@ -1,5 +1,6 @@
 <div class="adda_view container" ng-init="init()">
-    <div style="position:relative; background-size: 100%; background-image: url('{{adda.addaPicture}}'); width: 100%; height: 400px;">
+	<div class="cover">
+    <div style="position:relative; background-size: 100%; background-image: url('{{adda.addaPicture}}'); width: 100%; height: 300px;">
         <div class="adda_view_header">
 
 
@@ -31,7 +32,7 @@
                         <menu-item  show="show('events')">Events</menu-item>
                     </li>
                     <li ng-class="getMenuClass('noticeboard')">
-                        <menu-item  show="show('noticeboard')">Notice Board</menu-item>
+                        <menu-item  show="show('noticeboard')">Notification</menu-item>
                     </li>
                     <li ng-class="getMenuClass('members')">
                         <menu-item   show="show('members')">Members</menu-item>
@@ -47,55 +48,33 @@
         <li><a href="#/adda">Addas</a></li>
         <li class="active">{{ adda.addaName}}</li>
     </ol>
+	</div>
+	
 
-    <div ng-show="active != 'emailmembers' && active != 'joinadda'">
-        <!--<div class="adda_view_coverphoto">-->
-        <!--<img src="{{adda.addaPicture}}" ng-src="{{adda.addaPicture}}"/>-->
-        <!--</div>-->
-
-
-        <div id="addadescription" class="adda_description">{{adda.addaDescription}}</div>
-
-
-        <div id="addaevents" class="addaview_container">
-
-            <div class="addaview_side">
-                <div class="addaview_upcoming">Upcoming events</div>
-                <div class="addaview_past">Past events</div>
-
-            </div>
-            <div class="addaview_content">
-                <div id="addaview_events">
-
-
-                    <carousel-events events="adda.events"></carousel-events>
-
-                    <carousel-events events="adda.events"></carousel-events>
-
-
-                </div>
-            </div>
-
-        </div>
-
-
-        <div id="addaview_noticeboard">
-            <h3>Notice board</h3>
-
-            <div class="addaview_message sticky{{$index%5+1}}" data-ng-repeat="message in adda.noticeBoard">
-                <div class='pin'></div>
-                <div class='text'>{{message}}</div>
-            </div>
-        </div>
-
-        <div id="adda_members" class="container">
-            <div class="row">
-                <div class="col-md-2">
+<div ng-show="active != 'emailmembers' && active != 'joinadda' && active != 'noticeboarddetails'" style="float:left;margin:0px 20px;WIDTH:100%">
+    <!--<div class="adda_view_coverphoto">-->
+    <!--<img src="{{adda.addaPicture}}" ng-src="{{adda.addaPicture}}"/>-->
+    <!--</div>-->
+		<div class="adda_section" >
+			<div class="adda_organizer_details">
+				<div class="adda_organizer">
+					<div style="float:left;margin-left:70px;"><img class="img-circle org_clientimage ng-scope" ng-src="user/profile/3/1.jpg" alt=" Curtis" src="user/profile/3/1.jpg"></div> 
+				<div class="organizer_membership">Member of 2 more addas</div>
+				</br>
+				<div class="organizer_interests"> <h4>Interests</h4>
+					<ul><li>Reading</li>
+					<li>Racing</li>
+					<li>Trekking</li></ul>
+				</div>
+				</br>
+				</div>
+				<div id="adda_members" class="container">
+            
+                
                     <div style="margin-top: 10px; font-weight: bold;">
                         {{adda.members.length}} Members
                     </div>
-                </div>
-                <div class="col-md-10">
+              
                     <div id="addaview_members">
                         <!--<div masonry id="addaview_members_masonry" masonry-options="{ isInitLayout: false, gutter: 0 }"-->
                         <!--dynamic-layout cpage="active" page="members">-->
@@ -123,19 +102,81 @@
                             </div>
 
                         </div>
-
+						<div class="member-more-link " data-ng-show="(adda.members.length > 9)" data-ng-click=""> All Members..</div>
 
                     </div>
+                <ul style="display: block; margin-top: 10px; margin-bottom: 20px; clear: both;" ng-show="numPageMemberList > 1" class="pagination">
+                    <li><a href="">&laquo;</a></li>
+                    <li><a href="" ng-repeat="num in pageListArray" ng-click="showMemberPage(num)">{{ num }}</a></li>
+                    <li><a href="">&raquo;</a></li>
+                </ul>
+           
+        </div>
+				<div class="Contact_Organizer" href="" data-ng-click="item_click_customize()">Contact Organizer</div>
+				<div ng-show="(customize_state == 1)">
+						<div style="position: fixed; top: 0px; bottom: 0px; right: 0px; left: 0px; background-color: rgb(0, 0, 0); opacity: 0.6; z-index: 3;"></div>
+						<ub-event-customize-panel>
+						</ub-event-customize-panel>
+					</div>
+				
+				
+				
+				
+				
+			</div>
+		<div id="addadescription" class="adda_description">{{adda.addaDescription}}
+			<div class="Commentpost">
+				<ub-post-preview>
+				</ub-post-preview>
+			</div>
+		</div>
+		
+			<div id="addaview_noticeboard">
+					<h5 style="text-align:center;font-weight:bold;">Notification</h5>
+					<div class="hoverNotice">
+						<div class="imgNotice"><img ng-src="{{message.memberPicURL}}"/></div>
+						<div class=""></div>
+						<div class="" style="z-index: 1; position: relative; right: -210px; top: -62px;"><img src="./assets/images/tour_eachmenu_rgt.png"></div>
+					</div>
+					<div class="addaview_message sticky{{$index%5+1}}" data-ng-repeat="message in adda.noticeBoard"ng-click="showNoticeBoardDetail($event, message)">
+						<div class='img_form'><img ng-src="{{message.memberPicURL}}"/></div>
+						<div class='text'>{{message.title}}</div>
+					</div>
+					
+				</div>
+				<div class="clear">
+					
+				</div>
+		</div>
+        <div id="addaevents" class="addaview_container">
+
+            <div class="addaview_side">
+                <div class="addaview_upcoming">Upcoming events</div>
+                 <!--<div class="addaview_past">Past events</div> -->
+			
+            </div>
+			
+            <div class="addaview_content">
+                <div id="addaview_events">
+
+
+                    <carousel-events events="adda.events"></carousel-events>
+
+                    <!-- <carousel-events events="adda.events"></carousel-events> -->
+
+
                 </div>
             </div>
+
         </div>
+
     </div>
 
-    <div ng-show="active == 'joinadda'">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1 id="addaview_joinaddatitle">{{adda.addaName}}</h1>
+<div ng-show="active === 'joinadda'">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 id="addaview_joinaddatitle">{{adda.addaName}}</h1>
 
                     <form id="addaview_joinaddaform" class="form">
 
@@ -168,21 +209,56 @@
         </div>
     </div>
 
-    <div ng-show="active == 'emailmembers'">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div text-angular ng-model="htmlEmail"></div>
-                    <div style="text-align: center; padding: 20px 0; ">
-                        <button class="btn btn-lg btn-primary" ng-click="sendEmail()">
-                            Send email
-                        </button>
-                    </div>
+<div ng-show="active === 'emailmembers'">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div text-angular ng-model="htmlEmail"></div>
+                <div style="text-align: center; padding: 20px 0; ">
+                    <button class="btn btn-lg btn-primary" ng-click="sendEmail()">
+                        Send email
+                    </button>
                 </div>
             </div>
         </div>
+    </div>
 
     </div>
+
+<div ng-show="active == 'noticeboarddetails'">
+
+    <div class="nbdetail-top">
+         {{ selectedNoticeBoard.groupName }} <br/>
+        > {{selectedNoticeBoard.title}}
+    </div>
+
+    <h3 class="nbdetail_title">
+        {{selectedNoticeBoard.title}}
+    </h3>
+
+    <table class="nbdetail-table table table-condensed">
+        <tbody>
+        <tr class="header-row">
+            <td class="column-left"><strong>{{selectedNoticeBoard.name}}</strong></td>
+            <td><span>Posted {{ selectedNoticeBoard.dateFormatted}}</span></td>
+        </tr>
+        <tr>
+            <td class="column-left"><img class="org_memberimage" ng-src="{{selectedNoticeBoard.memberPicURL}}" alt=""/>
+<span class="groupName">{{ selectedNoticeBoard.groupName }}</span>
+                <span class="groupRole">{{ selectedNoticeBoard.userRole }}</span>
+                <span class="userLocation">{{ selectedNoticeBoard.userLocation }}</span>
+            </td>
+            <td >
+                <div class="nb_content"  ng-bind-html="selectedNoticeBoard.message">
+
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+
+</div>
 
 
 </div>
