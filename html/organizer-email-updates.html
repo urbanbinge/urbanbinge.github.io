@@ -1,0 +1,50 @@
+<div data-ng-controller="OrganizerEmailUpdatesCtrl" class="organizer">
+	<h2 class="hiw">Email Updates</h2>
+  <div class="events">
+	<div class="table-responsive">
+	  <table class="table table-borderd table-hover table-condensed">
+	  	<tr>
+	  		<th><strong>Email</strong></th>
+	  		<th><strong>Interval</strong></th>
+	  	</tr>
+	  	<tr data-ng-repeat="emailUpdate in emailUpdates">
+	  		<td>{{emailUpdate.email}}</td>
+	  		<td>{{emailUpdate.interval}}</td>
+	  		<td><button class="btn btn-default" data-ng-click="DeleteEmailUpdate($index)">Delete</button></td>
+	  	</tr>
+	  	<tr data-ng-show="emailUpdates == null">
+	  		<td colspan="3" class="text-center">Loading Email Updates ...</td>
+	  	</tr>
+	  	<tr data-ng-show="emailUpdates.length == 0">
+	  		<td colspan="3" class="text-center">No Email Updates.</td>
+	  	</tr>
+	  </table>
+	</div>
+  <hr>
+  <form class="form-horizontal" role="form">
+	  <div class="form-group">
+	    <label class="col-lg-3 col-md-3 col-sm-4 col-xs-12 control-label">Email</label>
+	    <div class="col-lg-4 col-md-5 col-sm-8 col-xs-12 control-label">
+	      <input type="email" class="form-control" data-ng-model="emailUpdate.email">
+	    </div>
+	  </div>
+	  <div class="form-group">
+	    <label class="col-lg-3 col-md-3 col-sm-4 col-xs-12 control-label">Interval</label>
+	    <div class="col-lg-4 col-md-5 col-sm-8 col-xs-12 control-label">
+	    	<select class="form-control" data-ng-model="emailUpdate.interval">
+	    		<option value="Daily">Daily</option>
+	    		<option value="Weekly">Weekly</option>
+	    		<option value="Monthly">Monthly</option>
+	    	</select>
+	    </div>
+	  </div>
+
+	  <div class="form-group">
+	    <div class="col-lg-offset-2 col-md-offset-3 col-sm-offset-4 col-lg-2 col-md-3 col-sm-4 col-xs-12">
+	      <button type="submit" class="btn btn-info btn-lg" data-ng-click="SaveEmailUpdate()"> Add </button>
+	    </div>
+	  </div>
+	</form>
+	<br>
+  </div>
+</div>

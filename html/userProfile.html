@@ -1,1 +1,28 @@
-<h1><i class="icon_34 icon_left"></i>User Profile</h1>
+<div class="user-profile">
+	<div class="profile">
+		<span class="picture">
+			<img data-ng-src="{{user.profilePicture}}" class="user-profile-pic">
+			<span class="change-picture" bs-modal="'html/user-change-picture.html'">Change Picture</span>
+		</span>
+		<div class="userdetails">
+			<h3 class="hi">&nbsp;{{user.name}}</h3>
+			<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+				<i class="icon-globe"></i> From <strong>{{user.city}}</strong><br>
+				<i class="icon-comment"></i> {{user.reviews.length}} reviews
+			</div>
+			<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+				<i class="icon-time"></i> Joined {{user.registeredOn | timeLeft}} ago.
+			</div>
+			<button class="btn btn-default" bs-modal="modal" data-template='html/user-change-password.html'>Change Password</button>
+		</div>
+	</div>
+	<br>
+	<br>
+	<div class="userProfileNavTabs">
+		<div data-fade="1" ng-model="tabs.activeTab" bs-tabs>
+			<div ng-repeat="tab in tabs" data-title="{{tab.title}}"></div>
+		</div>
+		<div ng-include src="tabs[tabs.activeTab].page"></div>
+	</div
+	  <ubtoaster-container toaster-options="{'time-out': 3000}"></ubtoaster-container>
+</div>

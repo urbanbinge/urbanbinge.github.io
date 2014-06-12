@@ -1,0 +1,71 @@
+<div data-ng-controller="OrganizerProfileCtrl" class="organizer-profile">
+	<br>
+	<div class="switch-container organizer-profile" data-ng-switch data-on="profileView">
+		<div data-ng-switch-when="events"  class="events">
+			<div class="switchcategory" data-ng-click="loadView('addas')">Switch to Addas</div>
+			<div data-fade="1" ng-model="eventTabs.activeTab" bs-tabs style="height: 40px; margin-top: 15px;">
+				<div ng-repeat="eventTab in eventTabs" data-title="{{eventTab.title}}"></div>
+			</div>
+			<div class="row events">
+				<div class="pull-right text-right" style="margin-top: 7px;">
+					{{eventsAttended.length}} Events Attended. &nbsp; | &nbsp;
+					{{eventsPosted.length}} Events Created. &nbsp; &nbsp;
+				</div>
+				<br>
+				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" data-ng-repeat="event in events">
+					<div class="event">
+						<div class="title">{{event.eventTitle | limitTo:20}}</div>
+						<div class="images">
+							<div class="image" data-ng-repeat="image in event.eventPhotos">
+								<img data-ng-src="{{image.imageURL}}"> 
+							</div>
+						</div>
+						<ul class="actions list-group">
+							<li class="list-group-item"><a>Edit</a></li>
+							<li class="list-group-item"><a>Manage</a></li>
+							<li class="list-group-item"><a>Duplicate</a></li>
+							<li class="list-group-item"><a>Delete</a></li>
+						<ul>
+					</div>
+				</div>
+			</div>
+			<div data-ng-show="events == null" class="loading">Loading Events ...</div>
+			<div data-ng-show="events.length == 0" class="none">No Events yet.</div>
+			<div class="text-center more">
+				<button data-ng-show="events.length > 0 && events.length%pageSize == 0" data-ng-click="moreEvents(eventTabs.activeTab)" class="btn btn-default">More Events</button>
+			</div>
+			<br><br>
+		</div>
+
+		<div data-ng-switch-when="addas" class="addas">
+			<div class="switchcategory" data-ng-click="loadView('events')">Switch to Events</div>
+			<br>
+			<div data-fade="1" ng-model="addaTabs.activeTab" bs-tabs>
+				<div ng-repeat="addaTab in addaTabs" data-title="{{addaTab.title}}"></div>
+			</div>
+			<div class="row events">
+				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" data-ng-repeat="adda in addas">
+					<div class="event">
+						<div class="title">{{adda.addaname | limitTo:20}}</div>
+						<div class="image">
+							<img data-ng-src="{{adda.addaPicture}}"> 
+						</div>
+						<ul class="actions list-group">
+							<li class="list-group-item"><a>Edit</a></li>
+							<li class="list-group-item"><a>Manage</a></li>
+							<li class="list-group-item"><a>Duplicate</a></li>
+							<li class="list-group-item"><a>Delete</a></li>
+						<ul>
+					</div>
+				</div>
+			</div>
+			<div data-ng-show="addas == null" class="loading">Loading Addas ...</div>
+			<div data-ng-show="addas.length == 0" class="none">No Addas yet.</div>
+			<div class="text-center more">
+				<button data-ng-show="addas.length > 0 && addas.length%pageSize == 0" data-ng-click="moreAddas(addaTabs.activeTab)" class="btn btn-default">More Addas</button>
+			</div>
+			<br><br>
+		</div>
+
+	</div>
+</div>

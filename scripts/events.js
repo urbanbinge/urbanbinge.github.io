@@ -450,6 +450,8 @@ mubEvents.directive('ubEventList',function(){
 			//setTimeout("$scope.loadmore()",10000);
 			$scope.loadmore();
 		    
+		}else if(($scope.listData != undefined) && ($scope.listData.length == 0)) {
+			$scope.dw.items = [];
 		}
 	    });
 		
@@ -831,9 +833,25 @@ mubEvents.directive('ubAskTheOrganizerPanel',function(){
     };
 });
 
+function getEventInfo($scope,ubapi,$location) {
+    $scope.eventinfo = [];
+	var i = 0;
+	var urlParts = $location.url().split('/');
+	
+    loadeventinfo = function() {
+		ubapi.event_by_id(
+			function (count, obj) {
+				$scope.eventinfo.push(new TEventList(obj[i]));
+			},
+			function _error() {
+				console.log("Error = ");
+			},urlParts[2]);
+	}
+	loadeventinfo();
+}
 /* eventDetailCtrl territory*/
-mubEvents.controller('eventDetailCtrl',['$scope','$routeParams','$location','ubSharedService','ubconfig','$analytics',
-	function eventDetailCtrl($scope,$routeParams,$location,ubSharedService,ubconfig,$analytics){
+mubEvents.controller('eventDetailCtrl',['$scope','$routeParams','$location','ubSharedService','ubconfig','$analytics','$timeout','ubapi',
+	function eventDetailCtrl($scope,$routeParams,$location,ubSharedService,ubconfig,$analytics,$timeout,ubapi){
 		var config = ubconfig.get('ratingconfig');
 		// user booking panel
 		$scope.booking_state = 0;
@@ -855,8 +873,14 @@ mubEvents.controller('eventDetailCtrl',['$scope','$routeParams','$location','ubS
 				$scope.event_item_active = findEventById(ubSharedService.eventlist,$routeParams.eventId);
 			}
 			if($scope.event_item_active == undefined){
-				$location.path('/404');
-				$location.replace();
+				//$location.path('/404');
+				//$location.replace();
+				getEventInfo($scope,ubapi,$location);
+				$scope.$watch('eventinfo',function() {
+					if($scope.eventinfo != undefined) {
+						$scope.event_item_active = $scope.eventinfo;
+					}
+				});
 			}
 		};
 		$scope.$on('update_booking_state',function(ev,state) {

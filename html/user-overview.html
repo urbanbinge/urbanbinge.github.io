@@ -1,0 +1,28 @@
+<div data-ng-controller="UserOverViewCtrl" class="user-overview">
+	<br><br>
+	<div data-fade="1" ng-model="tabs.activeTab" bs-tabs>
+		<div ng-repeat="tab in tabs" data-title="{{tab.title}}"></div>
+	</div>
+	<div class="row events">
+		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" data-ng-repeat="event in events">
+			<div class="event">
+				<div class="remaining pull-right">{{event.eventDate | timeLeft}} remaining</div>
+				<div class="title">{{event.eventTitle}}</div>
+				<div class="images">
+					<div class="image" data-ng-repeat="image in event.eventPhotos">
+						<img data-ng-src="{{image.imageURL}}"> 
+					</div>
+				</div>
+				<div class="row">
+					<div class="pull-right fees">&#8377; {{event.fee | number:2}}</div>
+					<span class="booked">{{event.ticketsBooked}} tickets booked</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div data-ng-show="events == null" class="loading">Loading Events ...</div>
+	<div data-ng-show="events.length == 0" class="none">No Events yet.</div>
+	<div class="text-center more">
+		<button class="loadmore" data-ng-show="events.length > 0 && events.length%4 == 0" data-ng-click="moreEvents(tabs.activeTab)">More Events</button>
+	</div>
+</div>

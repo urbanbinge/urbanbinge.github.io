@@ -1,0 +1,33 @@
+<div data-ng-controller="OrganizerEntranceListCtrl" class="organizer">
+	<h2 class="hiw">Entrance List</h2>
+	<div class="table-responsive">
+	  <table class="table">
+	  	<tr>
+	  		<th><strong>S. No.</strong></th>
+	  		<th><strong>Reg. No</strong></th>
+	  		<th><strong>Date</strong></th>
+	  		<th><strong>Ticket Type</strong></th>
+	  		<th><strong>Contact Details</strong></th>
+	  		<th><strong>Transaction No.</strong></th>
+	  		<th><strong>Qty.</strong></th>
+	  		<th class="text-right"><strong>Amount (Rs.)</strong></th>
+	  	</tr>
+	  	<tr data-ng-repeat="entrance in entranceList">
+	  		<td>{{$index + 1}}</td>
+	  		<td>{{entrance.regNo}}</td>
+	  		<td>{{entrance.date}}</td>
+	  		<td>{{entrance.ticketType}}</td>
+	  		<td>{{entrance.userName}}</td>
+	  		<td>{{entrance.transactionId}}</td>
+	  		<td>{{entrance.quantity}}</td>
+	  		<td class="text-right">{{entrance.amount}}</td>
+	  	</tr>
+	  	<tr data-ng-show="entranceList.length == 0" class="none">
+	  		<td colspan="8" class="text-center">No Entrance List.</td>
+	  	</tr>
+	  	<tr data-ng-show="entranceList == null" class="loading">
+	  		<td colspan="8" class="text-center">Loading Entrance List ...</td>
+	  	</tr>
+	  </table>
+	</div>
+</div>

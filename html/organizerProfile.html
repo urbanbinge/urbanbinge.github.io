@@ -1,1 +1,33 @@
-<h1><i class="icon_34 icon_left"></i>Organizer Profile</h1>
+<div class="organizer-profile">
+	<div class="organizerMenuSection">
+		<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">
+			<div class="organizer-pic">
+				<img data-ng-src="{{organizer.profilePicture}}">
+				<span class="change-organizer-picture" bs-modal="'html/organizer-change-picture.html'">Change Picture</span>
+			</div>
+			<ul class="list-group organizer-menu">
+				<li class="list-group-item"><strong>My Account</strong></li>
+				<li class="list-group-item"><a data-ng-click="loadPage('profile')">My Profile</a></li>
+				<li class="list-group-item"><a data-ng-click="loadPage('tickets')">My Tickets</a></li>
+				<li class="list-group-item"><a data-ng-click="loadPage('settings')">Account Settings</a></li>
+				<li class="list-group-item"><a data-ng-click="loadPage('sales-report')">Sales Report - consolidated</a></li>
+				<li class="list-group-item"><strong>Reports</strong></li>
+				<li class="list-group-item"><a data-ng-click="loadPage('sales-report')">Sales Report</a></li>
+				<li class="list-group-item"><a data-ng-click="loadPage('email-updates')">Email Updates</a></li>
+				<li class="list-group-item"><a data-ng-click="loadPage('analytics')">Analytics</a></li>
+				<li class="list-group-item"><strong>Tickets</strong></li>
+				<li class="list-group-item"><a data-ng-click="loadPage('entrance-list')">Entrance List</a></li>
+				<li class="list-group-item"><a data-ng-click="loadPage('comp-ticket')">Comp. Ticket</a></li>
+				<li class="list-group-item"><a data-ng-click="loadPage('ask-the-organizer')">Ask The Organizer</a></li>
+			</ul>
+			<div style="margin:10px;"></div>
+		</div>
+	</div>
+	<div class="organizerContentSection">
+		<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+			<h3 class="hiw">{{organizer.name}}</h3>
+			<h4 class="hiw">{{organizer.city}}</h4>
+			<div ng-include src="organizerPage"></div>
+		</div>
+	</div>
+</div>

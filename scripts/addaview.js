@@ -1,12 +1,17 @@
 var ubAddaView = angular.module("ubAddaView", []);
 
-ubAddaView.factory("addaViewService", [ '$http', '$q', function ($http, $q) {
+ubAddaView.factory("addaViewService", [ '$http', '$q','security', function ($http, $q,security) {
     var addaviewsrv = {};
     var currentEvent;
 
     // Logic to consult if is an administrator
     addaviewsrv.isOrganizer = function () {
-        return true;
+        /*if( (security.isOrganizer() || security.isOwner() || security.isHR() ) && security.currentUser.uid == 2)
+			return true;
+		else
+			return false; */
+		return true;
+			
     }
 
     addaviewsrv.getOrganizerData = function () {
@@ -173,7 +178,7 @@ ubAddaView.controller("addaViewCtrl", ['$scope', '$routeParams', '$modal', '$loc
 		
 		$scope.$watch('adda',function(){
 			$scope.getMembersList = function () {
-				return $scope.adda.members.slice(0,9);
+				return $scope.adda.members.slice(0,12);
 			}
 			$scope.getMembersList();
 		});
@@ -408,11 +413,7 @@ ubAddaView.controller("addaEventViewCtrl", ['$scope', '$routeParams', '$location
 
         ubSharedService.sethistory('/');
 
-        if ($location.path().indexOf('/admin') > -1) {
-            $scope.isOrganizer = true;
-        } else {
-            $scope.isOrganizer = false;
-        }
+        $scope.isOrganizer = addaViewService.isOrganizer();
 
         addaViewService.getAddaEventById($routeParams.addaId, $routeParams.eventId).then(function (d) {
             $scope.event = d.eventObj;

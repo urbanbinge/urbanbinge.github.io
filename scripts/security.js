@@ -7,8 +7,12 @@ angular.module('ubsecurityProvider', [
 function getModifiedUserFromUserObject(user,userRoles){
 	if(user != undefined){
 		var moduser = user;
-		if(user.role == "U"){
-			moduser.role = userRoles.U;
+		if(user.role == "M"){
+			moduser.role = userRoles.M;
+		}else if(user.role == "H"){
+			moduser.role = userRoles.H;
+		}else if(user.role == "A"){
+			moduser.role = userRoles.A;
 		}else if(user.role == "O"){
 			bitmask = userRoles.O;
 		}else if(user.role == "public"){
@@ -82,7 +86,7 @@ angular.module('security.service', [
 	
 	profile:function() {
       //openLoginDialog();
-	  if(service.currentUser.role == "U") {
+	  if(service.currentUser.role == "M" || service.currentUser.role == "H" || service.currentUser.role == "A") {
 		$location.path('/user');
 	  }else if(service.currentUser.role == "O") {
 		$location.path('/organizer');
@@ -180,9 +184,33 @@ angular.module('security.service', [
 			return true;
 		}
     },
-    // Is the current user an adminstrator?
-    isAdmin: function() {
-      return !!(service.currentUser && service.currentUser.admin);
+    // Is the current user a member?
+    isMember: function() {
+      if(service.currentUser.role == "M")
+		return true;
+	  else
+		return false;
+    },
+	// Is the current user an HR of a company?
+    isHR: function() {
+      if(service.currentUser.role == "H")
+		return true;
+	  else
+		return false;
+    },
+	// Is the current user owner of an adda?
+    isOwner: function() {
+      if(service.currentUser.role == "A")
+		return true;
+	  else
+		return false;
+    },
+	// Is the current user organizer of an event?
+    isOrganizer: function() {
+      if(service.currentUser.role == "O")
+		return true;
+	  else
+		return false;
     }
   };
 

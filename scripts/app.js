@@ -40,8 +40,10 @@ var mUrbanBinge = angular.module("UrbanBingeApp", [
         */
         roles :[
 			'public',
-            'U',
-            'O'],
+            'M',
+            'O',
+			'H',
+			'A'],
 
         /*
         Build out all the access levels you want referencing the roles listed above
@@ -49,7 +51,7 @@ var mUrbanBinge = angular.module("UrbanBingeApp", [
          */
         accessLevels : {
             'public' : "*",
-            'user' : ['U'],
+            'user' : ['M','H','A'],
             'organizer': ['O']
         }
 
@@ -144,8 +146,8 @@ mUrbanBinge.config(['$routeProvider',
             when('/addaview/:addaId/admin',{templateUrl: 'html/addaview.html',controller:'addaViewCtrl',access:access.public}).
             when('/addaview/:addaId/event/:eventId',{templateUrl: 'html/addaeventview.html',controller:'addaEventViewCtrl',access:access.public}).
             when('/addaview/:addaId/event/:eventId/admin',{templateUrl: 'html/addaeventview.html',controller:'addaEventViewCtrl',access:access.public}).
-		when('/users/:uid',{templateUrl: 'html/userProfile.html',controller:'userCtrl',access:access.user}).
-		when('/organizer/:uid',{templateUrl: 'html/organizerProfile.html',controller:'organizerCtrl',access:access.organizer}).
+		when('/users/:uid',{templateUrl: 'html/userProfile.html',controller:'userCtrl',access:access.public}).
+		when('/organizer/:uid',{templateUrl: 'html/organizerProfile.html',controller:'organizerCtrl',access:access.public}).
             when('/organizertheme/:id', {templateUrl: 'html/organizer_theme.html', controller: 'organizerThemeCtrl', access: access.public}).
             when('/login', {templateUrl: 'html/login.html', controller: 'loginCtrl', access: access.public}).
 		otherwise({redirectTo: '/'});
@@ -173,11 +175,16 @@ mUrbanBinge.factory('ubSharedService',['$rootScope','$cookieStore', function($ro
     sharedService.currentCity = '';
 
     sharedService.eventlist;
+	sharedService.addalist;
 	sharedService.isAddaSearch = false;
 	sharedService.history = '/';
 
     sharedService.updateEventList = function(eventlst) {
         this.eventlist = eventlst;
+    };
+	
+	sharedService.updateAddaList = function(addalst) {
+        this.addalist = addalst;
     };
 	sharedService.setLoginParams = function(status,user) {
 		if (user == null) {

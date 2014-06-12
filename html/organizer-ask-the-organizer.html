@@ -1,0 +1,47 @@
+<div data-ng-controller="OrganizerAskCtrl" class="organizer organizer-ask">
+	<h2 class="hiw">Ask The Organizer - {{event.eventTitle}} on {{event.eventDate}}</h2>
+	<div class="row events">
+		<div class="col-lg-8 col-md-10 col-sm-12 col-xs-12">
+				<br>
+			  <div class="queries" data-ng-repeat="query in queries">
+		  		<div class="query">
+		  			<div class="pull-left">
+		  				<img data-ng-src="{{query.memberPicURL}}">
+		  			</div>
+		  			<div class="text">
+		  				<div class="pull-right comment-time">{{query.commentDate | timeLeft }} ago</div>
+		  				<a href="#" class="user">{{query.name}}</a><br>
+		  				{{query.comment}}
+		  			</div>
+		  			<hr>
+		  			<div class="comments" data-ng-repeat="comment in query.commentReplies">
+		  				<blockquote  data-ng-show="query.showAll || query.commentReplies.length - $index < 4">
+			  				<div class="comment">
+			  					<div class="pull-left">
+			  						<img data-ng-src="{{comment.memberPicURL}}">
+			  					</div>
+			  					<div class="text">
+			  						<div class="pull-right comment-time">{{query.commentDate | timeLeft }} ago</div>
+					  				<a href="#" class="user">{{comment.name}}</a><br>
+			  						{{comment.comment}}
+			  					</div>
+			  				</div>
+			  			</blockquote>
+		  			</div>
+		  			<div class="show-all-comments text-center" data-ng-click="ShowAll($index)" data-ng-show="query.commentReplies.length > 3">
+		  				<span data-ng-show="!query.showAll">Show All </span>
+		  				<span data-ng-show="query.showAll">Show only last 3 </span>
+		  				 Comments
+		  			</div>
+		  			<div class="comment-response">
+		  				<textarea class="form-control" placeholder="Write your response here"></textarea>
+		  				<button class="btn btn-success">Submit</button>
+		  			</div>
+		  		</div>
+			  </div>
+			  <div class="text-center more">
+				<button data-ng-show="queries.length > 0 && queries.length%5 == 0" data-ng-click="moreQueries()" class="btn btn-default">More Queries</button>
+			   </div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,28 @@
+<div data-ng-controller="OrganizerTicketsCtrl" class="organizer organizerTickets user-overview">
+	<br><br>
+	<div data-fade="1" ng-model="ticketTabs.activeTab" bs-tabs>
+		<div ng-repeat="tab in ticketTabs" data-title="{{tab.title}}"></div>
+	</div>
+	<div class="row events">
+		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" data-ng-repeat="ticket in tickets">
+			<div class="event">
+				<div class="remaining pull-right">{{event.eventDate | timeLeft}} remaining</div>
+				<div class="title">{{ticket.eventTitle}}</div>
+				<div class="images">
+					<div class="image" data-ng-repeat="image in ticket.eventPhotos">
+						<img data-ng-src="{{image.imageURL}}"> 
+					</div>
+				</div>
+				<div class="row">
+					<div class="pull-right fees">&#8377; {{ticket.fee | number:2}}</div>
+					<span class="booked">{{ticket.ticketsBooked}} tickets</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div data-ng-show="tickets == null" class="loading">Loading Tickets ...</div>
+	<div data-ng-show="tickets.length == 0" class="none">No Tickets.</div>
+	<div class="text-center more">
+		<button data-ng-show="tickets.length > 0 && tickets.length%6 == 0" data-ng-click="moreTickets(ticketTabs.activeTab)" class="btn btn-default">More Tickets</button>
+	</div>
+</div>

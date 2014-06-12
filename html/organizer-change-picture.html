@@ -1,0 +1,28 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <form class="form-horizontal" name="changePasswordForm" data-ng-submit="changePassword(hide);">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3>Edit Profile Picture</h3>
+        </div>
+        <div class="modal-body">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            Upload Picture
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <input type="file">
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 help">
+              <br>JPG/PNG formats only.
+              <br>Maximum size 5MB.
+              <br>Greater than 200px in height and width.
+            </div>
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-ng-click="hide()">Close</button>
+        </div>
+    </form>
+  </div>
+</div>

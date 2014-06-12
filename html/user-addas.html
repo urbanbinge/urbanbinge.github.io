@@ -1,0 +1,21 @@
+<div data-ng-controller="UserAddasCtrl">
+	<br><br>
+	<div data-fade="1" ng-model="tabs.activeTab" bs-tabs>
+		<div ng-repeat="tab in tabs" data-title="{{tab.title}}"></div>
+	</div>
+	<div class="row events">
+		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" data-ng-repeat="adda in addas">
+			<div class="event">
+				<div class="title">{{adda.addaname}}</div>
+				<div class="image">
+					<img data-ng-src="{{adda.addaPicture}}"> 
+				</div>
+			</div>
+		</div>
+	</div>
+	<div data-ng-show="addas == null" class="loading">Loading Addas ...</div>
+	<div data-ng-show="addas.length == 0" class="none">No Addas yet.</div>
+	<div class="text-center more">
+		<button data-ng-show="addas.length > 0 && addas.length%4 == 0" data-ng-click="moreAddas(tabs.activeTab)" class="btn btn-default">More Addas</button>
+	</div>
+</div>

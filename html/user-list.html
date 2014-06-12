@@ -1,0 +1,20 @@
+<div data-ng-controller="UserListsCtrl">
+	<br><br>
+	<div class="row events">
+		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" data-ng-repeat="event in events">
+			<div class="event">
+				<div class="title">{{event.eventTitle}}</div>
+				<div class="images">
+					<div class="image" data-ng-repeat="image in event.eventPhotos">
+						<img data-ng-src="{{image.imageURL}}"> 
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div data-ng-show="events == null" class="loading">Loading Events ...</div>
+	<div data-ng-show="events.length == 0" class="none">No Events yet.</div>
+	<div class="text-center more">
+		<button data-ng-show="events.length%4 == 0" data-ng-click="moreEvents()" class="btn btn-default">More Events</button>
+	</div>
+</div>

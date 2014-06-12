@@ -1,0 +1,24 @@
+<div data-ng-controller="UserReviewsCtrl" class="user-reviews">
+	<br><br>
+	<div class="row reviews">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" data-ng-repeat="review in reviews">
+			<div class="review">
+				<img data-ng-src="{{review.eventPhotos[0].imageURL}}">
+				<div class="desc">
+					<div class="view" data-ng-show="!review.edit">{{review.comment}}</div>
+					<div class="edit" data-ng-show="review.edit">
+						<textarea class="form-control" data-ng-model="review.editComment">{{review.comment}}</textarea>
+						<button class="btn btn-default" data-ng-click="EditReview($index)">Cancel</button> <button class="btn btn-primary" data-ng-click="SaveReview($index)">Save</button>
+					</div>
+				</div>
+				<div class="links">{{review.commentDate | timeLeft }} ago / <a data-ng-click="EditReview($index)">Edit</a> / <a data-ng-click="DeleteReview($index)">Delete</a></div>
+				<div class="title">{{review.eventTitle}}, {{review.eventVenue}} </div>
+			</div>
+		</div>
+	</div>
+	<div data-ng-show="reviews == null" class="loading">Loading Reviews ...</div>
+	<div data-ng-show="reviews.length == 0" class="none">No Reviews yet.</div>
+	<div class="text-center more">
+		<button data-ng-show="reviews.length%4 == 0" data-ng-click="moreReviews()" class="btn btn-default">More Reviews</button>
+	</div>
+</div>

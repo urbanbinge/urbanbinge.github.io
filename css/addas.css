@@ -152,9 +152,9 @@ body{
 }
 
 .most_recent_event {
-    border: 1px solid #CCCCCC;
+    /*border: 1px solid #CCCCCC;*/
     margin: 5px;
-    margin-top: 15px;
+    margin-top: 35px;
     padding: 5px;
     position: relative;
 }
@@ -171,11 +171,11 @@ body{
 
 .most_recent_event .recent_event_title {
     position: absolute;
-    left: 20px;
-    bottom: 20px;
-    color: #FFF;
-    text-shadow: 2px 2px #333;
-    font-weight: bold;
+    bottom: 10px;
+    color: #000;
+    /*text-shadow: 2px 2px #333;
+	left: 20px;
+    font-weight: bold;*/
 }
 
 .most_recent_event .recent_event_info {
@@ -1322,13 +1322,13 @@ width: 350px;
     perspective: 800px;
     float: left; 
     position: relative; */
-    width: 33%;
+    width: 25%;
 	float:left;
     padding-bottom: 4px;
     line-height: 0;
-    font-size: 24px;
+    font-size: 14px;
     color: #333;
-	height:125px;
+	height:50px;
 }
 
 .organizer_interests ul{list-style:none;padding:0px;}
@@ -1384,19 +1384,19 @@ width: 350px;
 }
 
 .member_container .member_card .back h2.member_name{
-    font-size: 24px;
+    font-size: 12px;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 4px;
 }
 .member_container .member_card .back h3{
-    font-size: 18px !important;
+    font-size: 12px !important;
     text-align: center;
     padding: 0;
     margin: 0;
     margin-bottom: 5px;
 }
 .member_container .member_card .back p.member_interest{
-    font-size: 16px !important;
+    font-size: 10px !important;
     text-align: center;
     padding: 0;
     margin: 0;

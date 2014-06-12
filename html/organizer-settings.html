@@ -1,0 +1,185 @@
+<div data-ng-controller="OrganizerSettingstrl" class="organizer organizerSettings">
+	<br><br>
+	<div data-fade="1" ng-model="settingTabs.activeTab" bs-tabs>
+		<div ng-repeat="tab in settingTabs" data-title="{{tab.title}}"></div>
+	</div>
+	<div class="switch-container organizer-settings " data-ng-switch data-on="settingsView">
+		<br>
+		<div data-ng-switch-when="contactInfo"  class="contactInfo">
+			<form class="form-horizontal" role="form">
+				<div class="row events">
+					<div class="col-lg-5 col-md-6 col-sm-12 col-xs-12">
+						<div class="form-group">
+						    <label class="col-lg-4 col-md-5 col-sm-6 col-xs-12 control-label">First Name</label>
+						    <div class="col-lg-8 col-md-7 col-sm-6 col-xs-12 control-label">
+						      <input type="text" class="form-control" data-ng-model="contact.firstName">
+						    </div>
+						</div>
+						<div class="form-group">
+						    <label class="col-lg-4 col-md-5 col-sm-6 col-xs-12 control-label">Last Name</label>
+						    <div class="col-lg-8 col-md-7 col-sm-6 col-xs-12 control-label">
+						      <input type="text" class="form-control" data-ng-model="contact.lastName">
+						    </div>
+						</div>
+						<div class="form-group">
+						    <label class="col-lg-4 col-md-5 col-sm-6 col-xs-12 control-label">Company</label>
+						    <div class="col-lg-8 col-md-7 col-sm-6 col-xs-12 control-label">
+						      <input type="text" class="form-control" data-ng-model="contact.company">
+						    </div>
+						</div>
+						<div class="form-group">
+						    <label class="col-lg-4 col-md-5 col-sm-6 col-xs-12 control-label">Website</label>
+						    <div class="col-lg-8 col-md-7 col-sm-6 col-xs-12 control-label">
+						      <input type="url" class="form-control" data-ng-model="contact.website">
+						    </div>
+						</div>
+						<div class="form-group">
+						    <label class="col-lg-4 col-md-5 col-sm-6 col-xs-12 control-label">Email</label>
+						    <div class="col-lg-8 col-md-7 col-sm-6 col-xs-12 control-label">
+						      <input type="email" class="form-control" data-ng-model="contact.email">
+						    </div>
+						</div>
+						<div class="form-group">
+						    <label class="col-lg-4 col-md-5 col-sm-6 col-xs-12 control-label">Phone</label>
+						    <div class="col-lg-8 col-md-7 col-sm-6 col-xs-12 control-label">
+						      <input type="text" class="form-control" data-ng-model="contact.phone">
+						    </div>
+						</div>
+						<div class="form-group">
+						    <label class="col-lg-4 col-md-5 col-sm-6 col-xs-12 control-label">Cover Photo</label>
+						    <div class="col-lg-8 col-md-7 col-sm-6 col-xs-12">
+						      <button class="btn btn-default">Upload</button>
+						    </div>
+						</div>
+						<hr>
+						<div class="form-group">
+						    <div class="col-lg-offset-4 col-md-offset-5 col-sm-offset-6 col-lg-2 col-md-3 col-sm-4 col-xs-12">
+						      <button type="submit" class="btn btn-info btn-lg" data-ng-click="SaveContactInfo()"> Save </button>
+						    </div>
+						</div>
+					</div>
+					<div class="col-lg-7 col-md-6 col-sm-12 col-xs-12" style="background: #eee;padding-top: 11px;">
+						<div class="form-group">
+						    <label class="col-lg-12 col-md-12 col-sm-12 col-xs-12">About the organizer</label>
+						    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 control-label">
+						      <textarea class="form-control" data-ng-model="contact.about" rows="5"></textarea>
+						    </div>
+						</div>
+						<h5>Bank Details</h5>
+						<div class="form-group">
+						    <label class="col-lg-4 col-md-5 col-sm-6 col-xs-12 control-label">Account Holder Name</label>
+						    <div class="col-lg-8 col-md-7 col-sm-6 col-xs-12 control-label">
+						      <input type="text" class="form-control" data-ng-model="contact.accountName">
+						    </div>
+						</div>
+						<div class="form-group">
+						    <label class="col-lg-4 col-md-5 col-sm-6 col-xs-12 control-label">Account Number</label>
+						    <div class="col-lg-8 col-md-7 col-sm-6 col-xs-12 control-label">
+						      <input type="text" class="form-control" data-ng-model="contact.accountNumber">
+						    </div>
+						</div>
+						<div class="form-group">
+						    <label class="col-lg-4 col-md-5 col-sm-6 col-xs-12 control-label">Bank Name</label>
+						    <div class="col-lg-8 col-md-7 col-sm-6 col-xs-12 control-label">
+						      <input type="text" class="form-control" data-ng-model="contact.bankName">
+						    </div>
+						</div>
+						<div class="form-group">
+						    <label class="col-lg-4 col-md-5 col-sm-6 col-xs-12 control-label">Branch</label>
+						    <div class="col-lg-8 col-md-7 col-sm-6 col-xs-12 control-label">
+						      <input type="text" class="form-control" data-ng-model="contact.branch">
+						    </div>
+						</div>
+						<div class="form-group">
+						    <label class="col-lg-4 col-md-5 col-sm-6 col-xs-12 control-label">IFSC Dode</label>
+						    <div class="col-lg-8 col-md-7 col-sm-6 col-xs-12 control-label">
+						      <input type="text" class="form-control" data-ng-model="contact.ifsc">
+						    </div>
+						</div>
+						<div class="form-group">
+						    <label class="col-lg-4 col-md-5 col-sm-6 col-xs-12 control-label">Account Type</label>
+						    <div class="col-lg-8 col-md-7 col-sm-6 col-xs-12 control-label">
+						      <input type="text" class="form-control" data-ng-model="contact.accountType">
+						    </div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div data-ng-switch-when="address"  class="address">
+			<form class="form-horizontal" role="form">
+			  <div class="form-group">
+			    <label class="col-lg-2 col-md-3 col-sm-4 col-xs-12 control-label">Payable to</label>
+			    <div class="col-lg-4 col-md-5 col-sm-8 col-xs-12 control-label">
+			      <input type="text" class="form-control" data-ng-model="address.payable">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="col-lg-2 col-md-3 col-sm-4 col-xs-12 control-label">Address</label>
+			    <div class="col-lg-4 col-md-5 col-sm-8 col-xs-12 control-label">
+			      <input type="text" class="form-control" data-ng-model="address.address">
+			    </div>
+			  </div>
+
+			  <div class="form-group">
+			    <label class="col-lg-2 col-md-3 col-sm-4 col-xs-12 control-label">Country</label>
+			    <div class="col-lg-4 col-md-5 col-sm-8 col-xs-12 control-label">
+			      <select class="form-control" data-ng-model="address.country"></select>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="col-lg-2 col-md-3 col-sm-4 col-xs-12 control-label">Region</label>
+			    <div class="col-lg-4 col-md-5 col-sm-8 col-xs-12 control-label">
+			      <select class="form-control" data-ng-model="address.region"></select>
+			    </div>
+			  </div>
+
+			  <div class="form-group">
+			    <label class="col-lg-2 col-md-3 col-sm-4 col-xs-12 control-label">City</label>
+			    <div class="col-lg-4 col-md-5 col-sm-8 col-xs-12 control-label">
+			    	<div class="input-group">
+						<span class="input-group-addon"><span class="icon-map-marker"></span></span>
+						<input type="text" class="form-control" data-ng-model="address.city">
+					</div>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="col-lg-2 col-md-3 col-sm-4 col-xs-12 control-label">Postal Code</label>
+			    <div class="col-lg-4 col-md-5 col-sm-8 col-xs-12 control-label">
+			      <input type="text" class="form-control" data-ng-model="address.zip">
+			    </div>
+			  </div>
+
+			  <div class="form-group">
+			    <div class="col-lg-offset-2 col-md-offset-3 col-sm-offset-4 col-lg-2 col-md-3 col-sm-4 col-xs-12">
+			      <button type="submit" class="btn btn-info btn-lg" data-ng-click="SaveAddress()"> Save </button>
+			    </div>
+			  </div>
+			  <br><br>
+			</form>
+		</div>
+		<div data-ng-switch-when="password"  class="password">
+			<form class="form-horizontal" role="form">
+			  <div class="form-group">
+			    <label class="col-lg-3 col-md-3 col-sm-4 col-xs-12 control-label">Password</label>
+			    <div class="col-lg-4 col-md-5 col-sm-8 col-xs-12 control-label">
+			      <input type="password" class="form-control" data-ng-model="password.password">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="col-lg-3 col-md-3 col-sm-4 col-xs-12 control-label">Confirm Password</label>
+			    <div class="col-lg-4 col-md-5 col-sm-8 col-xs-12 control-label">
+			      <input type="password" class="form-control" data-ng-model="password.repassword">
+			    </div>
+			  </div>
+
+			  <div class="form-group">
+			    <div class="col-lg-offset-2 col-md-offset-3 col-sm-offset-4 col-lg-2 col-md-3 col-sm-4 col-xs-12">
+			      <button type="submit" class="btn btn-info btn-lg" data-ng-click="SavePassword()"> Save </button>
+			    </div>
+			  </div>
+			  <br><br>
+			</form>
+		</div>
+	</div>
+</div>

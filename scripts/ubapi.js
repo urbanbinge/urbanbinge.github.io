@@ -95,7 +95,11 @@ mUbProvider.factory('ubapi', ['$http','ubconfig', function (http,ubconfig) {
 	events_all: function(_success_cb, _error_cb, opt) { 
 	    this.event_req("events", opt, _success_cb, _error_cb);
 	},
-
+	event_by_id: function(_success_cb, _error_cb, opt) { 
+		var string = "events/"+opt;
+		opt = "";
+	    this.event_req(string, opt, _success_cb, _error_cb);
+	},
 	category_all: function(_success_cb, _error_cb, opt) { 
 	    this.category_req("category", opt, _success_cb, _error_cb);
 	},
