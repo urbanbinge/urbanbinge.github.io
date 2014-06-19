@@ -1,0 +1,236 @@
+<div class="OrganizerReportSection" ng-controller="OrganizerReportCtrl">
+	<br><br>
+	<div data-fade="1" ng-model="reportTabs.activeTab" bs-tabs>
+		<div ng-repeat="tab in reportTabs" data-title="{{tab.title}}"></div>
+	</div>
+	<div class="organizer_report">
+		<ul class="nav nav-tabs">
+		<div class="switch-container" data-ng-switch data-on="reportsView">
+			<div data-ng-switch-when="Notification"  class="Notification">
+				<div class="organizer">
+					<h2 class="hiw">Email Updates</h2>
+					<div class="events">
+						<div class="table-responsive">
+							<table class="table table-borderd table-hover table-condensed">
+								<tr>
+									<th><strong>Email</strong></th>
+									<th><strong>Interval</strong></th>
+								</tr>
+								<tr data-ng-repeat="notification in notifications">
+									<td>{{notification.email}}</td>
+									<td>{{notification.interval}}</td>
+									<td><button class="btn btn-default" data-ng-click="Deletenotification($index)">Delete</button></td>
+								</tr>
+								<tr data-ng-show="notifications == null">
+									<td colspan="3" class="text-center">Loading Email Updates ...</td>
+								</tr>
+								<tr data-ng-show="notifications.length == 0">
+									<td colspan="3" class="text-center">No Email Updates.</td>
+								</tr>
+							</table>
+						</div>
+						<hr>
+						<form class="form-horizontal" role="form">
+							<div class="form-group">
+								<label class="col-lg-3 col-md-3 col-sm-4 col-xs-12 control-label">Email</label>
+								<div class="col-lg-4 col-md-5 col-sm-8 col-xs-12 control-label">
+									<input type="email" class="form-control" data-ng-model="notification.email">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-lg-3 col-md-3 col-sm-4 col-xs-12 control-label">Interval</label>
+								<div class="col-lg-4 col-md-5 col-sm-8 col-xs-12 control-label">
+									<select class="form-control" data-ng-model="notification.interval">
+										<option value="Daily">Daily</option>
+										<option value="Weekly">Weekly</option>
+										<option value="Monthly">Monthly</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-lg-offset-2 col-md-offset-3 col-sm-offset-4 col-lg-2 col-md-3 col-sm-4 col-xs-12">
+									<button type="submit" class="btn btn-info btn-lg" data-ng-click="Savenotification()"> Add </button>
+								</div>
+							</div>
+						</form>
+						<br>
+					</div>
+				</div>
+			</div>
+			<div data-ng-switch-when="Sales_Report"  class="Sales_Report">
+				<div class="organizer">
+				<h2 class="hiw">Sales Report</h2>
+				<div class="table-responsive">
+				  <table class="table">
+					<tr>
+						<th>&nbsp;</th>
+						<th class="text-right"><strong>Invoiced</strong></th>
+						<th class="text-right"><strong>Refunded</strong></th>
+						<th class="text-right"><strong>Total</strong></th>
+					</tr>
+					<tr>
+						<td><strong>Ticket</strong></td>
+						<td class="text-right"><strong>$</strong></td>
+						<td class="text-right"><strong>$</strong></td>
+						<td class="text-right"><strong>$</strong></td>
+					</tr>
+					<tr>
+						<td>Totals</strong></td>
+						<td class="text-right">{{sales.invoiced | number:2}}</td>
+						<td class="text-right">{{sales.refunded | number:2}}</td>
+						<td class="text-right">{{sales.total | number:2}}</td>
+					</tr>
+					<tr>
+						<td colspan="4" style="padding-top: 20px;"><strong>Your Payout</strong></td>
+					</tr>
+					<tr>
+						<td colspan="3" >Income</strong></td>
+						<td class="text-right">{{sales.total | number:2}}</td>
+					</tr>
+					<tr>
+						<td colspan="3" >Tax</strong></td>
+						<td class="text-right">{{sales.tax | number:2}}</td>
+					</tr>
+					<tr>
+						<td colspan="3"  style="padding-top: 20px;">Payouts</strong></td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="3" class="text-right" style="padding-top: 20px;"><strong>Balance</strong></td>
+						<td style="padding-top: 20px;" class="text-right">{{sales.balance | number:2}}</td>
+					</tr>
+					<tr>
+						<td colspan="3" class="text-right"><strong>Fees Payable</strong></td>
+						<td class="text-right">{{sales.payable | number:2}}</td>
+					</tr>
+					<tr>
+						<td colspan="7">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="3" class="text-right"><strong>Current Estimated Payout</strong></td>
+						<td class="text-right">{{ (sales.balance - sales.payable) | number:2 }}</td>
+					</tr>
+				  </table>
+				</div>
+				</div>
+			</div>
+			<div  data-ng-switch-when="Buyers_List" class="Buyers_List">
+				<div class="organizer">
+					<h2 class="hiw">Entrance List</h2>
+					<div class="table-responsive">
+					  <table class="table">
+						<tr>
+							<th><strong>S. No.</strong></th>
+							<th><strong>Reg. No</strong></th>
+							<th><strong>Date</strong></th>
+							<th><strong>Ticket Type</strong></th>
+							<th><strong>Contact Details</strong></th>
+							<th><strong>Transaction No.</strong></th>
+							<th><strong>Qty.</strong></th>
+							<th class="text-right"><strong>Amount (Rs.)</strong></th>
+						</tr>
+						<tr data-ng-repeat="entrance in entranceList">
+							<td>{{$index + 1}}</td>
+							<td>{{entrance.regNo}}</td>
+							<td>{{entrance.date}}</td>
+							<td>{{entrance.ticketType}}</td>
+							<td>{{entrance.userName}}</td>
+							<td>{{entrance.transactionId}}</td>
+							<td>{{entrance.quantity}}</td>
+							<td class="text-right">{{entrance.amount}}</td>
+						</tr>
+						<tr data-ng-show="entranceList.length == 0" class="none">
+							<td colspan="8" class="text-center">No Entrance List.</td>
+						</tr>
+						<tr data-ng-show="entranceList == null" class="loading">
+							<td colspan="8" class="text-center">Loading Entrance List ...</td>
+						</tr>
+					  </table>
+					</div>
+				</div>
+			</div>
+			<div data-ng-switch-when="Complimentary" class="Complimentary">
+				<div class="organizer">
+					<h2 class="hiw">Complimentary Ticket</h2>
+					<div class="row events">
+						<br>
+						<div class="col-lg-7 col-md-8 col-sm-12 col-xs-12">
+						  <form class="form-horizontal" role="form">
+							  <div class="form-group">
+								<label class="col-lg-4 col-md-5 col-sm-6 col-xs-12 control-label">Quantity</label>
+								<div class="col-lg-8 col-md-7 col-sm-6 col-xs-12 control-label">
+								  <input type="number" class="form-control" data-ng-model="compTickets.quantity">
+								</div>
+							  </div>
+							  <div class="form-group">
+								<label class="col-lg-4 col-md-5 col-sm-6 col-xs-12 control-label">Ticket</label>
+								<div class="col-lg-8 col-md-7 col-sm-6 col-xs-12 control-label">
+									<select class="form-control" data-ng-model="compTickets.ticket">
+										<option value="Daily">Daily</option>
+										<option value="Weekly">Weekly</option>
+										<option value="Monthly">Monthly</option>
+									</select>
+								</div>
+							  </div>
+							<div class="form-group">
+								<label class="col-lg-4 col-md-5 col-sm-6 col-xs-12 control-label">First Name</label>
+								<div class="col-lg-8 col-md-7 col-sm-6 col-xs-12 control-label">
+								  <input type="text" class="form-control" data-ng-model="compTickets.firstName">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-lg-4 col-md-5 col-sm-6 col-xs-12 control-label">Last Name</label>
+								<div class="col-lg-8 col-md-7 col-sm-6 col-xs-12 control-label">
+								  <input type="text" class="form-control" data-ng-model="compTickets.lastName">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-lg-4 col-md-5 col-sm-6 col-xs-12 control-label">Email</label>
+								<div class="col-lg-8 col-md-7 col-sm-6 col-xs-12 control-label">
+								  <input type="email" class="form-control" data-ng-model="compTickets.email">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-lg-4 col-md-5 col-sm-6 col-xs-12 control-label">Phone</label>
+								<div class="col-lg-8 col-md-7 col-sm-6 col-xs-12 control-label">
+								  <input type="text" class="form-control" data-ng-model="compTickets.phone">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-lg-4 col-md-5 col-sm-6 col-xs-12 control-label">Cover Photo</label>
+								<div class="col-lg-8 col-md-7 col-sm-6 col-xs-12">
+								  <button class="btn btn-default">Upload</button>
+								</div>
+							</div>
+
+						  <div class="form-group">
+							<div class="col-lg-offset-4 col-md-offset-5 col-sm-offset-4 col-lg-6 col-md-3 col-sm-4 col-xs-12">
+							  <button type="submit" class="btn btn-info btn-lg" data-ng-click="SaveCompTickets()"> Send Complimentary Ticket </button>
+							</div>
+						  </div>
+						  <br>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div data-ng-switch-when="Analytics" class="Analytics">
+				<div class="organizer">
+					<h2 class="hiw">Analytics</h2>
+					<div class="row events">
+						<br>
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+							<input type="text" class="form-control" bs-datepicker data-ng-model="analytics.month" data-date-format="M, yyyy" view-mode="months" min-view-mode="months" end-date='+0m' data-ng-required="true"/>
+						</div>
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+							<button class="btn btn-default">Go</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</ul>
+	</div>
+</div>

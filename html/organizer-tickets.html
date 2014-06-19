@@ -7,15 +7,15 @@
 		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" data-ng-repeat="ticket in tickets">
 			<div class="event">
 				<div class="remaining pull-right">{{event.eventDate | timeLeft}} remaining</div>
-				<div class="title">{{ticket.eventTitle}}</div>
+				<div class="title">{{ticket.eventTitle | limitTo:20}}</div>
 				<div class="images">
-					<div class="image" data-ng-repeat="image in ticket.eventPhotos">
+					<div class="image" data-ng-repeat="image in ticket.eventimages">
 						<img data-ng-src="{{image.imageURL}}"> 
 					</div>
 				</div>
 				<div class="row">
 					<div class="pull-right fees">&#8377; {{ticket.fee | number:2}}</div>
-					<span class="booked">{{ticket.ticketsBooked}} tickets</span>
+					<span class="booked">{{ticket.ticketsBooked}} tickets booked</span>
 				</div>
 			</div>
 		</div>

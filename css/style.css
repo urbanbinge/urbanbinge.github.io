@@ -65,6 +65,20 @@ body {
 	width:auto;
 	overflow: hidden;
 }
+/* 
+.profile {
+	top: 120px;
+	position: relative;
+	font-family: "Andika";
+	left:120px;
+}
+.userProfileNavTabs {
+	margin-top: 120px;
+	position: relative;
+	font-family: "Andika";
+	margin-left: 120px;
+	height: auto;
+} */
 .organizerMenuSection {
 	top: 120px;
 	left:120px;
@@ -77,6 +91,11 @@ body {
 	position: relative;
 	top: 120px;
 	left: 120px;
+}
+.OrganizerReportSection {
+	position: relative;
+	top: 120px;
+	left: 10px;
 }
 .loadmore {
 	width: 150px;
@@ -91,11 +110,30 @@ body {
 	border-radius: 5px;
 	cursor: pointer;
 }
+.changepassword {
+	-moz-user-select: none;
+    background-image: none;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857;
+    margin-bottom: 0;
+    padding: 6px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+	background-color: #FFFFFF;
+    border-color: #CCCCCC;
+    color: #333333;
+	cursor: pointer;
+	font:'Andika';
+}
 .hi {
   color: #C7254E;
 }
 .hiw {
-  color: #fff;
+  /*color: #fff;*/
 }
 .page-view {
 	padding-top: 60px;
@@ -142,6 +180,7 @@ body {
 .user-profile .user-profile-pic {
   height: 120px;
   width: 120px;
+  background-color:rgba(1,1,1,.5);
 }
 .user-overview .event {
   position: relative;
@@ -157,7 +196,8 @@ body {
   text-align: center;
   opacity: 0.9;
   color: #C7254E;
-  font-weight: bold;
+  font-weight: normal;
+  font-size:13px;
 }
 .user-overview .desc {
   height: 120px;
@@ -402,4 +442,17 @@ body {
 .row.events {
     margin-right: 40px;
     margin-top: 20px;
+}
+
+.organizer_report {
+	border: 1px solid transparent;
+	border-radius: 4px 4px 0 0;
+	color: rgb(15, 12, 5);
+	background: rgba(255,255,255,.7);
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 20px;
+	margin-top: 20px;
+	height:auto;
 }

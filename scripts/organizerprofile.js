@@ -1,12 +1,11 @@
 var mubOrganizerProfile = angular.module("ubOrganizerProfile",[]);
 
 
-mubOrganizerProfile.controller('organizerCtrl',['$scope','$window','$timeout','ubapi','ubconfig','ubSharedService','$location', 'Organizer',
-	function organizerCtrl($scope, $window, $timeout, ubapi, ubconfig,ubSharedService,$location, Organizer) {
+mubOrganizerProfile.controller('organizerCtrl',['$scope','$window','$timeout','ubapi','ubconfig','ubSharedService','$location', 'Organizer','$rootScope',
+	function organizerCtrl($scope, $window, $timeout, ubapi, ubconfig,ubSharedService,$location, Organizer,$rootScope) {
 		
 		/* save current route for login mechanism*/
 		ubSharedService.sethistory('/');
-
 		console.log('organizerPage')
 
 		$scope.organizerPage = "html/organizer-profile.html";
@@ -20,79 +19,92 @@ mubOrganizerProfile.controller('organizerCtrl',['$scope','$window','$timeout','u
 	        Organizer.data = $scope.organizer;
 	      })
 	    }
-
-    $scope.init = function() {
-    	$scope.loadOrganizer();
-    }
-
-    $scope.init();
+	
+		var unbind = $rootScope.$on('displayReportSection',function(id) {
+			console.log("catching displayReportSection");
+			/* enable if required in future 
+			ubapi.eventReport_by_eventId(
+			function (count, obj) {
+					$scope.eventReport = new TEventReportList(obj);
+			},
+			function _error() {
+				console.log("Error = ");
+			},val[0]); */
+			$scope.organizerPage = "html/organizer-report.html";
 		
-	}
+		});
+		$scope.$on('$destroy', unbind);
+		/* enable if required in future 
+		$scope.$watch('eventReport', function() {
+			if($scope.eventReport != undefined){
+				$rootScope.$emit('passReportData',$scope.eventReport);
+			}
+		}); */
+		
+		$scope.init = function() {
+			$scope.loadOrganizer();
+		}
+
+		$scope.init();
+			
+		}
 ]);
 
-mubUser.factory('Organizer', function($rootScope, $resource, $routeParams) {
+mubOrganizerProfile.factory('Organizer', function($rootScope, $resource, $routeParams) {
   var obj = {};
 
   obj.data = null;
-  obj.resource = $resource(API_URL + "organizer.json");
+  obj.resource = $resource("organizer.json");
 
   return obj;
 });
 
 
-mubUser.factory('OrganizerEvents', function($rootScope, $resource, $routeParams) {
+mubOrganizerProfile.factory('OrganizerEvents', function($rootScope, $resource, $routeParams) {
   var obj = {};
 
   obj.page = 0;
   obj.pageSize = 6;
-  //obj.resource = $resource(API_URL + "events.json");
-
   return obj;
 });
 
-mubUser.factory('OrganizerAddas', function($rootScope, $resource, $routeParams) {
+mubOrganizerProfile.factory('OrganizerAddas', function($rootScope, $resource, $routeParams) {
   var obj = {};
 
   obj.page = 0;
   obj.pageSize = 6;
-  //obj.resource = $resource(API_URL + "events.json");
-
   return obj;
 });
 
-mubUser.factory('OrganizerTickets', function($rootScope, $resource, $routeParams) {
+mubOrganizerProfile.factory('OrganizerTickets', function($rootScope, $resource, $routeParams) {
   var obj = {};
 
   obj.page = 0;
   obj.pageSize = 6;
-  //obj.resource = $resource(API_URL + "events.json");
-
   return obj;
 });
 
 
-mubUser.factory('AskOrganizer', function($rootScope, $resource, $routeParams) {
+mubOrganizerProfile.factory('AskOrganizer', function($rootScope, $resource, $routeParams) {
   var obj = {};
 
   obj.page = 0;
   obj.pageSize = 5;
-  //obj.resource = $resource(API_URL + "events.json");
-
   return obj;
 });
 
-mubUser.controller('OrganizerProfileCtrl',['$scope','$window','$timeout','ubapi','ubconfig','ubSharedService','$location', 'Organizer', 'OrganizerEvents', 'OrganizerAddas',
-  function userCtrl($scope, $window, $timeout, ubapi, ubconfig,ubSharedService,$location, Organizer, OrganizerEvents, OrganizerAddas) {
+mubOrganizerProfile.controller('OrganizerProfileCtrl',['$scope','$window','$timeout','ubapi','ubconfig','ubSharedService','$location', 'Organizer', 'OrganizerEvents', 'OrganizerAddas','$rootScope',
+  function userCtrl($scope, $window, $timeout, ubapi, ubconfig,ubSharedService,$location, Organizer, OrganizerEvents, OrganizerAddas,$rootScope) {
 
     /* save current route for login mechanism*/
     ubSharedService.sethistory($location.path());
-
     console.log('OrganizerProfileCtrl')
 
     $scope.organizer = null;
     $scope.allAddas = [];
     $scope.eventsAttended = [];
     $scope.eventsPosted = [];
+	$scope.eventReport;
     $scope.pageSize = OrganizerEvents.pageSize;
 
     $scope.eventTabs = [
@@ -126,12 +138,12 @@ mubUser.controller('OrganizerProfileCtrl',['$scope','$window','$timeout','ubapi'
     		$scope.consolidatedSales = $scope.organizer.consolidatedSales;
     		$scope.tags = $scope.organizer.tags;
 
-        if($scope.allAddas.length > 0) {
-          $scope.profileView = 'addas';
-          $scope.loadAddas($scope.addaTabs.activeTab);
-        } else {
+        if($scope.eventsPosted.length > 0) {
           $scope.profileView = 'events';
           $scope.loadEvents($scope.eventTabs.activeTab);
+        } else {
+          $scope.profileView = 'addas';
+          $scope.loadAddas($scope.addaTabs.activeTab);
         }
 
       });
@@ -184,7 +196,11 @@ mubUser.controller('OrganizerProfileCtrl',['$scope','$window','$timeout','ubapi'
         }
       }
     }
-
+	
+	$scope.manageEvent = function(id) {
+		$rootScope.$emit('displayReportSection',id);
+	}
+	
     $scope.init = function() {
     	$scope.loadOrganizer();
     }
@@ -194,7 +210,7 @@ mubUser.controller('OrganizerProfileCtrl',['$scope','$window','$timeout','ubapi'
 ]);
 
 
-mubUser.controller('OrganizerTicketsCtrl',['$scope','$window','$timeout','ubapi','ubconfig','ubSharedService','$location', 'Organizer', 'OrganizerTickets',
+mubOrganizerProfile.controller('OrganizerTicketsCtrl',['$scope','$window','$timeout','ubapi','ubconfig','ubSharedService','$location', 'Organizer', 'OrganizerTickets',
   function userCtrl($scope, $window, $timeout, ubapi, ubconfig,ubSharedService,$location, Organizer, OrganizerTickets) {
 
     /* save current route for login mechanism*/
@@ -270,15 +286,85 @@ mubUser.controller('OrganizerTicketsCtrl',['$scope','$window','$timeout','ubapi'
   }
 ]);
 
+mubOrganizerProfile.controller('OrganizerReportCtrl',['$scope','$window','$timeout','ubapi','ubconfig','ubSharedService','$location', 'Organizer','$rootScope',
+  function userCtrl($scope, $window, $timeout, ubapi, ubconfig,ubSharedService,$location, Organizer,$rootScope) {
+	/* save current route for login mechanism*/
+    ubSharedService.sethistory($location.path());
+	$scope.organizer = null;
+	$scope.notifications = [];
+    $scope.notification = {};
+	$scope.sales = {};
+	$scope.compTickets = {};
+	$scope.entrance = {};
+    $scope.reportsView = 'Notification';
+	$scope.reportTabs = [
+	    {'title':'Notification'},
+		{'title':'Sales Report'},
+		{'title':'Buyers List'},
+		{'title':'Analytics'},
+		{'title':'Complimentary'}
+    ];
+	$scope.reportTabs.activeTab = 0;
+	
+    console.log('OrganizerReportCtrl');
+	
+	$scope.$watch('reportTabs.activeTab', function(newValue, oldValue) {
+      $scope.loadView(newValue);
+    });
+    
+	var unbindReportData = $rootScope.$on('passReportData',function(report) {
+			console.log("catching passReportData");
+			$scope.entranceList = report.entranceList;
+			$scope.sales = report.sales;
+			$scope.notification = report.notification;
+	});
+	
+	$scope.$on('$destroy', unbindReportData);
+	
+    $scope.Savenotification = function() {
+      console.log($scope.notification)
+      $scope.notifications.push($scope.notification);
+      $scope.notification = {};
+    }
 
+    $scope.Deletenotification = function(i) {
+      $scope.notifications.splice(i, 1);
+    }
+	
+	$scope.calculate = function() {
+      $scope.sales.total = $scope.sales.invoiced - $scope.sales.refunded;
+      $scope.sales.balance = $scope.sales.total - ($scope.sales.tax * $scope.sales.total/100) ;
+      $scope.sales.payable = ($scope.sales.fees * $scope.sales.balance) / 100;
+    }
+	
+	$scope.SaveCompTickets = function() {
+      console.log($scope.compTickets)
+      alert(JSON.stringify($scope.compTickets))
+    }
+	
+    $scope.loadView = function(view) {
+		if(view == '0') {
+			$scope.reportsView = 'Notification';
+		}else if(view == '1') {
+			$scope.reportsView = 'Sales_Report';
+		} else if(view == '2') {
+			$scope.reportsView = 'Buyers_List';
+		} else if(view == '3') {
+			$scope.reportsView = 'Analytics';
+		} else {
+			$scope.reportsView = 'Complimentary';
+		}
+    }
+  }
+]);
 
-mubUser.controller('OrganizerSettingstrl',['$scope','$window','$timeout','ubapi','ubconfig','ubSharedService','$location', 'Organizer',
+mubOrganizerProfile.controller('OrganizerSettingstrl',['$scope','$window','$timeout','ubapi','ubconfig','ubSharedService','$location', 'Organizer',
   function userCtrl($scope, $window, $timeout, ubapi, ubconfig,ubSharedService,$location, Organizer) {
 
     /* save current route for login mechanism*/
     ubSharedService.sethistory($location.path());
 
-    console.log('OrganizerSettingstrl')
+    console.log('OrganizerSettingstrl');
 
     $scope.organizer = null;
     $scope.settingsView = 'contactInfo';
@@ -343,163 +429,7 @@ mubUser.controller('OrganizerSettingstrl',['$scope','$window','$timeout','ubapi'
 ]);
 
 
-
-mubUser.controller('OrganizerEmailUpdatesCtrl',['$scope','$window','$timeout','ubapi','ubconfig','ubSharedService','$location', 'Organizer',
-  function userCtrl($scope, $window, $timeout, ubapi, ubconfig,ubSharedService,$location, Organizer) {
-
-    /* save current route for login mechanism*/
-    ubSharedService.sethistory($location.path());
-
-    console.log('OrganizerEmailUpdatesCtrl')
-
-    $scope.emailUpdates = [];
-
-    $scope.emailUpdate = {};
-    
-    $scope.loadOrganizer = function() {
-      Organizer.resource.query(function(data) {
-        $scope.organizer = data[0];
-        Organizer.data = $scope.organizer;
-      });
-    }
-
-    $scope.SaveEmailUpdate = function() {
-      console.log($scope.emailUpdate)
-      $scope.emailUpdates.push($scope.emailUpdate);
-      $scope.emailUpdate = {};
-    }
-
-    $scope.DeleteEmailUpdate = function(i) {
-      $scope.emailUpdates.splice(i, 1);
-    }
-
-    $scope.init = function() {
-      $scope.loadOrganizer();
-    }
-
-    $scope.init();
-  }
-]);
-
-
-
-mubUser.controller('OrganizerCompTicketsCtrl',['$scope','$window','$timeout','ubapi','ubconfig','ubSharedService','$location', 'Organizer',
-  function userCtrl($scope, $window, $timeout, ubapi, ubconfig,ubSharedService,$location, Organizer) {
-
-    /* save current route for login mechanism*/
-    ubSharedService.sethistory($location.path());
-
-    console.log('OrganizerCompTicketsCtrl')
-
-    $scope.compTickets = {};
-    
-    $scope.loadOrganizer = function() {
-      Organizer.resource.query(function(data) {
-        $scope.organizer = data[0];
-        Organizer.data = $scope.organizer;
-      });
-    }
-
-    $scope.SaveCompTickets = function() {
-      console.log($scope.compTickets)
-      alert(JSON.stringify($scope.compTickets))
-    }
-
-    $scope.init = function() {
-      $scope.loadOrganizer();
-    }
-
-    $scope.init();
-  }
-]);
-
-
-mubUser.controller('OrganizerEntranceListCtrl',['$scope','$window','$timeout','ubapi','ubconfig','ubSharedService','$location', 'Organizer',
-  function userCtrl($scope, $window, $timeout, ubapi, ubconfig,ubSharedService,$location, Organizer) {
-
-    /* save current route for login mechanism*/
-    ubSharedService.sethistory($location.path());
-
-    console.log('OrganizerEntranceListCtrl')
-
-    $scope.organizer = null;
-    $scope.entranceList = [];
-    $scope.eventId = 26;
-    $scope.event = {};
-    
-    $scope.loadOrganizer = function() {
-      Organizer.resource.query(function(data) {
-        $scope.organizer = data[0];
-        Organizer.data = $scope.organizer;
-
-        var eventsPosted = $scope.organizer.eventsPosted;
-        angular.forEach(eventsPosted, function(E, i) {
-          if(E.eventid == $scope.eventId) {
-            $scope.event = E;
-            $scope.entranceList = E.entranceList;
-          }
-        });
-      });
-    }
-
-    $scope.init = function() {
-      $scope.loadOrganizer();
-    }
-
-    $scope.init();
-  }
-]);
-
-
-mubUser.controller('OrganizerSalesReportCtrl',['$scope','$window','$timeout','ubapi','ubconfig','ubSharedService','$location', 'Organizer',
-  function userCtrl($scope, $window, $timeout, ubapi, ubconfig,ubSharedService,$location, Organizer) {
-
-    /* save current route for login mechanism*/
-    ubSharedService.sethistory($location.path());
-
-    console.log('OrganizerSalesReportCtrl')
-
-    $scope.organizer = null;
-    $scope.queries = [];
-    $scope.eventId = 26;
-    $scope.sales = {};
-    
-    $scope.loadOrganizer = function() {
-      Organizer.resource.query(function(data) {
-        $scope.organizer = data[0];
-        Organizer.data = $scope.organizer;
-        
-        if($scope.eventId == null) {
-          $scope.sales = $scope.organizer.consolidatedSales[0];
-        } else {
-          angular.forEach($scope.organizer.eventsPosted, function(E, i) {
-            if(E.eventid == $scope.eventId) {
-              $scope.sales = E.ticketSales[0];
-            }
-          });
-        }
-
-        $scope.calculate();
-      });
-    }
-
-    $scope.calculate = function() {
-      $scope.sales.total = $scope.sales.invoiced - $scope.sales.refunded;
-      $scope.sales.balance = $scope.sales.total - ($scope.sales.tax * $scope.sales.total/100) ;
-      $scope.sales.payable = ($scope.sales.fees * $scope.sales.balance) / 100;
-    }
-    $scope.init = function() {
-      $scope.loadOrganizer();
-    }
-
-    $scope.init();
-  }
-]);
-
-
-
-
-mubUser.controller('OrganizerAskCtrl',['$scope','$window','$timeout','ubapi','ubconfig','ubSharedService','$location', 'Organizer', 'AskOrganizer',
+mubOrganizerProfile.controller('OrganizerAskCtrl',['$scope','$window','$timeout','ubapi','ubconfig','ubSharedService','$location', 'Organizer', 'AskOrganizer',
   function userCtrl($scope, $window, $timeout, ubapi, ubconfig,ubSharedService,$location, Organizer, AskOrganizer) {
 
     /* save current route for login mechanism*/
