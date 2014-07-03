@@ -37,7 +37,8 @@
                         <span>Anyone can join group, membership aproval not required.</span>
 
                         <input type="radio" name="op_privacy" ng-model="$parent.isPrivate" ng-value="true"/> <i
-                            class="glyphicon glyphicon-lock"></i> Closed
+                            class="glyphicon glyphicon-lock"></i> 
+						Closed
 
 
                         <span> Private group, membership approval required..</span>
@@ -54,7 +55,26 @@
                     </div>
 
                 </div>
-            </div>
+				
+				<div class="adda-control-group type">
+					<label>Adda Type:</label>
+					<div class="options">
+						<input type="radio" name="op_type" ng-model="$parent.isOfType" ng-value="true"/> <i
+							class="glyphicon glyphicon-globe"></i>
+						User
+						<span>Ideal for making your buddy group,get-together,share common interest etc..</span>
+
+						<input type="radio" name="op_type" ng-model="$parent.isOfType" ng-value="false"/> <i
+							class="glyphicon glyphicon-picture"></i> 
+						Event Organizer
+						<span> Ideal for professional event organizers</span>
+						
+						<input type="radio" name="op_type" ng-model="$parent.isOfType" ng-value="false"/> <i
+							class="glyphicon glyphicon-lock"></i> 
+						Corporate
+						<span> Ideal for Corporates and companies</span>
+					</div>
+				</div>
             <div ng-show="showPage(2)">
 
 
