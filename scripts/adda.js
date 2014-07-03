@@ -67,6 +67,10 @@ function CreateAddaDialogCtrl($scope, $modalInstance, $http, ubconfig) {
     $scope.privacyChanged = function () {
         console.log('privacyChanged',$scope.isPrivate);
     }
+	
+	$scope.typeChanged = function () {
+        console.log('typeChanged',$scope.isOfType);
+    }
 
 
 
