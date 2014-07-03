@@ -26,10 +26,7 @@
                         <menu-item href="#" show="show('org_whatwedo')">What We Do</menu-item>
                     </li>
                     <li ng-class="getMenuClass('org_activites')">
-                        <menu-item href="#" show="show('org_activites')">Activities</menu-item>
-                    </li>
-                    <li ng-class="getMenuClass('org_clients')">
-                        <menu-item href="#" show="show('org_clients')">Clients</menu-item>
+                        <menu-item href="#" show="show('org_activites')">Posts</menu-item>
                     </li>
                     <li ng-class="getMenuClass('org_getintouch')">
                         <menu-item href="#" show="show('org_getintouch')">Get in Touch</menu-item>
@@ -77,22 +74,19 @@
 
     </div>
 
-    <div id="org_clients">
-        <h3 class="org_paneltitle">Feedback</h3>
+    <div id="org_activites">
+        <div class="org_side">
+            <div class="addaview_upcoming">Posts</div>
+        </div>
+        <div class="org_content">
+            <div id="org_events">
+                <carousel-events events="organizer.activities"></carousel-events>
 
-        <p class="org_panelsubtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-
-        <carousel id="org_clientlist" interval="clientsCarouselInterval">
-            <slide class="org_clientpanel" ng-repeat="client in organizer.clients" active="slide.active">
-                <img class="img-circle org_clientimage" ng-src="{{ client.memberPicURL }}" alt="{{ client.name }}"/>
-
-                <div class="org_innerpanel">
-                    <blockquote class="org_clientcomment">{{ client.comment }}</blockquote>
-                    <strong class="org_clientname">{{ client.name }}</strong>
-                </div>
-            </slide>
-        </carousel>
+                <carousel-events events="organizer.activities"></carousel-events>
+            </div>
+        </div>
     </div>
+
     <div id="org_getintouch">
 
         <div>
