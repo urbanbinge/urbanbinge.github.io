@@ -308,6 +308,10 @@ body{
     float: left;
 }
 
+.type label {
+    float: left;
+}
+
 .options {
     overflow: hidden;
     width: 400px;
