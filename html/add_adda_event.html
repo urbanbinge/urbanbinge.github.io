@@ -1,13 +1,13 @@
 <div ng-init="$parent.init()">
 
     <div id="create_adda_header" class="modal-header">
-        <h3>Create new Event</h3>
+        <h3>Create new Activity</h3>
     </div>
     <div class="modal-body">
         <div ng-show="showPage(1)">
             <div class="adda-control-group">
-                <label>Event-title:</label>
-                <input class="input-control" type="text" ng-model="$parent.eventTitle"/>
+                <label>Activity-title:</label>
+                <input class="input-control" type="text" ng-model="$parent.activityTitle"/>
             </div>
             <div class="adda-control-group">
                 <label>Location:</label>
@@ -20,28 +20,11 @@
                        bs-datepicker/>
             </div>
             <div class="adda-control-group">
-                <label>Seats:</label>
+                <label>Group Size:</label>
                 <input class="input-control" type="text" ng-model="$parent.seats" style=" width: 100px; " ng-disabled="noLimit"/>
                 <input type="checkbox" ng-model="$parent.noLimit"/> No limit
 
             </div>
-            <div style="clear: both; margin: 20px 0; overflow: hidden">
-
-                <div class="addaddaevent_check">
-                    <input class="input-control" type="checkbox" ng-model="$parent.onlineBookingRequired"/> Online
-                    Booking Required
-                </div>
-
-                <div class="addaaddevent_price">
-                    <span>Ticket Price</span>
-
-                    <div class="input-group">
-                        <span class="input-group-addon">$</span>
-                        <input type="text" class="form-control" style="width: 100px;">
-                    </div>
-                </div>
-            </div>
-
             <hr class="clearfix">
 
             <div  style="margin-top: 20px;">
@@ -58,13 +41,13 @@
 </div>
             <hr/>
             <div ng-show="options.uploadAditionalPhotos">
-            <adda-image-upload filename="eventImages" title="Upload Event Images"></adda-image-upload>
+            <adda-image-upload filename="activityImages" title="Upload Activity Images"></adda-image-upload>
 </div>
 
         </div>
         <div ng-show="showPage(3)">
             <div class="adda-control-group">
-                <label>Event Introduction:</label>
+                <label>Activity Introduction:</label>
                 <!--   <textarea name="" id="" class="createadda-introduction" ng-model="$parent.introduction"></textarea> -->
                 <div text-angular ng-model="$parent.introduction" ta-text-editor-class="createadda_editor"></div>
             </div>

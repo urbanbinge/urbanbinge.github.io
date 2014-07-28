@@ -13,7 +13,7 @@
 
         <div class="adda_view_join_button">
             <!--  <button ng-show="isOrganizer" ng-click="show('addevent')">Add Event</button>-->
-            <button ng-show="isOrganizer" ng-click="showAddEventDialog()">Add Event</button>
+            <button ng-show="isOrganizer" ng-click="showAddEventDialog()">Add Activity</button>
             <button ng-hide="isOrganizer" ng-click="show('joinadda')">Join Adda</button>
             <button ng-show="isOrganizer" ng-click="show('emailmembers')">Email Members</button>
         </div>
@@ -29,7 +29,7 @@
                         <menu-item  show="show('theme')">Theme</menu-item>
                     </li>
                     <li ng-class="getMenuClass('events')">
-                        <menu-item  show="show('events')">Events</menu-item>
+                        <menu-item  show="show('events')">Activities</menu-item>
                     </li>
                     <li ng-class="getMenuClass('noticeboard')">
                         <menu-item  show="show('noticeboard')">Notification</menu-item>
